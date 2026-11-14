@@ -76,7 +76,8 @@ function storyHTML(ins) {
       <dt>${tr('impact')}</dt><dd>${pick(ins.impact)}</dd>
       <dt>${tr('missions')}</dt><dd>${missions}</dd>
       ${status ? `<dt>${tr('status')}</dt><dd>${status}</dd>` : ''}
-    </dl>`;
+    </dl>
+    ${ins.note ? `<p class="mm-alert">${pick(ins.note)}</p>` : ''}`;
 }
 
 // ---------- photo gallery ----------
@@ -101,6 +102,7 @@ function showImage(i, animate = true) {
     img.hidden = true;
     empty.hidden = false;
     $('gcap').textContent = '';
+    $('gkind').textContent = '';
     $('gcount').textContent = '';
     return;
   }
@@ -114,6 +116,7 @@ function showImage(i, animate = true) {
     img.src = item.src;
     img.alt = pick(item.caption);
     $('gcap').textContent = pick(item.caption);
+    $('gkind').textContent = item.kind === 'illustration' ? tr('kind_illus') : tr('kind_photo');
     $('gcount').textContent = `${gIndex + 1} / ${images.length}`;
     markStrip();
     requestAnimationFrame(() => img.classList.remove('swap'));
@@ -231,6 +234,7 @@ onLangChange(() => {
   if (current && inspect.open) {
     story.innerHTML = storyHTML(current);
     $('gcap').textContent = pick(current.images[gIndex]?.caption) ?? '';
+    if (current.images[gIndex]) $('gkind').textContent = current.images[gIndex].kind === 'illustration' ? tr('kind_illus') : tr('kind_photo');
     renderStrip(current.images);
     markStrip();
   }

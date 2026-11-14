@@ -32,7 +32,7 @@ body {
   margin: 0;
   min-height: 100vh;
   color: var(--ink);
-  font-family: "Inter", "Noto Sans Thai", system-ui, sans-serif;
+  font-family: "Space Grotesk", "Noto Sans Thai", system-ui, sans-serif;
   line-height: 1.6;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
@@ -41,7 +41,7 @@ body {
     radial-gradient(900px 700px at -10% 110%, #2a1a3f 0%, transparent 55%),
     var(--bg);
 }
-body.thai { font-family: "Noto Sans Thai", "Inter", system-ui, sans-serif; line-height: 1.9; }
+body.thai { font-family: "Noto Sans Thai", "Space Grotesk", system-ui, sans-serif; line-height: 1.9; }
 
 /* vignette: darkens the edges of the whole screen, like a film frame */
 body::after {
@@ -299,20 +299,14 @@ h2.title {
 #hero-moon { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 0; display: block; }
 .giant {
   position: absolute;
-  top: 8%;
-  left: 0;
-  right: 0;
+  top: 9%;
+  left: 50%;
   z-index: 1;
+  width: min(92vw, 1000px);
+  height: auto;
+  transform: translateX(-50%);
   pointer-events: none;
   user-select: none;
-  font-size: clamp(70px, 20vw, 250px);
-  font-weight: 900;
-  line-height: 1;
-  letter-spacing: 0.02em;
-  background: linear-gradient(180deg, #ffffff 0%, #d4dcec 35%, #6f7b93 78%, #252d40 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
   filter: drop-shadow(0 0 40px rgba(166, 240, 247, 0.18)) drop-shadow(0 20px 40px rgba(0, 0, 0, 0.6));
 }
 .hero-copy { position: relative; z-index: 2; max-width: 860px; margin-top: 30vh; }
@@ -645,3 +639,101 @@ dialog.modal::backdrop { background: rgba(2, 4, 10, 0.78); backdrop-filter: blur
   background: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.55));
 }
 .site-footer p { margin: 4px 0; }
+
+/* ==========================================================================
+   Asset pack pieces: icons, floating astronauts, moon map
+   ========================================================================== */
+
+/* icons from the asset pack */
+.icon-btn img, .close img, .nav-btn img { display: block; margin: auto; }
+.nav-btn img { width: 20px; height: 20px; }
+.brand img { flex: 0 0 auto; }
+
+/* two floating astronauts: side margins, behind content, never over text */
+.astro-layer { position: fixed; inset: 0; z-index: 1; pointer-events: none; overflow: hidden; }
+.astro { position: absolute; will-change: transform; }
+.astro .bob { animation: bob 8s ease-in-out infinite; }
+.astro img { width: 100%; height: auto; opacity: 0.92; filter: drop-shadow(0 12px 24px rgba(0, 0, 0, 0.55)); }
+@keyframes bob {
+  0%, 100% { transform: translateY(0) rotate(-3deg); }
+  50% { transform: translateY(-16px) rotate(4deg); }
+}
+html[data-motion="reduced"] .astro .bob { animation: none; }
+@media (max-width: 760px) { .astro-layer { display: none; } }
+
+/* moon map: explorer layout */
+.mm-grid { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(320px, 0.9fr); gap: 22px; align-items: stretch; }
+.mm-panel { position: relative; background: var(--glass); border: 1px solid var(--line); border-radius: 22px; box-shadow: var(--shadow); overflow: hidden; }
+.mm-head { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; padding: 16px 20px; border-bottom: 1px solid var(--line); }
+.mm-head strong { font-size: 1rem; }
+.mm-stage {
+  position: relative;
+  height: clamp(380px, 48vw, 520px);
+  background: radial-gradient(ellipse at 50% 55%, #1c2a3a 0%, #0a121c 60%, #06090f 100%);
+  overflow: hidden;
+}
+.mm-stage canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+.mm-ring { position: absolute; left: 50%; top: 50%; width: 88%; aspect-ratio: 1; border-radius: 50%; transform: translate(-50%, -50%); border: 1px solid rgba(166, 240, 247, 0.18); pointer-events: none; }
+.mm-ring.r2 { width: 104%; border-style: dashed; opacity: 0.5; }
+.mm-labels { position: absolute; inset: 0; pointer-events: none; }
+.mm-label {
+  position: absolute; left: 0; top: 0; pointer-events: auto;
+  display: flex; flex-direction: column; gap: 2px; text-align: left;
+  padding: 7px 11px; border-radius: 12px;
+  border: 1px solid rgba(232, 183, 90, 0.55);
+  background: rgba(8, 12, 20, 0.85);
+  color: var(--ink);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+  transition: box-shadow 0.35s var(--ease), border-color 0.35s, transform 0.35s var(--ease);
+  white-space: nowrap;
+}
+.mm-label:hover, .mm-label.on { border-color: var(--gold); box-shadow: 0 0 22px rgba(232, 183, 90, 0.45); transform: scale(1.04); }
+.mm-label .n { font-weight: 800; font-size: 0.8rem; color: var(--gold); letter-spacing: 0.08em; }
+.mm-label .s { font-size: 0.8rem; color: var(--muted); }
+.mm-instruments { padding: 16px 20px 18px; border-top: 1px solid var(--line); }
+.mm-sub { margin: 0 0 10px; font-size: 0.85rem; color: var(--muted); font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
+.mm-chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.mm-chip {
+  font: inherit; cursor: pointer; text-align: left;
+  background: rgba(255, 255, 255, 0.03); color: var(--ink);
+  border: 1px solid var(--line); border-radius: 12px; padding: 8px 12px;
+  transition: all 0.35s var(--ease);
+}
+.mm-chip b { display: block; color: var(--gold); font-size: 0.78rem; letter-spacing: 0.1em; }
+.mm-chip span { font-size: 0.85rem; color: var(--muted); }
+.mm-chip:hover { border-color: rgba(166, 240, 247, 0.6); box-shadow: 0 0 18px rgba(166, 240, 247, 0.3); transform: translateY(-2px); }
+.mm-chip.on { background: var(--cyan); border-color: transparent; box-shadow: 0 0 22px rgba(166, 240, 247, 0.5); }
+.mm-chip.on b, .mm-chip.on span { color: #041018; }
+.mm-empty { color: var(--muted); margin: 0; }
+
+.mm-dossier { display: flex; flex-direction: column; }
+.mm-dossier-top { padding: 16px 20px; border-bottom: 1px solid var(--line); display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; }
+.mm-dossier-top .mono { color: var(--gold); letter-spacing: 0.14em; font-size: 0.8rem; font-weight: 700; }
+.mm-dossier-top small { color: var(--muted); }
+.mm-entry { padding: 22px 24px 26px; animation: mmRise 0.45s var(--ease) both; }
+@keyframes mmRise { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+.mm-plinth { position: relative; aspect-ratio: 16 / 10; border-radius: 16px; overflow: hidden; background: radial-gradient(circle at 50% 40%, #22324a, #070b14 75%); border: 1px solid var(--line); }
+.mm-plinth-img { position: absolute; left: 0; right: 0; bottom: 0; width: 100%; height: 100%; object-fit: contain; opacity: 0.9; }
+.mm-object { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; filter: drop-shadow(0 18px 24px rgba(0, 0, 0, 0.6)); }
+.mm-entry h2 { font-size: clamp(1.5rem, 2.4vw, 2rem); font-weight: 800; margin: 14px 0 4px; line-height: 1.2; }
+.mm-kicker { color: var(--gold); letter-spacing: 0.12em; font-weight: 700; font-size: 0.8rem; margin: 0; }
+.mm-facts { display: grid; gap: 14px; margin: 14px 0 0; }
+.mm-facts dt { color: var(--gold); font-weight: 700; font-size: 0.85rem; margin-bottom: 4px; }
+.mm-facts dd { margin: 0; color: #dfe8f5; line-height: 1.75; }
+.mm-alert { margin: 16px 0 0; padding: 12px 15px; border-left: 3px solid var(--gold); background: rgba(232, 183, 90, 0.1); border-radius: 0 10px 10px 0; color: #f6e3c0; font-size: 0.92rem; line-height: 1.7; }
+.mm-credit { margin: 14px 0 0; font-size: 0.8rem; color: var(--muted); }
+
+.mm-below { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; padding-top: 0; }
+.mm-power { padding: 24px; display: flex; flex-direction: column; gap: 14px; }
+.mm-power-img { aspect-ratio: 16 / 10; border-radius: 16px; overflow: hidden; background: radial-gradient(circle at 50% 40%, #22324a, #070b14 75%); border: 1px solid var(--line); }
+.mm-power-img img { width: 100%; height: 100%; object-fit: contain; filter: drop-shadow(0 18px 24px rgba(0, 0, 0, 0.6)); }
+.mm-power h2, .mm-findings h2 { font-size: 1.2rem; font-weight: 800; margin: 0; line-height: 1.3; }
+.mm-power p { margin: 0; color: #d5dfe8; line-height: 1.8; }
+.mm-power .small { color: var(--muted); }
+.mm-findings { padding: 24px; }
+.mm-findings ul { padding-left: 20px; margin: 14px 0 0; }
+.mm-findings li { margin-bottom: 12px; line-height: 1.75; color: #d9e3ee; }
+
+@media (max-width: 900px) {
+  .mm-grid, .mm-below { grid-template-columns: 1fr; }
+}

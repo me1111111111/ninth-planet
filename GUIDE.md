@@ -207,3 +207,36 @@ On your computer and your phone:
 - [ ] Footer says it is not endorsed by NASA (it does).
 
 Good luck with the challenge.
+
+---
+
+## 14. Version 3: asset pack, moon map and astronauts
+
+**What changed**
+
+- **Moon map** (`moon-map.html`, `js/moonmap.js`): rebuilt as an explorer. The 3D Moon shows the five real Apollo landing sites. Their labels follow the Moon as it turns. Pick a site to see its instruments as chips, then pick a chip to open the dossier with its illustration on the museum plinth. Power (SNAP-27) and findings panels sit below.
+- **Astronauts**: two floating astronauts from the asset pack, in the side margins, hidden on phones.
+- **Placeholders replaced** with the asset pack: the logo, favicon, icons, the steel APOLLO wordmark, and local fonts (Space Grotesk, Noto Sans Thai, IBM Plex Mono). Google Fonts are no longer loaded.
+- **Missing instruments added**: LSPE, LSG, SIDE and CCIG (text from the Canva page you sent).
+- **Galleries**: each instrument now has its real NASA photos first, then the concept illustration. Every gallery image is labelled "Photo" or "Concept illustration".
+
+**Where the files are**
+
+| Folder | What it holds |
+| --- | --- |
+| `assets/instruments/` | Equipment illustrations (transparent PNG) |
+| `assets/scene/` | Astronauts, plinth, Moon and Earth illustrations |
+| `assets/ui/` | Logo, favicon, icons, steel APOLLO wordmark |
+| `fonts/` | Font files and their licence texts (keep these) |
+| `styles/fonts.css` | Loads the local fonts |
+| `docs/sources.md` | Source list from the asset pack |
+| `data/assets.json` | Manifest with sizes and bilingual names |
+
+**Adding an illustration to an instrument:** add an entry to its `"images"` list in `data/content.json` with `"kind": "illustration"`, the path, and a bilingual caption.
+
+**Things to know**
+
+- The asset pack's illustrations are AI-generated concept images, not NASA photographs. The site labels them that way.
+- The illustration PNGs are large (about 2 MB each). If pages feel slow, convert them to WebP with alpha, and update the paths.
+- The 3D Moon still uses `moon.glb`, which is not in the asset pack. Keep the file in `assets/models/`.
+- Pin positions on the 3D Moon need a check in a real browser, because the test environment for this version could not draw the 3D Moon.

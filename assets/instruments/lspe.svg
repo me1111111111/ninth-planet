@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1536 1024" role="img" aria-label="Conceptual seismic measuring equipment illustration"><defs>
+<linearGradient id="metal"><stop stop-color="#465465"/><stop offset=".2" stop-color="#B7C4D0"/><stop offset=".45" stop-color="#F4F6F5"/><stop offset=".62" stop-color="#9DAAB9"/><stop offset="1" stop-color="#3D4857"/></linearGradient>
+<linearGradient id="top" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#F1F4F6"/><stop offset="1" stop-color="#687789"/></linearGradient>
+<linearGradient id="gold"><stop stop-color="#87724E"/><stop offset=".5" stop-color="#D6BA83"/><stop offset="1" stop-color="#64553E"/></linearGradient>
+<linearGradient id="face" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#9FADB9"/><stop offset="1" stop-color="#4F5C6D"/></linearGradient>
+</defs><path d="M775 420C537 560 220 565 300 605" fill="none" stroke="#B8A27B" stroke-width="5" stroke-linecap="round"/><path d="M775 420C537 560 220 565 300 605" fill="none" stroke="#E5D6B5" stroke-opacity=".5" stroke-width="1"/><path d="M775 420C687 560 520 640 600 680" fill="none" stroke="#B8A27B" stroke-width="5" stroke-linecap="round"/><path d="M775 420C687 560 520 640 600 680" fill="none" stroke="#E5D6B5" stroke-opacity=".5" stroke-width="1"/><path d="M775 420C845 560 835 605 915 645" fill="none" stroke="#B8A27B" stroke-width="5" stroke-linecap="round"/><path d="M775 420C845 560 835 605 915 645" fill="none" stroke="#E5D6B5" stroke-opacity=".5" stroke-width="1"/><path d="M775 420C995 560 1135 510 1215 550" fill="none" stroke="#B8A27B" stroke-width="5" stroke-linecap="round"/><path d="M775 420C995 560 1135 510 1215 550" fill="none" stroke="#E5D6B5" stroke-opacity=".5" stroke-width="1"/><g transform="translate(650 300)">
+ <path d="M0 0 136-45 232 0 96 49Z" fill="url(#top)" stroke="#D2DCE4" stroke-width="2"/>
+ <path d="M0 0v108l96 49V49Z" fill="url(#face)" stroke="#B2BFCA" stroke-width="2"/>
+ <path d="m96 49 136-49v108L96 157Z" fill="url(#metal)" stroke="#B2BFCA" stroke-width="2"/>
+ <path d="m102 61 123-44v72l-123 45Z" fill="url(#gold)" opacity=".8"/>
+ <path d="m118 54 6 68m19-80 3 70m24-81-2 72m28-81-2 71" stroke="#E9DDC3" opacity=".4"/>
+ <g fill="#273743" stroke="#CBD4DC" stroke-width="3"><circle cx="28" cy="58" r="10"/><circle cx="65" cy="76" r="10"/></g>
+ <path d="m40-11 26-9v-10l24-8v10l22-8" fill="none" stroke="#D7DEE5" stroke-width="7"/>
+ </g><g transform="translate(300 625) scale(1.1)">
+ <path d="M-4 46v43l4 10 4-10V46" fill="url(#metal)" stroke="#83909D"/>
+ <path d="M-42-16V35C-42 59 42 59 42 35V-16" fill="url(#metal)" stroke="#C9D3DC" stroke-width="2"/>
+ <ellipse cy="-16" rx="42" ry="18" fill="url(#top)" stroke="#E4EAF0" stroke-width="2"/>
+ <ellipse cy="33" rx="42" ry="18" fill="none" stroke="#5F6D7D" stroke-width="3"/>
+ <path d="M-8-18v-9q8-9 16 0v9" fill="none" stroke="#D6BA83" stroke-width="5"/>
+ <path d="M-34 4v25M31 1v25" stroke="#E9EEF2" stroke-opacity=".4" stroke-width="2"/>
+ <circle cx="-25" cy="-20" r="3" fill="#596674"/><circle cx="24" cy="-12" r="3" fill="#596674"/>
+ </g><g transform="translate(600 700) scale(1.1)">
+ <path d="M-4 46v43l4 10 4-10V46" fill="url(#metal)" stroke="#83909D"/>
+ <path d="M-42-16V35C-42 59 42 59 42 35V-16" fill="url(#metal)" stroke="#C9D3DC" stroke-width="2"/>
+ <ellipse cy="-16" rx="42" ry="18" fill="url(#top)" stroke="#E4EAF0" stroke-width="2"/>
+ <ellipse cy="33" rx="42" ry="18" fill="none" stroke="#5F6D7D" stroke-width="3"/>
+ <path d="M-8-18v-9q8-9 16 0v9" fill="none" stroke="#D6BA83" stroke-width="5"/>
+ <path d="M-34 4v25M31 1v25" stroke="#E9EEF2" stroke-opacity=".4" stroke-width="2"/>
+ <circle cx="-25" cy="-20" r="3" fill="#596674"/><circle cx="24" cy="-12" r="3" fill="#596674"/>
+ </g><g transform="translate(915 665) scale(1.1)">
+ <path d="M-4 46v43l4 10 4-10V46" fill="url(#metal)" stroke="#83909D"/>
+ <path d="M-42-16V35C-42 59 42 59 42 35V-16" fill="url(#metal)" stroke="#C9D3DC" stroke-width="2"/>
+ <ellipse cy="-16" rx="42" ry="18" fill="url(#top)" stroke="#E4EAF0" stroke-width="2"/>
+ <ellipse cy="33" rx="42" ry="18" fill="none" stroke="#5F6D7D" stroke-width="3"/>
+ <path d="M-8-18v-9q8-9 16 0v9" fill="none" stroke="#D6BA83" stroke-width="5"/>
+ <path d="M-34 4v25M31 1v25" stroke="#E9EEF2" stroke-opacity=".4" stroke-width="2"/>
+ <circle cx="-25" cy="-20" r="3" fill="#596674"/><circle cx="24" cy="-12" r="3" fill="#596674"/>
+ </g><g transform="translate(1215 570) scale(1.1)">
+ <path d="M-4 46v43l4 10 4-10V46" fill="url(#metal)" stroke="#83909D"/>
+ <path d="M-42-16V35C-42 59 42 59 42 35V-16" fill="url(#metal)" stroke="#C9D3DC" stroke-width="2"/>
+ <ellipse cy="-16" rx="42" ry="18" fill="url(#top)" stroke="#E4EAF0" stroke-width="2"/>
+ <ellipse cy="33" rx="42" ry="18" fill="none" stroke="#5F6D7D" stroke-width="3"/>
+ <path d="M-8-18v-9q8-9 16 0v9" fill="none" stroke="#D6BA83" stroke-width="5"/>
+ <path d="M-34 4v25M31 1v25" stroke="#E9EEF2" stroke-opacity=".4" stroke-width="2"/>
+ <circle cx="-25" cy="-20" r="3" fill="#596674"/><circle cx="24" cy="-12" r="3" fill="#596674"/>
+ </g></svg>

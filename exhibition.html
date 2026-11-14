@@ -4,10 +4,8 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Exhibition · The Ninth Planet</title>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&family=Noto+Sans+Thai:wght@400;600;800&display=swap" rel="stylesheet" />
+  <link rel="icon" href="assets/ui/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="styles/fonts.css" />
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
   <link rel="stylesheet" href="css/style.css" />
 
@@ -47,16 +45,17 @@
 
   <!-- Exhibit viewer: photo gallery on the left, story on the right -->
   <dialog id="inspect" class="modal">
-    <button class="close" data-close aria-label="Close">✕</button>
+    <button class="close" data-close aria-label="Close"><img src="assets/ui/close.svg" alt="" width="18" height="18"></button>
     <div class="modal-grid">
       <section class="gallery" aria-label="Photos">
         <div class="stage" id="stage">
           <img id="gimg" alt="" hidden />
           <div class="nophoto" id="nophoto" hidden data-i18n="photo_soon"></div>
-          <button class="nav-btn prev" id="gprev" aria-label="Previous photo">‹</button>
-          <button class="nav-btn next" id="gnext" aria-label="Next photo">›</button>
+          <button class="nav-btn prev" id="gprev" aria-label="Previous photo"><img src="assets/ui/arrow-left.svg" alt=""></button>
+          <button class="nav-btn next" id="gnext" aria-label="Next photo"><img src="assets/ui/arrow-right.svg" alt=""></button>
           <span class="counter" id="gcount"></span>
         </div>
+        <p class="hint" id="gkind"></p>
         <p class="gcap" id="gcap"></p>
         <div class="strip" id="strip"></div>
         <p class="hint" data-i18n="gallery_hint"></p>
@@ -72,7 +71,7 @@
 
   <!-- Maps: where it was built (Earth) and where it was left (Moon) -->
   <dialog id="mapdlg" class="modal">
-    <button class="close" data-close aria-label="Close">✕</button>
+    <button class="close" data-close aria-label="Close"><img src="assets/ui/close.svg" alt="" width="18" height="18"></button>
     <div class="map-grid">
       <figure>
         <figcaption data-i18n="map_earth"></figcaption>

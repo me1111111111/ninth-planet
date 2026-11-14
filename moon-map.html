@@ -4,10 +4,8 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Moon map · The Ninth Planet</title>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&family=Noto+Sans+Thai:wght@400;600;800&display=swap" rel="stylesheet" />
+  <link rel="icon" href="assets/ui/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="styles/fonts.css" />
   <link rel="stylesheet" href="css/style.css" />
 
   <script type="importmap">
@@ -24,71 +22,50 @@
 
   <main class="page">
     <section class="page-hero">
-      <p class="eyebrow" data-i18n="credits_eyebrow"></p>
-      <h1 class="display" data-i18n="moon_map_title"></h1>
-      <p class="lead" data-i18n="moon_map_sub"></p>
+      <p class="eyebrow" data-i18n="mm_eyebrow"></p>
+      <h1 class="display" data-i18n="mm_title"></h1>
+      <p class="lead" data-i18n="mm_intro"></p>
+      <div class="chips" id="filters" style="margin-top:20px">
+        <button class="chip active" data-group="all" aria-pressed="true" data-i18n="filter_all"></button>
+        <button class="chip" data-group="inside" aria-pressed="false" data-i18n="filter_inside"></button>
+        <button class="chip" data-group="fields" aria-pressed="false" data-i18n="mm_filter_fields"></button>
+        <button class="chip" data-group="particles" aria-pressed="false" data-i18n="filter_particles"></button>
+      </div>
     </section>
 
-    <section class="block moon-layout">
-      <div class="moon-box"><canvas id="moon" aria-label="The Moon with five Apollo landing sites marked"></canvas></div>
-      <div class="mission-list" id="missions"></div>
+    <section class="block" style="padding-top:28px">
+      <div class="mm-grid">
+        <article class="mm-panel">
+          <div class="mm-head">
+            <strong data-i18n="mm_sites_head"></strong>
+            <button class="pill" id="show-all" data-i18n="show_all"></button>
+          </div>
+          <div class="mm-stage" id="mm-stage">
+            <div class="mm-ring" aria-hidden="true"></div>
+            <div class="mm-ring r2" aria-hidden="true"></div>
+            <canvas id="moon" aria-label="3D Moon with the five Apollo landing sites marked"></canvas>
+            <div class="mm-labels" id="labels"></div>
+          </div>
+          <div class="mm-instruments">
+            <h3 class="mm-sub" id="site-title"></h3>
+            <div class="mm-chips" id="site-chips"></div>
+          </div>
+          <p class="caption" style="padding:0 20px 18px" data-i18n="mm_disclaimer"></p>
+        </article>
+
+        <aside class="mm-panel mm-dossier" id="dossier" aria-live="polite"></aside>
+      </div>
+    </section>
+
+    <section class="block mm-below" style="padding-top:0">
+      <article class="mm-panel mm-power" id="power"></article>
+      <article class="mm-panel mm-findings" id="findings"></article>
     </section>
   </main>
 
   <footer id="app-footer"></footer>
 
   <script type="module" src="js/main.js"></script>
-  <script type="module">
-    import { createViewer, buildMoon } from './js/moon3d.js';
-    import { loadContent, currentLang, tr, onLangChange } from './js/main.js';
-
-    const content = await loadContent();
-    const pick = (o) => o?.[currentLang()] ?? o?.en ?? '';
-
-    const pins = Object.values(content.missions).map((m) => ({ lat: m.lat, lon: m.lon }));
-    const viewer = createViewer(document.getElementById('moon'));
-    const moon = buildMoon(pins);
-    viewer.root.add(moon.root);
-    viewer.camera.position.set(0, 0, 3.2);
-
-    let focused = false;
-    let time = 0;
-    viewer.setTick((dt) => {
-      if (document.documentElement.dataset.motion === 'reduced') return;
-      time += dt;
-      moon.pulse(time);
-      if (!focused) moon.spin.rotation.y += dt * 0.05;
-    });
-
-    const list = document.getElementById('missions');
-    function renderList() {
-      const items = Object.entries(content.missions).map(([k, m]) => {
-        const deployed = content.instruments
-          .filter((i) => i.missions.includes(k))
-          .map((i) => i.abbr).join(', ');
-        return `<button class="mission" data-k="${k}">
-          <strong>${tr('apollo')} ${k}</strong> · ${pick(m.site)}<br>
-          <small>${tr('instruments')}: ${deployed}</small></button>`;
-      });
-      list.innerHTML = `<button class="pill" data-all>${tr('show_all')}</button>` + items.join('');
-    }
-
-    list.addEventListener('click', (e) => {
-      if (e.target.closest('[data-all]')) {
-        focused = false;
-        list.querySelectorAll('.mission').forEach((x) => x.classList.remove('on'));
-        return;
-      }
-      const b = e.target.closest('[data-k]');
-      if (!b) return;
-      const m = content.missions[b.dataset.k];
-      focused = true;
-      moon.face(m.lat, m.lon);
-      list.querySelectorAll('.mission').forEach((x) => x.classList.toggle('on', x === b));
-    });
-
-    renderList();
-    onLangChange(renderList);
-  </script>
+  <script type="module" src="js/moonmap.js"></script>
 </body>
 </html>

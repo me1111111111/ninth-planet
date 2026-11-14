@@ -14,7 +14,11 @@ viewer.camera.position.set(0, 0.25, 3.6);
 
 const pins = Object.values(content.missions).map((m) => ({ lat: m.lat, lon: m.lon }));
 const moon = buildMoon(pins);
-moon.root.position.y = -1.0;   // lower the Moon so its surface curves across the bottom of the hero
+// Size of the Moon on the home page. 1 = normal, 1.4 = 40% bigger, 2 = twice the size.
+// The markers are children of the Moon, so they grow with it.
+const HERO_MOON_SCALE = 1.4;
+moon.root.scale.setScalar(HERO_MOON_SCALE);
+moon.root.position.y = -HERO_MOON_SCALE;   // keeps the top of the Moon at the same height as before
 viewer.root.add(moon.root);
 
 let time = 0;

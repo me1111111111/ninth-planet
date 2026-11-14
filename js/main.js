@@ -34,6 +34,24 @@ export const DICT = {
     moon_map_title: 'Moon map',
     moon_map_sub: 'Five Apollo landing sites where ALSEP was set up. Pick a mission to turn the Moon toward it.',
     show_all: 'Show all sites',
+    mm_eyebrow: 'Apollo Lunar Surface Experiments Package',
+    mm_title: 'The experiments left on the Moon',
+    mm_intro: 'Five Apollo landing sites where ALSEP instruments were set up. Choose a site or an instrument to explore.',
+    mm_disclaimer: 'Site markers show real Apollo landing sites on a 3D model of the Moon. Positions of individual instruments within one site are not shown.',
+    mm_sites_head: 'Landing sites',
+    mm_site_instruments: 'Instruments at this site',
+    mm_dossier: 'MISSION DOSSIER',
+    mm_dossier_hint: 'From the exhibition research notes',
+    mm_filter_fields: 'Magnetic & gravity',
+    filter_particles: 'Atmosphere, dust & solar wind',
+    kind_photo: 'Photo',
+    kind_illus: 'Concept illustration',
+    mm_none: 'No instruments match this filter.',
+    mm_findings_title: 'What the data told us',
+    assets_title: 'Assets and fonts',
+    assets_illus: 'Concept illustrations: AI-generated, from the Ninth Planet asset pack. They are not NASA photographs or measured reconstructions.',
+    assets_fonts: 'Fonts: Space Grotesk, Noto Sans Thai and IBM Plex Mono, all under the SIL Open Font License. Licence texts are in the fonts folder.',
+    assets_source: 'Source notes: see docs/sources.md.',
     credits_eyebrow: 'The people & the paper trail', credits_title: 'Exploration is a shared story.',
     credits_sub: 'Meet the team and explore the sources behind the lunar collection.',
     team_title: 'The Ninth Planet team',
@@ -77,6 +95,24 @@ export const DICT = {
     moon_map_title: 'แผนที่ดวงจันทร์',
     moon_map_sub: 'จุดลงจอดอะพอลโล 5 จุดที่ติดตั้ง ALSEP เลือกภารกิจเพื่อหมุนดวงจันทร์ไปยังจุดนั้น',
     show_all: 'ดูทุกจุด',
+    mm_eyebrow: 'ชุดทดลองพื้นผิวดวงจันทร์ของอะพอลโล (ALSEP)',
+    mm_title: 'ห้องทดลองที่ยังอยู่บนดวงจันทร์',
+    mm_intro: 'จุดลงจอดอะพอลโล 5 จุดที่ติดตั้งเครื่องมือ ALSEP เลือกจุดหรือเครื่องมือเพื่อสำรวจรายละเอียด',
+    mm_disclaimer: 'หมุดบนภาพดวงจันทร์ 3 มิติแสดงจุดลงจอดอะพอลโลจริง ตำแหน่งเครื่องมือภายในจุดเดียวกันไม่ได้แสดงไว้',
+    mm_sites_head: 'จุดลงจอด',
+    mm_site_instruments: 'เครื่องมือที่จุดนี้',
+    mm_dossier: 'MISSION DOSSIER',
+    mm_dossier_hint: 'ข้อมูลจากเอกสารประกอบนิทรรศการ',
+    mm_filter_fields: 'แม่เหล็กและแรงโน้มถ่วง',
+    filter_particles: 'บรรยากาศ ฝุ่น และลมสุริยะ',
+    kind_photo: 'ภาพถ่าย',
+    kind_illus: 'ภาพแนวคิด',
+    mm_none: 'ไม่มีเครื่องมือที่ตรงกับตัวกรองนี้',
+    mm_findings_title: 'สิ่งที่ข้อมูลจากดวงจันทร์เล่าให้ฟัง',
+    assets_title: 'ทรัพยากรภาพและฟอนต์',
+    assets_illus: 'ภาพแนวคิด: สร้างด้วย AI จากชุดทรัพยากรของ The Ninth Planet ไม่ใช่ภาพถ่ายจาก NASA และไม่ใช่การสร้างใหม่ที่วัดได้',
+    assets_fonts: 'ฟอนต์: Space Grotesk, Noto Sans Thai และ IBM Plex Mono ทั้งหมดอยู่ภายใต้ SIL Open Font License ไฟล์ลิขสิทธิ์อยู่ในโฟลเดอร์ fonts',
+    assets_source: 'หมายเหตุแหล่งที่มา: ดูที่ docs/sources.md',
     credits_eyebrow: 'ผู้คนและหลักฐาน', credits_title: 'การสำรวจคือเรื่องราวร่วมกัน',
     credits_sub: 'พบกับทีมงานและแหล่งข้อมูลเบื้องหลังคอลเลกชันดวงจันทร์',
     team_title: 'ทีม The Ninth Planet',
@@ -140,10 +176,7 @@ const PAGES = [
   ['moon-map.html', 'nav_map'],
   ['credits.html', 'nav_credits'],
 ];
-const PLANET_SVG = `<svg width="30" height="30" viewBox="0 0 40 40" aria-hidden="true">
-  <circle cx="20" cy="20" r="9" fill="#cfd8e6"/>
-  <ellipse cx="20" cy="20" rx="18" ry="6" fill="none" stroke="#a6f0f7" stroke-width="1.5" transform="rotate(-20 20 20)"/>
-  <circle cx="33" cy="12" r="2.2" fill="#a6f0f7"/></svg>`;
+const PLANET_SVG = `<img src="assets/ui/logo-mark.svg" alt="" width="48" height="32">`;
 
 function renderChrome() {
   const here = location.pathname.split('/').pop() || 'index.html';
@@ -161,7 +194,7 @@ function renderChrome() {
             <button class="lang-btn" data-lang="en">EN</button>
             <button class="lang-btn" data-lang="th">ไทย</button>
           </div>
-          <button id="settings-btn" class="icon-btn" aria-label="Settings" aria-expanded="false">⚙</button>
+          <button id="settings-btn" class="icon-btn" aria-label="Settings" aria-expanded="false"><img src="assets/ui/settings.svg" alt="" width="20" height="20"></button>
         </div>
       </nav>
       <div id="settings-panel" class="settings" hidden>
@@ -179,6 +212,7 @@ function renderChrome() {
   }
   const footer = document.getElementById('app-footer');
   if (footer) {
+    footer.className = 'site-footer';
     footer.innerHTML = `
       <p><strong>THE NINTH PLANET</strong> · <span data-i18n="footer_tag"></span></p>
       <p class="small" data-i18n="footer_disc"></p>`;
@@ -357,6 +391,36 @@ function initStars() {
   requestAnimationFrame(frame);
 }
 
+// ---------- floating astronauts (two, from the asset pack) ----------
+// Decorative only: pointer-events off, empty alt text, placed in the side margins,
+// and hidden on narrow screens so they never sit over reading text.
+function initAstronauts() {
+  const spots = [
+    { img: 'assets/scene/astronaut-front.png', top: 55, left: 0.5, width: 120, speed: 0.22, rot: -0.02, delay: 0 },
+    { img: 'assets/scene/astronaut-back.png', top: 28, right: 0.5, width: 110, speed: -0.18, rot: 0.02, delay: 3 },
+  ];
+  const layer = document.createElement('div');
+  layer.className = 'astro-layer';
+  layer.setAttribute('aria-hidden', 'true');
+  layer.innerHTML = spots.map((s) => `
+    <div class="astro" style="top:${s.top}%;${s.left !== undefined ? `left:${s.left}%` : `right:${s.right}%`};width:${s.width}px">
+      <div class="bob" style="animation-delay:-${s.delay}s"><img src="${s.img}" alt="" loading="lazy"></div>
+    </div>`).join('');
+  document.body.prepend(layer);
+
+  const els = [...layer.querySelectorAll('.astro')];
+  const onScroll = () => {
+    const reduced = document.documentElement.dataset.motion === 'reduced';
+    els.forEach((el, i) => {
+      if (reduced) { el.style.transform = ''; return; }
+      const y = window.scrollY, s = spots[i];
+      el.style.transform = `translate3d(0, ${-y * s.speed}px, 0) rotate(${y * s.rot}deg)`;
+    });
+  };
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+}
+
 // ---------- boot ----------
 document.documentElement.classList.add('js');
 renderChrome();
@@ -368,4 +432,5 @@ const motionBox = document.getElementById('motion-toggle');
 if (motionBox) motionBox.checked = storedMotion === 'reduced';
 applyLang();
 initStars();
+initAstronauts();
 observeReveal();

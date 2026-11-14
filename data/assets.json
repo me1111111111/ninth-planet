@@ -1,0 +1,1083 @@
+{
+  "project": "The Ninth Planet",
+  "version": "1.0.0",
+  "assetBase": "",
+  "defaultBackground": "#070B14",
+  "generatedImageCount": 20,
+  "assets": [
+    {
+      "id": "moon",
+      "path": "assets/scene/moon.png",
+      "category": "scene",
+      "name": {
+        "en": "Moon",
+        "th": "ดวงจันทร์"
+      },
+      "alt": {
+        "en": "Concept illustration of Moon",
+        "th": "ภาพจำลองดวงจันทร์"
+      },
+      "width": 1254,
+      "height": 1254,
+      "format": "png",
+      "hasAlpha": true,
+      "transparentPixelPercent": 39.63,
+      "alphaBounds": [
+        78,
+        80,
+        1169,
+        1186
+      ],
+      "alphaBoundsThreshold": 16,
+      "bytes": 2280167,
+      "sha256": "7f288c68a86317820a967798fd9af144e95b82517e652305e4f996dbfd2becf4",
+      "suggestedUse": "Landing hero; crop in CSS for a curved horizon",
+      "rendering": "2D AI-generated concept illustration; not a 3D mesh or engineering reference"
+    },
+    {
+      "id": "earth",
+      "path": "assets/scene/earth.png",
+      "category": "scene",
+      "name": {
+        "en": "Earth",
+        "th": "โลก"
+      },
+      "alt": {
+        "en": "Concept illustration of Earth",
+        "th": "ภาพจำลองโลก"
+      },
+      "width": 1254,
+      "height": 1254,
+      "format": "png",
+      "hasAlpha": true,
+      "transparentPixelPercent": 37.8,
+      "alphaBounds": [
+        81,
+        90,
+        1168,
+        1176
+      ],
+      "alphaBoundsThreshold": 16,
+      "bytes": 2232765,
+      "sha256": "aba168b0e8c65f02b3669bc1fddf241d0daa8b0f27e73ec8bd68872c1548976b",
+      "suggestedUse": "Origin story illustration; not a georeferenced map",
+      "rendering": "2D AI-generated concept illustration; not a 3D mesh or engineering reference"
+    },
+    {
+      "id": "astronaut-front",
+      "path": "assets/scene/astronaut-front.png",
+      "category": "scene",
+      "name": {
+        "en": "Astronaut, front view",
+        "th": "นักบินอวกาศ มุมด้านหน้า"
+      },
+      "alt": {
+        "en": "Concept illustration of Astronaut, front view",
+        "th": "ภาพจำลองนักบินอวกาศ มุมด้านหน้า"
+      },
+      "width": 1195,
+      "height": 1316,
+      "format": "png",
+      "hasAlpha": true,
+      "transparentPixelPercent": 62.81,
+      "alphaBounds": [
+        92,
+        52,
+        1137,
+        1260
+      ],
+      "alphaBoundsThreshold": 16,
+      "bytes": 1516417,
+      "sha256": "ce62315d4cec0b849ef5b04bd950f69f022798e345a5dbbe348246e837c2844f",
+      "suggestedUse": "Decorative floating astronaut",
+      "rendering": "2D AI-generated concept illustration; not a 3D mesh or engineering reference"
+    },
+    {
+      "id": "astronaut-back",
+      "path": "assets/scene/astronaut-back.png",
+      "category": "scene",
+      "name": {
+        "en": "Astronaut, rear view",
+        "th": "นักบินอวกาศ มุมด้านหลัง"
+      },
+      "alt": {
+        "en": "Concept illustration of Astronaut, rear view",
+        "th": "ภาพจำลองนักบินอวกาศ มุมด้านหลัง"
+      },
+      "width": 1199,
+      "height": 1312,
+      "format": "png",
+      "hasAlpha": true,
+      "transparentPixelPercent": 68.14,
+      "alphaBounds": [
+        133,
+        47,
+        973,
+        1262
+      ],
+      "alphaBoundsThreshold": 16,
+      "bytes": 1279672,
+      "sha256": "f90026a377dfe916e26e4d3dbe52c12d481c06af6a1e226a66f1c4250f56b6ac",
+      "suggestedUse": "Decorative floating astronaut",
+      "rendering": "2D AI-generated concept illustration; not a 3D mesh or engineering reference"
+    },
+    {
+      "id": "pse",
+      "path": "assets/instruments/pse.png",
+      "category": "instruments",
+      "name": {
+        "en": "Passive Seismic Experiment",
+        "th": "เครื่องวัดแผ่นดินไหวแบบพาสซีฟ"
+      },
+      "alt": {
+        "en": "Concept illustration of Passive Seismic Experiment",
+        "th": "ภาพจำลองเครื่องวัดแผ่นดินไหวแบบพาสซีฟ"
+      },
+      "width": 1536,
+      "height": 1024,
+      "format": "png",
+      "hasAlpha": true,
+      "transparentPixelPercent": 59.1,
+      "alphaBounds": [
+        177,
+        78,
+        1358,
+        928
+      ],
+      "alphaBoundsThreshold": 16,
+      "bytes": 2257764,
+      "sha256": "ce0614e9ff80a750630c130cb3b51051f338ffa49762c4ee7418f3be1713f602",
+      "suggestedUse": "Featured exhibit and Moon hero",
+      "rendering": "2D AI-generated concept illustration; not a 3D mesh or engineering reference"
+    },
+    {
+      "id": "central-station",
+      "path": "assets/instruments/central-station.png",
+      "category": "instruments",
+      "name": {
+        "en": "ALSEP central station",
+        "th": "สถานีควบคุมกลาง ALSEP"
+      },
+      "alt": {
+        "en": "Concept illustration of ALSEP central station",
+        "th": "ภาพจำลองสถานีควบคุมกลาง ALSEP"
+      },
+      "width": 1312,
+      "height": 1199,
+      "format": "png",
+      "hasAlpha": true,
+      "transparentPixelPercent": 73.47,
+      "alphaBounds": [
+        226,
+        63,
+        1099,
+        1122
+      ],
+      "alphaBoundsThreshold": 16,
+      "bytes": 1035933,
+      "sha256": "e3e0579afa46bd70002c493ea1a566a74e50226034ae0e315b4c25a55cf25ac8",
+      "suggestedUse": "Moon hero and instrument detail example",
+      "rendering": "2D AI-generated concept illustration; not a 3D mesh or engineering reference"
+    },
+    {
+      "id": "ase",
+      "path": "assets/instruments/ase.png",
+      "category": "instruments",
+      "name": {
+        "en": "Active Seismic Experiment",
+        "th": "ชุดทดลองแผ่นดินไหวแบบแอ็กทีฟ"
+      },
+      "alt": {
+        "en": "Concept illustration of Active Seismic Experiment",
+        "th": "ภาพจำลองชุดทดลองแผ่นดินไหวแบบแอ็กทีฟ"
+      },
+      "width": 1536,
+      "height": 1024,
+      "format": "png",
+      "hasAlpha": true,
+      "transparentPixelPercent": 94.54,
+      "alphaBounds": [
+        276,
+        196,
+        1162,
+        807
+      ],
+      "alphaBoundsThreshold": 16,
+      "bytes": 96249,
+      "sha256": "eeef250b0879d9e18b5475b6594ed544af71baec780ce2c1716c3b80d8d1268f",
+      "suggestedUse": "Exhibition; illustrative calibration staff and sensors",
+      "rendering": "Authored vector illustration exported to PNG"
+    },
+    {
+      "id": "lspe",
+      "path": "assets/instruments/lspe.png",
+      "category": "instruments",
+      "name": {
+        "en": "Lunar Seismic Profiling Experiment",
+        "th": "ชุดสำรวจใต้พื้นผิวด้วยคลื่นไหวสะเทือน"
+      },
+      "alt": {
+        "en": "Concept illustration of Lunar Seismic Profiling Experiment",
+        "th": "ภาพจำลองชุดสำรวจใต้พื้นผิวด้วยคลื่นไหวสะเทือน"
+      },
+      "width": 1536,
+      "height": 1024,
+      "format": "png",
+      "hasAlpha": true,
+      "transparentPixelPercent": 94.78,
+      "alphaBounds": [
+        252,
+        254,
+        1263,
+        810
+      ],
+      "alphaBoundsThreshold": 16,
+      "bytes": 84081,
+      "sha256": "57417d8df8c812884dd95b0e356f00d6a09d60e276374b3a688366e2c488bc0c",
+      "suggestedUse": "Exhibition; illustrative sensor group",
+      "rendering": "Authored vector illustration exported to PNG"
+    },
+    {
+      "id": "hfe",
+      "path": "assets/instruments/hfe.png",
+      "category": "instruments",
+      "name": {
+        "en": "Heat Flow Experiment",
+        "th": "เครื่องวัดการไหลของความร้อน"
+      },
+      "alt": {
+        "en": "Concept illustration of Heat Flow Experiment",
+        "th": "ภาพจำลองเครื่องวัดการไหลของความร้อน"
+      },
+      "width": 1536,
+      "height": 1024,
+      "format": "png",
+      "hasAlpha": true,
+      "transparentPixelPercent": 74.33,
+      "alphaBounds": [
+        69,
+        64,
+        1469,
+        942
+      ],
+      "alphaBoundsThreshold": 16,
+      "bytes": 1849099,
+      "sha256": "f20a864fbdd236a11145d5d106cc16500933db944b5245510cb275a8f87bbffb",
+      "suggestedUse": "Heat-flow story and exhibit",
+      "rendering": "2D AI-generated concept illustration; not a 3D mesh or engineering reference"
+    },
+    {
+      "id": "lsm",
+      "path": "assets/instruments/lsm.png",
+      "category": "instruments",
+      "name": {
+        "en": "Lunar Surface Magnetometer",
+        "th": "เครื่องวัดสนามแม่เหล็กบนพื้นผิวดวงจันทร์"
+      },
+      "alt": {
+        "en": "Concept illustration of Lunar Surface Magnetometer",
+        "th": "ภาพจำลองเครื่องวัดสนามแม่เหล็กบนพื้นผิวดวงจันทร์"
+      },
+      "width": 1536,
+      "height": 1024,
+      "format": "png",
+      "hasAlpha": true,
+      "transparentPixelPercent": 88.03,
+      "alphaBounds": [
+        68,
+        27,
+        1468,
+        991
+      ],
+      "alphaBoundsThreshold": 16,
+      "bytes": 1383849,
+      "sha256": "5e89da85374878b09ba32945d8bc510ce0be00406741a202a7e36aaa2046d314",
+      "suggestedUse": "Moon hero and magnetic-field exhibit",
+      "rendering": "2D AI-generated concept illustration; not a 3D mesh or engineering reference"
+    },
+    {
+      "id": "lsg",
+      "path": "assets/instruments/lsg.png",
+      "category": "instruments",
+      "name": {
+        "en": "Lunar Surface Gravimeter",
+        "th": "เครื่องวัดแรงโน้มถ่วงบนพื้นผิวดวงจันทร์"
+      },
+      "alt": {
+        "en": "Concept illustration of Lunar Surface Gravimeter",
+        "th": "ภาพจำลองเครื่องวัดแรงโน้มถ่วงบนพื้นผิวดวงจันทร์"
+      },
+      "width": 1199,
+      "height": 1312,
+      "format": "png",
+      "hasAlpha": true,
+      "transparentPixelPercent": 60.59,
+      "alphaBounds": [
+        154,
+        74,
+        1000,
+        1254
+      ],
+      "alphaBoundsThreshold": 16,
+      "bytes": 1318283,
+      "sha256": "6c81b799965070479684a7eab69f440ec45152582a50c1545a3bfc0460f9309d",
+      "suggestedUse": "Exhibition; distinguish goal from achieved result",
+      "rendering": "2D AI-generated concept illustration; not a 3D mesh or engineering reference"
+    },
+    {
+      "id": "sws",
+      "path": "assets/instruments/sws.png",
+      "category": "instruments",
+      "name": {
+        "en": "Solar Wind Spectrometer",
+        "th": "เครื่องวัดอนุภาคลมสุริยะ"
+      },
+      "alt": {
+        "en": "Concept illustration of Solar Wind Spectrometer",
+        "th": "ภาพจำลองเครื่องวัดอนุภาคลมสุริยะ"
+      },
+      "width": 1536,
+      "height": 1024,
+      "format": "png",
+      "hasAlpha": true,
+      "transparentPixelPercent": 54.3,
+      "alphaBounds": [
+        190,
+        28,
+        1348,
+        1006
+      ],
+      "alphaBoundsThreshold": 16,
+      "bytes": 2413647,
+      "sha256": "3248bb116f845cb4660ec42a8b3834bcd33fa51e09e63e8eb4a603628136f59f",
+      "suggestedUse": "Particle-science exhibit",
+      "rendering": "2D AI-generated concept illustration; not a 3D mesh or engineering reference"
+    },
+    {
+      "id": "side",
+      "path": "assets/instruments/side.png",
+      "category": "instruments",
+      "name": {
+        "en": "Suprathermal Ion Detector",
+        "th": "เครื่องตรวจวัดไอออนเหนือความร้อน"
+      },
+      "alt": {
+        "en": "Concept illustration of Suprathermal Ion Detector",
+        "th": "ภาพจำลองเครื่องตรวจวัดไอออนเหนือความร้อน"
+      },
+      "width": 1536,
+      "height": 1024,
+      "format": "png",
+      "hasAlpha": true,
+      "transparentPixelPercent": 61.56,
+      "alphaBounds": [
+        301,
+        35,
+        1228,
+        1001
+      ],
+      "alphaBoundsThreshold": 16,
+      "bytes": 2108711,
+      "sha256": "799a776e18e80b5aaac67f81921412c830d555cae7e1b2f96ee1b9b577ec0582",
+      "suggestedUse": "Combine with CCIG in one display if desired",
+      "rendering": "2D AI-generated concept illustration; not a 3D mesh or engineering reference"
+    },
+    {
+      "id": "ccig",
+      "path": "assets/instruments/ccig.png",
+      "category": "instruments",
+      "name": {
+        "en": "Cold Cathode Ion Gauge",
+        "th": "เครื่องวัดก๊าซแบบแคโทดเย็น"
+      },
+      "alt": {
+        "en": "Concept illustration of Cold Cathode Ion Gauge",
+        "th": "ภาพจำลองเครื่องวัดก๊าซแบบแคโทดเย็น"
+      },
+      "width": 1536,
+      "height": 1024,
+      "format": "png",
+      "hasAlpha": true,
+      "transparentPixelPercent": 57.85,
+      "alphaBounds": [
+        140,
+        72,
+        1404,
+        960
+      ],
+      "alphaBoundsThreshold": 16,
+      "bytes": 2208647,
+      "sha256": "0c6d85cf6ac35155cd70c894fe40e550df5110ab0d2688311f3f67aced9553d3",
+      "suggestedUse": "Combine with SIDE in one display if desired",
+      "rendering": "2D AI-generated concept illustration; not a 3D mesh or engineering reference"
+    },
+    {
+      "id": "leam",
+      "path": "assets/instruments/leam.png",
+      "category": "instruments",
+      "name": {
+        "en": "Lunar Ejecta and Meteorites",
+        "th": "เครื่องตรวจวัดฝุ่นและอุกกาบาตขนาดเล็ก"
+      },
+      "alt": {
+        "en": "Concept illustration of Lunar Ejecta and Meteorites",
+        "th": "ภาพจำลองเครื่องตรวจวัดฝุ่นและอุกกาบาตขนาดเล็ก"
+      },
+      "width": 1536,
+      "height": 1024,
+      "format": "png",
+      "hasAlpha": true,
+      "transparentPixelPercent": 62.74,
+      "alphaBounds": [
+        208,
+        24,
+        1295,
+        1007
+      ],
+      "alphaBoundsThreshold": 16,
+      "bytes": 2140312,
+      "sha256": "f6f268552240be90b33b639b6945411f759fc7c0fac18c6553a40de84ce1b9df",
+      "suggestedUse": "Dust exhibit; retain uncertainty in interpretation",
+      "rendering": "2D AI-generated concept illustration; not a 3D mesh or engineering reference"
+    },
+    {
+      "id": "cplee",
+      "path": "assets/instruments/cplee.png",
+      "category": "instruments",
+      "name": {
+        "en": "Charged Particle Lunar Environment Experiment",
+        "th": "ชุดทดลองอนุภาคมีประจุบนดวงจันทร์"
+      },
+      "alt": {
+        "en": "Concept illustration of Charged Particle Lunar Environment Experiment",
+        "th": "ภาพจำลองชุดทดลองอนุภาคมีประจุบนดวงจันทร์"
+      },
+      "width": 1536,
+      "height": 1024,
+      "format": "png",
+      "hasAlpha": true,
+      "transparentPixelPercent": 61.15,
+      "alphaBounds": [
+        145,
+        64,
+        1376,
+        987
+      ],
+      "alphaBoundsThreshold": 16,
+      "bytes": 2286655,
+      "sha256": "b1f9adced69eac2d839c4d2ba4f196142f46e58e5a085dcb5fd45bd563ff205d",
+      "suggestedUse": "Particle-science exhibit",
+      "rendering": "2D AI-generated concept illustration; not a 3D mesh or engineering reference"
+    },
+    {
+      "id": "snap-27",
+      "path": "assets/instruments/snap-27.png",
+      "category": "instruments",
+      "name": {
+        "en": "SNAP-27 power generator",
+        "th": "เครื่องกำเนิดไฟฟ้าจากไอโซโทปรังสี SNAP-27"
+      },
+      "alt": {
+        "en": "Concept illustration of SNAP-27 power generator",
+        "th": "ภาพจำลองเครื่องกำเนิดไฟฟ้าจากไอโซโทปรังสี SNAP-27"
+      },
+      "width": 1312,
+      "height": 1199,
+      "format": "png",
+      "hasAlpha": true,
+      "transparentPixelPercent": 51.72,
+      "alphaBounds": [
+        107,
+        70,
+        1208,
+        1138
+      ],
+      "alphaBoundsThreshold": 16,
+      "bytes": 1631434,
+      "sha256": "c246cceba1bf0b8926d46d82e81c2abfd2ff9fbbf9ede973e45eb0853eb6aa7d",
+      "suggestedUse": "Mission support and hero equipment",
+      "rendering": "2D AI-generated concept illustration; not a 3D mesh or engineering reference"
+    },
+    {
+      "id": "lrrr",
+      "path": "assets/instruments/lrrr.png",
+      "category": "instruments",
+      "name": {
+        "en": "Laser Ranging Retroreflector",
+        "th": "แผงสะท้อนเลเซอร์กลับ"
+      },
+      "alt": {
+        "en": "Concept illustration of Laser Ranging Retroreflector",
+        "th": "ภาพจำลองแผงสะท้อนเลเซอร์กลับ"
+      },
+      "width": 1536,
+      "height": 1024,
+      "format": "png",
+      "hasAlpha": true,
+      "transparentPixelPercent": 48.73,
+      "alphaBounds": [
+        145,
+        74,
+        1390,
+        972
+      ],
+      "alphaBoundsThreshold": 16,
+      "bytes": 2527591,
+      "sha256": "631b50fef1a2cf5b3193e5b2f4912b9ee4611bca0a2c057619b7d995c78d5c8a",
+      "suggestedUse": "Separate related-experiment feature; array pattern illustrative",
+      "rendering": "2D AI-generated concept illustration; not a 3D mesh or engineering reference"
+    },
+    {
+      "id": "lunar-terrain",
+      "path": "assets/scene/lunar-terrain.png",
+      "category": "scene",
+      "name": {
+        "en": "Illustrative lunar terrain",
+        "th": "ภาพจำลองพื้นผิวดวงจันทร์"
+      },
+      "alt": {
+        "en": "Concept illustration of Illustrative lunar terrain",
+        "th": "ภาพจำลองภาพจำลองพื้นผิวดวงจันทร์"
+      },
+      "width": 1774,
+      "height": 887,
+      "format": "png",
+      "hasAlpha": true,
+      "transparentPixelPercent": 38.49,
+      "alphaBounds": [
+        18,
+        88,
+        1756,
+        825
+      ],
+      "alphaBoundsThreshold": 16,
+      "bytes": 2903503,
+      "sha256": "9f9e0f89d07f98434dd9461e745fb910c1113b1a50b2405f3ea7042ec4d61f50",
+      "suggestedUse": "Fixed location backdrop; not a measured lunar site",
+      "rendering": "2D AI-generated concept illustration; not a 3D mesh or engineering reference"
+    },
+    {
+      "id": "museum-plinth",
+      "path": "assets/scene/museum-plinth.png",
+      "category": "scene",
+      "name": {
+        "en": "Museum display plinth",
+        "th": "ฐานจัดแสดง"
+      },
+      "alt": {
+        "en": "Concept illustration of Museum display plinth",
+        "th": "ภาพจำลองฐานจัดแสดง"
+      },
+      "width": 1774,
+      "height": 887,
+      "format": "png",
+      "hasAlpha": true,
+      "transparentPixelPercent": 56.46,
+      "alphaBounds": [
+        124,
+        207,
+        1628,
+        746
+      ],
+      "alphaBoundsThreshold": 16,
+      "bytes": 1706512,
+      "sha256": "7398c4b080041cc9175c84c3d0e2a596f82439545998b1b6ebb0df2b85680498",
+      "suggestedUse": "Place below an instrument with separate CSS layers",
+      "rendering": "2D AI-generated concept illustration; not a 3D mesh or engineering reference"
+    },
+    {
+      "id": "ase-vector",
+      "path": "assets/instruments/ase.svg",
+      "category": "instrument-vectors",
+      "name": {
+        "en": "Active Seismic Experiment vector source"
+      },
+      "format": "svg",
+      "hasTransparentCanvas": true,
+      "viewBox": "0 0 1536 1024",
+      "bytes": 4683,
+      "rendering": "Authored conceptual equipment diagram; simplified geometry"
+    },
+    {
+      "id": "lspe-vector",
+      "path": "assets/instruments/lspe.svg",
+      "category": "instrument-vectors",
+      "name": {
+        "en": "Lunar Seismic Profiling Experiment vector source"
+      },
+      "format": "svg",
+      "hasTransparentCanvas": true,
+      "viewBox": "0 0 1536 1024",
+      "bytes": 5014,
+      "rendering": "Authored conceptual equipment diagram; simplified geometry"
+    },
+    {
+      "id": "accessibility",
+      "path": "assets/ui/accessibility.svg",
+      "category": "ui",
+      "name": {
+        "en": "Accessibility"
+      },
+      "format": "svg",
+      "hasTransparentCanvas": true,
+      "viewBox": "0 0 24 24",
+      "bytes": 250,
+      "rendering": "Authored vector asset"
+    },
+    {
+      "id": "apollo-steel",
+      "path": "assets/ui/apollo-steel.svg",
+      "category": "ui",
+      "name": {
+        "en": "Apollo Steel"
+      },
+      "format": "svg",
+      "hasTransparentCanvas": true,
+      "viewBox": "0 60 1131.7 280",
+      "bytes": 5662,
+      "rendering": "Authored vector asset"
+    },
+    {
+      "id": "arrow-left",
+      "path": "assets/ui/arrow-left.svg",
+      "category": "ui",
+      "name": {
+        "en": "Arrow Left"
+      },
+      "format": "svg",
+      "hasTransparentCanvas": true,
+      "viewBox": "0 0 24 24",
+      "bytes": 194,
+      "rendering": "Authored vector asset"
+    },
+    {
+      "id": "arrow-right",
+      "path": "assets/ui/arrow-right.svg",
+      "category": "ui",
+      "name": {
+        "en": "Arrow Right"
+      },
+      "format": "svg",
+      "hasTransparentCanvas": true,
+      "viewBox": "0 0 24 24",
+      "bytes": 195,
+      "rendering": "Authored vector asset"
+    },
+    {
+      "id": "arrow-up-right",
+      "path": "assets/ui/arrow-up-right.svg",
+      "category": "ui",
+      "name": {
+        "en": "Arrow Up Right"
+      },
+      "format": "svg",
+      "hasTransparentCanvas": true,
+      "viewBox": "0 0 24 24",
+      "bytes": 194,
+      "rendering": "Authored vector asset"
+    },
+    {
+      "id": "book",
+      "path": "assets/ui/book.svg",
+      "category": "ui",
+      "name": {
+        "en": "Book"
+      },
+      "format": "svg",
+      "hasTransparentCanvas": true,
+      "viewBox": "0 0 24 24",
+      "bytes": 244,
+      "rendering": "Authored vector asset"
+    },
+    {
+      "id": "check",
+      "path": "assets/ui/check.svg",
+      "category": "ui",
+      "name": {
+        "en": "Check"
+      },
+      "format": "svg",
+      "hasTransparentCanvas": true,
+      "viewBox": "0 0 24 24",
+      "bytes": 188,
+      "rendering": "Authored vector asset"
+    },
+    {
+      "id": "chevron-down",
+      "path": "assets/ui/chevron-down.svg",
+      "category": "ui",
+      "name": {
+        "en": "Chevron Down"
+      },
+      "format": "svg",
+      "hasTransparentCanvas": true,
+      "viewBox": "0 0 24 24",
+      "bytes": 186,
+      "rendering": "Authored vector asset"
+    },
+    {
+      "id": "close",
+      "path": "assets/ui/close.svg",
+      "category": "ui",
+      "name": {
+        "en": "Close"
+      },
+      "format": "svg",
+      "hasTransparentCanvas": true,
+      "viewBox": "0 0 24 24",
+      "bytes": 194,
+      "rendering": "Authored vector asset"
+    },
+    {
+      "id": "download",
+      "path": "assets/ui/download.svg",
+      "category": "ui",
+      "name": {
+        "en": "Download"
+      },
+      "format": "svg",
+      "hasTransparentCanvas": true,
+      "viewBox": "0 0 24 24",
+      "bytes": 208,
+      "rendering": "Authored vector asset"
+    },
+    {
+      "id": "dust-overlay",
+      "path": "assets/ui/dust-overlay.svg",
+      "category": "ui",
+      "name": {
+        "en": "Dust Overlay"
+      },
+      "format": "svg",
+      "hasTransparentCanvas": true,
+      "viewBox": "0 0 1600 1000",
+      "bytes": 4641,
+      "rendering": "Authored vector asset"
+    },
+    {
+      "id": "external-link",
+      "path": "assets/ui/external-link.svg",
+      "category": "ui",
+      "name": {
+        "en": "External Link"
+      },
+      "format": "svg",
+      "hasTransparentCanvas": true,
+      "viewBox": "0 0 24 24",
+      "bytes": 208,
+      "rendering": "Authored vector asset"
+    },
+    {
+      "id": "favicon",
+      "path": "assets/ui/favicon.svg",
+      "category": "ui",
+      "name": {
+        "en": "Favicon"
+      },
+      "format": "svg",
+      "hasTransparentCanvas": true,
+      "viewBox": "0 0 64 64",
+      "bytes": 358,
+      "rendering": "Authored vector asset"
+    },
+    {
+      "id": "fullscreen",
+      "path": "assets/ui/fullscreen.svg",
+      "category": "ui",
+      "name": {
+        "en": "Fullscreen"
+      },
+      "format": "svg",
+      "hasTransparentCanvas": true,
+      "viewBox": "0 0 24 24",
+      "bytes": 210,
+      "rendering": "Authored vector asset"
+    },
+    {
+      "id": "globe",
+      "path": "assets/ui/globe.svg",
+      "category": "ui",
+      "name": {
+        "en": "Globe"
+      },
+      "format": "svg",
+      "hasTransparentCanvas": true,
+      "viewBox": "0 0 24 24",
+      "bytes": 253,
+      "rendering": "Authored vector asset"
+    },
+    {
+      "id": "headphones",
+      "path": "assets/ui/headphones.svg",
+      "category": "ui",
+      "name": {
+        "en": "Headphones"
+      },
+      "format": "svg",
+      "hasTransparentCanvas": true,
+      "viewBox": "0 0 24 24",
+      "bytes": 296,
+      "rendering": "Authored vector asset"
+    },
+    {
+      "id": "icons-sprite",
+      "path": "assets/ui/icons-sprite.svg",
+      "category": "ui",
+      "name": {
+        "en": "Icons Sprite"
+      },
+      "format": "svg",
+      "hasTransparentCanvas": true,
+      "viewBox": null,
+      "bytes": 3116,
+      "rendering": "Authored vector asset"
+    },
+    {
+      "id": "info",
+      "path": "assets/ui/info.svg",
+      "category": "ui",
+      "name": {
+        "en": "Info"
+      },
+      "format": "svg",
+      "hasTransparentCanvas": true,
+      "viewBox": "0 0 24 24",
+      "bytes": 221,
+      "rendering": "Authored vector asset"
+    },
+    {
+      "id": "layers",
+      "path": "assets/ui/layers.svg",
+      "category": "ui",
+      "name": {
+        "en": "Layers"
+      },
+      "format": "svg",
+      "hasTransparentCanvas": true,
+      "viewBox": "0 0 24 24",
+      "bytes": 225,
+      "rendering": "Authored vector asset"
+    },
+    {
+      "id": "logo-mark",
+      "path": "assets/ui/logo-mark.svg",
+      "category": "ui",
+      "name": {
+        "en": "Logo Mark"
+      },
+      "format": "svg",
+      "hasTransparentCanvas": true,
+      "viewBox": "0 0 96 64",
+      "bytes": 313,
+      "rendering": "Authored vector asset"
+    },
+    {
+      "id": "logo-wordmark",
+      "path": "assets/ui/logo-wordmark.svg",
+      "category": "ui",
+      "name": {
+        "en": "Logo Wordmark"
+      },
+      "format": "svg",
+      "hasTransparentCanvas": true,
+      "viewBox": "0 0 388.9 64",
+      "bytes": 2836,
+      "rendering": "Authored vector asset"
+    },
+    {
+      "id": "menu",
+      "path": "assets/ui/menu.svg",
+      "category": "ui",
+      "name": {
+        "en": "Menu"
+      },
+      "format": "svg",
+      "hasTransparentCanvas": true,
+      "viewBox": "0 0 24 24",
+      "bytes": 197,
+      "rendering": "Authored vector asset"
+    },
+    {
+      "id": "minus",
+      "path": "assets/ui/minus.svg",
+      "category": "ui",
+      "name": {
+        "en": "Minus"
+      },
+      "format": "svg",
+      "hasTransparentCanvas": true,
+      "viewBox": "0 0 24 24",
+      "bytes": 182,
+      "rendering": "Authored vector asset"
+    },
+    {
+      "id": "moon",
+      "path": "assets/ui/moon.svg",
+      "category": "ui",
+      "name": {
+        "en": "Moon"
+      },
+      "format": "svg",
+      "hasTransparentCanvas": true,
+      "viewBox": "0 0 24 24",
+      "bytes": 223,
+      "rendering": "Authored vector asset"
+    },
+    {
+      "id": "orbit-rings",
+      "path": "assets/ui/orbit-rings.svg",
+      "category": "ui",
+      "name": {
+        "en": "Orbit Rings"
+      },
+      "format": "svg",
+      "hasTransparentCanvas": true,
+      "viewBox": "0 0 1200 600",
+      "bytes": 281,
+      "rendering": "Authored vector asset"
+    },
+    {
+      "id": "pause",
+      "path": "assets/ui/pause.svg",
+      "category": "ui",
+      "name": {
+        "en": "Pause"
+      },
+      "format": "svg",
+      "hasTransparentCanvas": true,
+      "viewBox": "0 0 24 24",
+      "bytes": 189,
+      "rendering": "Authored vector asset"
+    },
+    {
+      "id": "pin",
+      "path": "assets/ui/pin.svg",
+      "category": "ui",
+      "name": {
+        "en": "Pin"
+      },
+      "format": "svg",
+      "hasTransparentCanvas": true,
+      "viewBox": "0 0 24 24",
+      "bytes": 250,
+      "rendering": "Authored vector asset"
+    },
+    {
+      "id": "play",
+      "path": "assets/ui/play.svg",
+      "category": "ui",
+      "name": {
+        "en": "Play"
+      },
+      "format": "svg",
+      "hasTransparentCanvas": true,
+      "viewBox": "0 0 24 24",
+      "bytes": 189,
+      "rendering": "Authored vector asset"
+    },
+    {
+      "id": "plus",
+      "path": "assets/ui/plus.svg",
+      "category": "ui",
+      "name": {
+        "en": "Plus"
+      },
+      "format": "svg",
+      "hasTransparentCanvas": true,
+      "viewBox": "0 0 24 24",
+      "bytes": 190,
+      "rendering": "Authored vector asset"
+    },
+    {
+      "id": "reset",
+      "path": "assets/ui/reset.svg",
+      "category": "ui",
+      "name": {
+        "en": "Reset"
+      },
+      "format": "svg",
+      "hasTransparentCanvas": true,
+      "viewBox": "0 0 24 24",
+      "bytes": 201,
+      "rendering": "Authored vector asset"
+    },
+    {
+      "id": "rotate",
+      "path": "assets/ui/rotate.svg",
+      "category": "ui",
+      "name": {
+        "en": "Rotate"
+      },
+      "format": "svg",
+      "hasTransparentCanvas": true,
+      "viewBox": "0 0 24 24",
+      "bytes": 204,
+      "rendering": "Authored vector asset"
+    },
+    {
+      "id": "search",
+      "path": "assets/ui/search.svg",
+      "category": "ui",
+      "name": {
+        "en": "Search"
+      },
+      "format": "svg",
+      "hasTransparentCanvas": true,
+      "viewBox": "0 0 24 24",
+      "bytes": 221,
+      "rendering": "Authored vector asset"
+    },
+    {
+      "id": "settings",
+      "path": "assets/ui/settings.svg",
+      "category": "ui",
+      "name": {
+        "en": "Settings"
+      },
+      "format": "svg",
+      "hasTransparentCanvas": true,
+      "viewBox": "0 0 24 24",
+      "bytes": 341,
+      "rendering": "Authored vector asset"
+    },
+    {
+      "id": "stars-overlay",
+      "path": "assets/ui/stars-overlay.svg",
+      "category": "ui",
+      "name": {
+        "en": "Stars Overlay"
+      },
+      "format": "svg",
+      "hasTransparentCanvas": true,
+      "viewBox": "0 0 1600 1000",
+      "bytes": 14306,
+      "rendering": "Authored vector asset"
+    },
+    {
+      "id": "text-size",
+      "path": "assets/ui/text-size.svg",
+      "category": "ui",
+      "name": {
+        "en": "Text Size"
+      },
+      "format": "svg",
+      "hasTransparentCanvas": true,
+      "viewBox": "0 0 24 24",
+      "bytes": 215,
+      "rendering": "Authored vector asset"
+    },
+    {
+      "id": "volume",
+      "path": "assets/ui/volume.svg",
+      "category": "ui",
+      "name": {
+        "en": "Volume"
+      },
+      "format": "svg",
+      "hasTransparentCanvas": true,
+      "viewBox": "0 0 24 24",
+      "bytes": 235,
+      "rendering": "Authored vector asset"
+    }
+  ]
+}
