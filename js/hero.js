@@ -51,6 +51,21 @@ window.addEventListener('scroll', () => {
 }, { passive: true });
 updateFade();
 
+// ---------- origin: the team's introduction to the programme and ALSEP ----------
+const o = content.origin;
+function renderOrigin() {
+  if (!o) return;
+  document.getElementById('origin-title').textContent = pick(o.title);
+  document.getElementById('origin-text').innerHTML = o.paragraphs.map((p) => `<p>${pick(p)}</p>`).join('');
+  const img = document.getElementById('origin-img');
+  img.src = o.image.src;
+  img.alt = pick(o.image.caption);
+  document.getElementById('origin-cap').textContent = `${pick(o.image.caption)} · ${pick(o.credit)}`;
+  observeReveal(document.getElementById('origin'));
+}
+renderOrigin();
+onLangChange(renderOrigin);
+
 // ---------- featured cards ----------
 function renderFeatured() {
   const box = document.getElementById('featured');

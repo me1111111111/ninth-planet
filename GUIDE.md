@@ -260,3 +260,14 @@ Good luck with the challenge.
 - **Scroll fade**: scroll down and the Moon darkens and fades; scroll up and it rises again. The settings are in `js/hero.js` (`updateFade`).
 - **Dossier**: instruments stand on the centre of the plinth's top surface. Each picture's visible base is measured and stored as `feet` in `data/content.json`, so new pictures can be placed the same way.
 - **Horizon position**: change `HORIZON_Y` in `js/hero.js` to move the Moon's horizon up or down across APOLLO.
+
+---
+
+## 17. Version 6: iPad and phone layouts, the team's document, team and credits
+
+- **Mobile and iPad:** on screens up to 900 px the astronauts are hidden, dialogs fill the screen, and the moon map stacks into one column. On screens up to 760 px a menu button opens the navigation. Buttons are at least 44 px tall.
+- **Fonts:** the Thai fallback is now Thonburi / Sukhumvit Set (built into iOS). The gradient headline no longer uses a filter, because Safari hides text that has both. The variable-font descriptor that iOS rejects was removed. Icons now have explicit sizes, which stops them from drawing as a dot on iPad.
+- **Labels from the review:** the home headline and tagline were rewritten, and a "Where it began" button was added. The status reads "Operations ended" (หมดภารกิจการทำงาน). "What it did" became "Its role" (หน้าที่ของมัน). "What it helped us learn" became "Data it returned" (ข้อมูลที่ได้จากอุปกรณ์). Instrument headings show the English full name and abbreviation, with the Thai name underneath.
+- **Team document:** the origin section on the home page, a mission block on the moon map (dates, landing site, power, summary), and the five findings are all in `data/content.json`. The Thai text is the team's, with light spacing fixes. The English is a translation to check.
+- **Photos:** the 17 extra photos are in `assets/photos/` and appear in each mission's photo strip. The origin section uses the Saturn V launch.
+- **Team and credits:** three members are listed with their names in Thai and English. The credits page includes the tools and AI used: Claude and ChatGPT (GPT), Canva, VS Code, GitHub, Vercel, Three.js, Leaflet and Esri imagery, and the fonts.

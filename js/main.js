@@ -8,9 +8,9 @@ export const DICT = {
     size_normal: 'A', size_large: 'A+', size_xl: 'A++',
     footer_tag: 'An independent Space Apps project',
     footer_disc: 'NASA Space Apps Challenge 2026 concept · No NASA endorsement implied.',
-    hero_tag: 'A lunar museum for every explorer',
-    hero_title: 'The Moon remembers.',
-    hero_sub: 'The astronauts came home. Their instruments kept exploring.',
+    hero_tag: "A museum on the Moon",
+    hero_title: "Traces of history on the Moon.",
+    hero_sub: "When the astronauts went home, their instruments kept exploring.",
     hero_giant: 'APOLLO',
     hero_caption: 'Abandoned, but not forgotten',
     hero_stat1: '5 ALSEP deployments',
@@ -23,7 +23,7 @@ export const DICT = {
     filter_all: 'All exhibits', filter_inside: 'Inside the Moon',
     filter_fields: 'Fields & particles', filter_support: 'Mission support',
     inspect: 'Open exhibit', read_aloud: 'Read aloud',
-    what_it_did: 'What it did', impact: 'What it helped us learn',
+    what_it_did: "Its role",
     missions: 'Missions', status: 'Status', instruments: 'Instruments', apollo: 'Apollo',
     imagined: 'Imagined voice · fictionalized narration for learning',
     photo_soon: 'Photo coming soon',
@@ -56,12 +56,25 @@ export const DICT = {
     credits_eyebrow: 'The people & the paper trail', credits_title: 'Exploration is a shared story.',
     credits_sub: 'Meet the team and explore the sources behind the lunar collection.',
     team_title: 'The Ninth Planet team',
-    team_1: 'Research & fact-checking', team_2: 'Story & learning design',
-    team_3: 'UI & visual design', team_4: 'Development & accessibility',
+    team_1: "UI & visual design, and development",
+    team_3: "Accessibility & polishing",
     team_note: 'Team names and roles to be confirmed.',
     sources_title: 'Follow the evidence.', ack_title: 'Acknowledgments',
-    ack_text: 'Photographs are NASA archive images shared through Wikimedia Commons. The 3D Moon model is by RenderX on Sketchfab. Historical facts were checked against NASA sources. Instrument narration is fictionalized and labeled as an imagined voice.',
+    ack_text: "Photographs are NASA photographs, from the team album and NASA archives shared through Wikimedia Commons. Concept illustrations are AI-generated. The 3D Moon uses a texture derived from a model by RenderX on Sketchfab. Historical facts were checked against NASA sources and the team document. Instrument narration is fictionalized and labeled as an imagined voice.",
     moon_credit: '3D Moon model by RenderX on Sketchfab',
+    impact: "Data it returned",
+    team_2: "Research & fact-checking",
+    btn_origin: "Where it began",
+    mm_dates: "Dates",
+    mm_missionphotos: "Photos from this mission",
+    mm_missionsum: "About this mission",
+    menu: "Menu",
+    photo_close: "Close photo",
+    credits_tools: "Tools and credits",
+    credits_ai: "AI tools",
+    credits_members: "The team",
+    mm_landing: "Landing site",
+    mm_power: "Power",
     back_exhibit: 'Return to the exhibition',
   },
   th: {
@@ -70,9 +83,9 @@ export const DICT = {
     size_normal: 'A', size_large: 'A+', size_xl: 'A++',
     footer_tag: 'โครงการอิสระจากงาน Space Apps',
     footer_disc: 'แนวคิดจากการแข่งขัน NASA Space Apps Challenge 2026 · ไม่ได้รับการรับรองจาก NASA',
-    hero_tag: 'พิพิธภัณฑ์ดวงจันทร์สำหรับนักสำรวจทุกวัย',
-    hero_title: 'ดวงจันทร์ยังจดจำ',
-    hero_sub: 'นักบินอวกาศกลับบ้านแล้ว แต่เครื่องมือของพวกเขายังคงสำรวจต่อไป',
+    hero_tag: "พิพิธภัณฑ์บนดวงจันทร์",
+    hero_title: "ร่องรอยประวัติศาสตร์บนดวงจันทร์",
+    hero_sub: "เมื่อนักบินอวกาศกลับบ้านแล้ว เครื่องมือของพวกเขายังคงสำรวจต่อไป",
     hero_giant: 'APOLLO',
     hero_caption: 'ถูกทิ้งไว้ แต่ไม่ถูกลืม',
     hero_stat1: 'การติดตั้ง ALSEP 5 ชุด',
@@ -85,7 +98,7 @@ export const DICT = {
     filter_all: 'ทั้งหมด', filter_inside: 'ภายในดวงจันทร์',
     filter_fields: 'สนามและอนุภาค', filter_support: 'ระบบสนับสนุนภารกิจ',
     inspect: 'เปิดดูนิทรรศการ', read_aloud: 'อ่านออกเสียง',
-    what_it_did: 'สิ่งที่มันทำ', impact: 'สิ่งที่ช่วยให้เราเรียนรู้',
+    what_it_did: "หน้าที่ของมัน",
     missions: 'ภารกิจ', status: 'สถานะ', instruments: 'เครื่องมือ', apollo: 'อะพอลโล',
     imagined: 'เสียงจินตนาการ · เรื่องเล่าที่แต่งขึ้นเพื่อการเรียนรู้',
     photo_soon: 'ภาพจะเพิ่มในเร็วๆ นี้',
@@ -118,12 +131,25 @@ export const DICT = {
     credits_eyebrow: 'ผู้คนและหลักฐาน', credits_title: 'การสำรวจคือเรื่องราวร่วมกัน',
     credits_sub: 'พบกับทีมงานและแหล่งข้อมูลเบื้องหลังคอลเลกชันดวงจันทร์',
     team_title: 'ทีม The Ninth Planet',
-    team_1: 'ค้นคว้าและตรวจสอบข้อเท็จจริง', team_2: 'ออกแบบเรื่องราวและการเรียนรู้',
-    team_3: 'การออกแบบ UI และภาพ', team_4: 'การพัฒนาและการเข้าถึง',
+    team_1: "ออกแบบ UI และภาพ รวมถึงการพัฒนา",
+    team_3: "การเข้าถึงและการขัดเกลางาน",
     team_note: 'ชื่อและบทบาทของทีมอยู่ระหว่างการยืนยัน',
     sources_title: 'ตามหาหลักฐาน', ack_title: 'กิตติกรรมประกาศ',
-    ack_text: 'ภาพถ่ายเป็นภาพจากคลังของ NASA เผยแพร่ผ่าน Wikimedia Commons โมเดลดวงจันทร์ 3 มิติโดย RenderX บน Sketchfab ข้อเท็จจริงทางประวัติศาสตร์ตรวจสอบกับแหล่งของ NASA แล้ว เสียงบรรยายของเครื่องมือเป็นเรื่องแต่งที่ระบุไว้ชัดเจน',
+    ack_text: "ภาพถ่ายเป็นภาพของ NASA จากอัลบั้มของทีมและคลังภาพของ NASA ที่เผยแพร่ผ่าน Wikimedia Commons ภาพแนวคิดสร้างด้วย AI พื้นผิวดวงจันทร์ 3 มิติดัดแปลงจากโมเดลโดย RenderX บน Sketchfab ข้อเท็จจริงตรวจสอบกับแหล่งของ NASA และเอกสารของทีมแล้ว เสียงบรรยายของเครื่องมือเป็นเรื่องแต่งที่ระบุไว้ชัดเจน",
     moon_credit: 'โมเดลดวงจันทร์ 3 มิติโดย RenderX บน Sketchfab',
+    impact: "ข้อมูลที่ได้จากอุปกรณ์",
+    team_2: "ค้นคว้าและตรวจสอบข้อเท็จจริง",
+    btn_origin: "จุดเริ่มต้นของโครงการ",
+    mm_dates: "วันที่",
+    mm_missionphotos: "ภาพจากภารกิจนี้",
+    mm_missionsum: "เกี่ยวกับภารกิจนี้",
+    menu: "เมนู",
+    photo_close: "ปิดภาพ",
+    credits_tools: "เครื่องมือและเครดิต",
+    credits_ai: "เครื่องมือ AI",
+    credits_members: "สมาชิกทีม",
+    mm_landing: "จุดลงจอด",
+    mm_power: "แหล่งพลังงาน",
     back_exhibit: 'กลับไปยังนิทรรศการ',
   },
 };
@@ -188,7 +214,7 @@ function renderChrome() {
     header.innerHTML = `
       <nav class="topnav">
         <a class="brand" href="index.html">${PLANET_SVG}<span>THE NINTH PLANET</span></a>
-        <div class="links">${PAGES.map(([href, key]) =>
+        <div class="links" id="site-links">${PAGES.map(([href, key]) =>
           `<a href="${href}" class="${href === here ? 'active' : ''}" data-i18n="${key}"></a>`).join('')}
         </div>
         <div class="tools">
@@ -196,6 +222,7 @@ function renderChrome() {
             <button class="lang-btn" data-lang="en">EN</button>
             <button class="lang-btn" data-lang="th">ไทย</button>
           </div>
+          <button id="menu-btn" class="icon-btn menu-btn" aria-label="Menu" aria-expanded="false" aria-controls="site-links"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#F2F3EF" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
           <button id="settings-btn" class="icon-btn" aria-label="Settings" aria-expanded="false"><img src="assets/ui/settings.svg" alt="" width="20" height="20"></button>
         </div>
       </nav>
@@ -244,6 +271,12 @@ function applySize(size) {
 
 document.addEventListener('click', (e) => {
   const t = e.target;
+  const menuBtn = t.closest('#menu-btn');
+  if (menuBtn) {
+    const open = document.getElementById('site-links').classList.toggle('open');
+    menuBtn.setAttribute('aria-expanded', String(open));
+    return;
+  }
   const settingsBtn = t.closest('#settings-btn');
   if (settingsBtn) {
     const panel = document.getElementById('settings-panel');

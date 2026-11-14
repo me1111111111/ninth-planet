@@ -39,7 +39,7 @@ function renderGrid() {
             : `<div class="nophoto">${tr('photo_soon')}</div>`}
         </div>
         <div class="card-body">
-          <h3>${pick(ins.name)}</h3>
+          <h3>${ins.name.en}</h3>${currentLang() === 'th' ? `<p class="th-sub">${ins.name.th}</p>` : ''}
           <p>${pick(ins.short)}</p>
           ${ins.status ? `<span class="tag ${ins.status.tone || ''}">${pick(ins.status)}</span><br>` : ''}
           <button class="pill" data-open="${ins.id}">${tr('inspect')} ↗</button>
@@ -67,7 +67,7 @@ function storyHTML(ins) {
   const missions = ins.missions.map((m) => `${tr('apollo')} ${m}`).join(', ');
   const status = ins.status ? `<span class="tag ${ins.status.tone || ''}">${pick(ins.status)}</span>` : '';
   return `
-    <p class="kicker">${pick(ins.name)}</p>
+    <p class="kicker">${ins.abbr} · ${ins.name.en}</p>${currentLang() === 'th' ? `<p class="th-sub">${ins.name.th}</p>` : ''}
     <h2>${pick(ins.question)}</h2>
     <p class="imagined">${tr('imagined')}</p>
     <blockquote>${pick(ins.story)}</blockquote>

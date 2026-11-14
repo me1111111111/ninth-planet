@@ -4,6 +4,7 @@
 
 import { createViewer, buildMoon, latLonToVec3, attachDrag } from './moon3d.js';
 import { loadContent, currentLang, tr, onLangChange } from './main.js';
+const isThai = () => currentLang() === 'th';
 
 const content = await loadContent();
 const pick = (o) => o?.[currentLang()] ?? o?.en ?? '';
@@ -92,15 +93,35 @@ function placeLabels() {
 }
 
 // ---------- instrument chips and dossier ----------
+// Mission block: dates, landing site, power, summary and the mission's photos
+function renderSiteInfo() {
+  const m = content.missions[siteKey];
+  $('site-info').innerHTML = `
+    <dl class="site-facts">
+      <div><dt>${tr('mm_dates')}</dt><dd>${pick(m.dates)}</dd></div>
+      <div><dt>${tr('mm_landing')}</dt><dd>${pick(m.site)}</dd></div>
+      <div><dt>${tr('mm_power')}</dt><dd>${pick(m.power)}</dd></div>
+    </dl>
+    <p class="site-summary"><strong>${tr('mm_missionsum')}:</strong> ${pick(m.summary)}</p>`;
+  $('site-photos').innerHTML = m.photos.length ? `
+    <p class="sub-label">${tr('mm_missionphotos')}</p>
+    <div class="photo-strip">${m.photos.map((p, i) => `
+      <button class="photo-thumb" data-i="${i}" aria-label="${pick(p.caption)}">
+        <img src="${p.src}" alt="" loading="lazy">
+      </button>`).join('')}</div>
+    <p class="caption">${pick(m.photo_credit)}</p>` : '';
+}
+
 function renderSiteChips() {
   const s = content.missions[siteKey];
   $('site-title').textContent = `${tr('apollo')} ${siteKey} · ${pick(s.site)}`;
+  renderSiteInfo();
   const list = instrumentsAt(siteKey);
   $('site-chips').innerHTML = list.length
     ? list.map((i) => `
         <button class="mm-chip ${i.id === instrumentId ? 'on' : ''}" data-id="${i.id}"
                 aria-pressed="${i.id === instrumentId}">
-          <b>${i.abbr}</b><span>${pick(i.name)}</span>
+          <b>${i.abbr}</b><span>${i.name.en}</span>
         </button>`).join('')
     : `<p class="mm-empty">${tr('mm_none')}</p>`;
 }
@@ -124,6 +145,7 @@ function renderDossier() {
   const illus = ins.images.find((x) => x.kind === 'illustration') ?? ins.images[0];
   const missions = ins.missions.map((m) => `${tr('apollo')} ${m} · ${pick(content.missions[m].site)}`).join('<br>');
   const status = ins.status ? `<p><span class="tag ${ins.status.tone || ''}">${pick(ins.status)}</span></p>` : '';
+  const nameBlock = `<h2>${ins.name.en}</h2>${isThai() ? `<p class="th-sub">${ins.name.th}</p>` : ''}`;
   box.innerHTML = `
     <div class="mm-dossier-top">
       <span class="mono">${tr('mm_dossier')}</span>
@@ -135,7 +157,7 @@ function renderDossier() {
         ${illus ? `<img class="mm-object" src="${illus.src}" alt="${pick(illus.caption)}" style="bottom:${objectBottom(illus)}%">` : ''}
       </div>
       <p class="mm-kicker">${ins.abbr}</p>
-      <h2>${pick(ins.name)}</h2>
+      ${nameBlock}
       ${status}
       <dl class="mm-facts">
         <div><dt>${tr('missions')}</dt><dd>${missions}</dd></div>
@@ -210,12 +232,26 @@ $('filters').addEventListener('click', (e) => {
 
 $('show-all').addEventListener('click', () => { focused = false; });
 
+// photos open larger in the photo dialog
+$('site-photos').addEventListener('click', (e) => {
+  const b = e.target.closest('[data-i]');
+  if (!b) return;
+  const m = content.missions[siteKey];
+  const p = m.photos[Number(b.dataset.i)];
+  $('photo-img').src = p.src;
+  $('photo-img').alt = pick(p.caption);
+  $('photo-cap').textContent = pick(p.caption);
+  $('photo-credit').textContent = pick(m.photo_credit);
+  $('photo-dialog').showModal();
+});
+
 // ---------- first render and language changes ----------
 renderLabels();
 renderExtras();
 selectSite('12', false);
 
 onLangChange(() => {
+  renderSiteInfo();
   renderLabels();
   renderExtras();
   renderSiteChips();

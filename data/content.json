@@ -6,7 +6,53 @@
         "th": "Oceanus Procellarum (มหาสมุทรแห่งพายุ)"
       },
       "lat": -3.01,
-      "lon": -23.42
+      "lon": -23.42,
+      "dates": {
+        "en": "14–24 November 1969",
+        "th": "14–24 พฤศจิกายน ค.ศ. 1969"
+      },
+      "summary": {
+        "en": "The second crewed Moon landing. ALSEP was set up and linked to the central station. Instruments: PSE, LSM, SIDE, CCGE, SWS and a Lunar Dust Detector.",
+        "th": "ภารกิจที่สองที่นำมนุษย์ลงจอดบนดวงจันทร์ ติดตั้งชุด ALSEP เชื่อมกับสถานีกลาง อุปกรณ์หลัก ได้แก่ PSE, LSM, SIDE, CCGE, SWS และ Lunar Dust Detector"
+      },
+      "power": {
+        "en": "SNAP-27 radioisotope thermoelectric generator (RTG)",
+        "th": "เครื่องกำเนิดไฟฟ้าจากไอโซโทปรังสี SNAP-27 (RTG)"
+      },
+      "photos": [
+        {
+          "src": "assets/photos/a12-1.jpg",
+          "caption": {
+            "en": "Earth from space",
+            "th": "โลกจากอวกาศ"
+          }
+        },
+        {
+          "src": "assets/photos/a12-2.jpg",
+          "caption": {
+            "en": "Lunar landscape with the lunar module in the distance",
+            "th": "พื้นผิวดวงจันทร์ มียานลงจอดอยู่ไกล ๆ"
+          }
+        },
+        {
+          "src": "assets/photos/a12-3.jpg",
+          "caption": {
+            "en": "Apollo 12 crew portrait",
+            "th": "ภาพถ่ายลูกเรืออะพอลโล 12"
+          }
+        },
+        {
+          "src": "assets/photos/a12-4.jpg",
+          "caption": {
+            "en": "Astronaut beside equipment on the surface",
+            "th": "นักบินอวกาศข้างอุปกรณ์บนพื้นผิว"
+          }
+        }
+      ],
+      "photo_credit": {
+        "en": "Photos: NASA photographs (team album)",
+        "th": "ภาพ: ภาพถ่ายจาก NASA (อัลบั้มของทีม)"
+      }
     },
     "14": {
       "site": {
@@ -14,7 +60,53 @@
         "th": "Fra Mauro"
       },
       "lat": -3.65,
-      "lon": -17.47
+      "lon": -17.47,
+      "dates": {
+        "en": "31 January – 9 February 1971",
+        "th": "31 มกราคม – 9 กุมภาพันธ์ ค.ศ. 1971"
+      },
+      "summary": {
+        "en": "Landed at Fra Mauro, the target Apollo 13 aimed for before its accident. Instruments: PSE, ASE (thumper and small charges with geophones), SIDE and CCGE.",
+        "th": "ลงจอดบริเวณ Fra Mauro จุดหมายเดียวกับที่อะพอลโล 13 เคยตั้งเป้าไว้แต่ไม่สำเร็จเพราะอุบัติเหตุ อุปกรณ์หลัก ได้แก่ PSE, ASE (ตัวเคาะ thumper และประจุขนาดเล็ก ร่วมกับจีโอโฟน), SIDE และ CCGE"
+      },
+      "power": {
+        "en": "SNAP-27 radioisotope thermoelectric generator (RTG)",
+        "th": "เครื่องกำเนิดไฟฟ้าจากไอโซโทปรังสี SNAP-27 (RTG)"
+      },
+      "photos": [
+        {
+          "src": "assets/photos/a14-1.jpg",
+          "caption": {
+            "en": "Astronaut and lunar module on the surface",
+            "th": "นักบินอวกาศกับยานลงจอดบนพื้นผิว"
+          }
+        },
+        {
+          "src": "assets/photos/a14-2.jpg",
+          "caption": {
+            "en": "Apollo 14 crew portrait",
+            "th": "ภาพถ่ายลูกเรืออะพอลโล 14"
+          }
+        },
+        {
+          "src": "assets/photos/a14-3.jpg",
+          "caption": {
+            "en": "Astronaut with the flag",
+            "th": "นักบินอวกาศกับธงชาติ"
+          }
+        },
+        {
+          "src": "assets/photos/a14-4.jpg",
+          "caption": {
+            "en": "Saturn V launch",
+            "th": "การปล่อยจรวด Saturn V"
+          }
+        }
+      ],
+      "photo_credit": {
+        "en": "Photos: NASA photographs (team album)",
+        "th": "ภาพ: ภาพถ่ายจาก NASA (อัลบั้มของทีม)"
+      }
     },
     "15": {
       "site": {
@@ -22,7 +114,46 @@
         "th": "Hadley-Apennine"
       },
       "lat": 26.13,
-      "lon": 3.63
+      "lon": 3.63,
+      "dates": {
+        "en": "26 July – 7 August 1971",
+        "th": "26 กรกฎาคม – 7 สิงหาคม ค.ศ. 1971"
+      },
+      "summary": {
+        "en": "The first 'J-mission': more science and a longer stay on the Moon. Instruments: PSE, LSM, HFE, SWS, SIDE, CCIG and a Dust Detector.",
+        "th": "ภารกิจ 'J-mission' แรก เน้นการสำรวจทางวิทยาศาสตร์และอยู่บนดวงจันทร์นานขึ้น อุปกรณ์หลัก ได้แก่ PSE, LSM, HFE, SWS, SIDE, CCIG และ Dust Detector"
+      },
+      "power": {
+        "en": "SNAP-27 radioisotope thermoelectric generator (RTG)",
+        "th": "เครื่องกำเนิดไฟฟ้าจากไอโซโทปรังสี SNAP-27 (RTG)"
+      },
+      "photos": [
+        {
+          "src": "assets/photos/a15-1.jpg",
+          "caption": {
+            "en": "Lunar Roving Vehicle with an astronaut",
+            "th": "ยานสำรวจบนดวงจันทร์ (LRV) กับนักบินอวกาศ"
+          }
+        },
+        {
+          "src": "assets/photos/a15-2.jpg",
+          "caption": {
+            "en": "Apollo 15 crew portrait",
+            "th": "ภาพถ่ายลูกเรืออะพอลโล 15"
+          }
+        },
+        {
+          "src": "assets/photos/a15-3.jpg",
+          "caption": {
+            "en": "Astronaut with the flag and lunar module",
+            "th": "นักบินอวกาศกับธงชาติและยานลงจอด"
+          }
+        }
+      ],
+      "photo_credit": {
+        "en": "Photos: NASA photographs (team album)",
+        "th": "ภาพ: ภาพถ่ายจาก NASA (อัลบั้มของทีม)"
+      }
     },
     "16": {
       "site": {
@@ -30,7 +161,46 @@
         "th": "Descartes Highlands"
       },
       "lat": -8.97,
-      "lon": 15.5
+      "lon": 15.5,
+      "dates": {
+        "en": "Launched 16 April 1972",
+        "th": "ปล่อยยานวันที่ 16 เมษายน ค.ศ. 1972"
+      },
+      "summary": {
+        "en": "Instruments: PSE, ASE (thumper and Mortar), LSM and HFE. During setup, astronaut John Young tripped over the HFE cable and broke it, so that experiment could not be used.",
+        "th": "อุปกรณ์หลัก ได้แก่ PSE, ASE (ตัวเคาะ thumper และเครื่องยิงลูกระเบิด Mortar), LSM และ HFE ระหว่างการติดตั้ง นักบินอวกาศจอห์น ยัง สะดุดสายเคเบิลของ HFE จนขาด ทำให้ใช้การทดลองนี้ไม่ได้"
+      },
+      "power": {
+        "en": "SNAP-27 radioisotope thermoelectric generator (RTG)",
+        "th": "เครื่องกำเนิดไฟฟ้าจากไอโซโทปรังสี SNAP-27 (RTG)"
+      },
+      "photos": [
+        {
+          "src": "assets/photos/a16-1.jpg",
+          "caption": {
+            "en": "Lunar surface image from the Apollo 16 album",
+            "th": "ภาพพื้นผิวดวงจันทร์จากชุดภาพอะพอลโล 16"
+          }
+        },
+        {
+          "src": "assets/photos/a16-2.jpg",
+          "caption": {
+            "en": "Apollo 16 crew portrait",
+            "th": "ภาพถ่ายลูกเรืออะพอลโล 16"
+          }
+        },
+        {
+          "src": "assets/photos/a16-3.jpg",
+          "caption": {
+            "en": "Lunar module and astronaut on the surface",
+            "th": "ยานลงจอดกับนักบินอวกาศบนพื้นผิว"
+          }
+        }
+      ],
+      "photo_credit": {
+        "en": "Photos: NASA photographs (team album)",
+        "th": "ภาพ: ภาพถ่ายจาก NASA (อัลบั้มของทีม)"
+      }
     },
     "17": {
       "site": {
@@ -38,7 +208,46 @@
         "th": "Taurus-Littrow"
       },
       "lat": 20.19,
-      "lon": 30.77
+      "lon": 30.77,
+      "dates": {
+        "en": "7–19 December 1972",
+        "th": "7–19 ธันวาคม ค.ศ. 1972"
+      },
+      "summary": {
+        "en": "The last crewed Apollo landing. Instruments: HFE, LSPE, LSG, LACE and LEAM, with the central station and SNAP-27.",
+        "th": "ภารกิจสุดท้ายของโครงการอะพอลโลที่ส่งมนุษย์ลงดวงจันทร์ อุปกรณ์หลัก ได้แก่ HFE, LSPE, LSG, LACE และ LEAM พร้อมสถานีกลางและ SNAP-27"
+      },
+      "power": {
+        "en": "SNAP-27 radioisotope thermoelectric generator (RTG)",
+        "th": "เครื่องกำเนิดไฟฟ้าจากไอโซโทปรังสี SNAP-27 (RTG)"
+      },
+      "photos": [
+        {
+          "src": "assets/photos/a17-1.jpg",
+          "caption": {
+            "en": "Lunar module in a test facility",
+            "th": "ยานลงจอดในห้องทดสอบ"
+          }
+        },
+        {
+          "src": "assets/photos/a17-2.jpg",
+          "caption": {
+            "en": "Apollo 17 crew portrait",
+            "th": "ภาพถ่ายลูกเรืออะพอลโล 17"
+          }
+        },
+        {
+          "src": "assets/photos/a17-3.jpg",
+          "caption": {
+            "en": "Astronaut, rover and flag",
+            "th": "นักบินอวกาศ ยานสำรวจ และธงชาติ"
+          }
+        }
+      ],
+      "photo_credit": {
+        "en": "Photos: NASA photographs (team album)",
+        "th": "ภาพ: ภาพถ่ายจาก NASA (อัลบั้มของทีม)"
+      }
     }
   },
   "instruments": [
@@ -52,8 +261,8 @@
         "12"
       ],
       "status": {
-        "en": "Retired",
-        "th": "ปลดระวางแล้ว",
+        "en": "Operations ended",
+        "th": "หมดภารกิจการทำงาน",
         "tone": "gold"
       },
       "maker": {
@@ -82,12 +291,12 @@
         "th": "ข้าพเจ้ารับค่าการวัดจากเครื่องมือบนดวงจันทร์ แล้วส่งให้ทีมงานบนโลก"
       },
       "what": {
-        "en": "It connected the experiments, distributed their power and sent their data to Earth.",
-        "th": "มันเชื่อมการทดลองทั้งหมดเข้าด้วยกัน จ่ายพลังงานให้ และส่งข้อมูลกลับโลก"
+        "en": "The hub of the ALSEP package. It linked the experiments, distributed power from the SNAP-27 generator to each instrument, and relayed their data to Earth.",
+        "th": "เป็นศูนย์กลางของชุด ALSEP เชื่อมการทดลองทั้งหมดเข้าด้วยกัน จ่ายพลังงานจาก SNAP-27 ให้แต่ละอุปกรณ์ และรับ-ส่งข้อมูลกลับมายังโลก"
       },
       "impact": {
-        "en": "Years of measurements kept arriving long after the astronauts went home.",
-        "th": "ข้อมูลหลายปีทยอยส่งมาต่อเนื่อง หลังนักบินอวกาศกลับโลกไปแล้ว"
+        "en": "Measurements from several experiments kept arriving on Earth for years after the astronauts had left.",
+        "th": "ข้อมูลจากการทดลองหลายชุดถูกส่งกลับโลกต่อเนื่องหลายปี แม้นักบินอวกาศจะกลับไปแล้ว"
       },
       "credit": {
         "en": "Photos: NASA via Wikimedia Commons · Illustration: AI-generated concept",
@@ -126,8 +335,8 @@
         "16"
       ],
       "status": {
-        "en": "Retired",
-        "th": "ปลดระวางแล้ว",
+        "en": "Operations ended",
+        "th": "หมดภารกิจการทำงาน",
         "tone": "gold"
       },
       "name": {
@@ -147,11 +356,11 @@
         "th": "แรงสั่นเล็กๆ เปิดหน้าต่างให้เรามองเข้าไปในดวงจันทร์"
       },
       "what": {
-        "en": "It listened for moonquakes and meteorite impacts, including the thump of spacecraft stages hitting the surface on purpose.",
-        "th": "มันฟังแผ่นดินไหวบนดวงจันทร์และอุกกาบาตที่พุ่งชน รวมถึงแรงกระแทกเมื่อชิ้นส่วนยานถูกตั้งใจพุ่งชนพื้นผิว"
+        "en": "Set on the surface to pick up natural vibrations: moonquakes and meteorite impacts, plus the shocks from spent spacecraft stages deliberately crashed into the Moon, to probe the rock beneath.",
+        "th": "ตั้งบนผิวดวงจันทร์เพื่อรับแรงสั่นสะเทือนตามธรรมชาติ เช่น แผ่นดินไหวบนดวงจันทร์และอุกกาบาตพุ่งชน รวมถึงแรงกระแทกจากการจงใจพุ่งชิ้นส่วนยานลงดวงจันทร์ เพื่อศึกษาชั้นหินใต้ดิน"
       },
       "impact": {
-        "en": "It revealed layers inside the Moon and four kinds of moonquakes: deep, shallow, meteoroid and thermal.",
+        "en": "It revealed layers inside the Moon and four kinds of moonquakes: deep, shallow, meteoroid-induced and thermal.",
         "th": "เผยให้เห็นชั้นภายในดวงจันทร์ และแผ่นดินไหวดวงจันทร์ 4 ประเภท ได้แก่ ลึก ตื้น จากอุกกาบาต และจากความร้อน"
       },
       "credit": {
@@ -205,8 +414,8 @@
         "th": "นักบินอวกาศจุดประจุขนาดเล็ก แล้วฟังเสียงสะท้อนที่ย้อนกลับมา"
       },
       "what": {
-        "en": "Geophones picked up the echoes, which show how thick the soil and rock layers are.",
-        "th": "จีโอโฟนรับเสียงสะท้อน ซึ่งบอกได้ว่าชั้นดินและชั้นหินหนาแค่ไหน"
+        "en": "Astronauts laid out a line of geophones, then made waves with a thumper or small charges and timed the echoes that came back.",
+        "th": "นักบินอวกาศวางจีโอโฟน (เครื่องรับแรงสั่นสะเทือน) เป็นแนว แล้วสร้างคลื่นด้วยตัวเคาะ (thumper) หรือประจุขนาดเล็ก ก่อนวัดเวลาที่คลื่นสะท้อนกลับมา"
       },
       "impact": {
         "en": "Geologists on Earth use the same idea to map rock layers underground.",
@@ -285,8 +494,8 @@
         "th": "นักบินอวกาศเจาะลงดินเพื่อวัดความร้อนที่ซึมขึ้นมาจากภายในดวงจันทร์"
       },
       "what": {
-        "en": "The probes went 1.5 to 2.5 meters down to measure temperature and how fast heat flows toward the surface.",
-        "th": "หัววัดถูกฝังลึก 1.5–2.5 เมตร เพื่อวัดอุณหภูมิและอัตราการไหลของความร้อนขึ้นสู่ผิว"
+        "en": "Astronauts drilled 1.5 to 2.5 metres into the ground and set temperature probes to measure how fast heat flows from the Moon's interior to its surface.",
+        "th": "นักบินอวกาศเจาะหลุมลึกประมาณ 1.5–2.5 เมตรลงในพื้นดิน แล้วติดตั้งหัววัดอุณหภูมิ เพื่อวัดอัตราการไหลของความร้อนจากภายในดวงจันทร์สู่พื้นผิว"
       },
       "impact": {
         "en": "Together with other data, it helps show how the Moon loses heat from inside.",
@@ -348,8 +557,8 @@
         "th": "ข้าพเจ้าวัดสนามแม่เหล็กที่ดวงจันทร์ยังจดจำจากอดีต"
       },
       "what": {
-        "en": "It measured the strength and direction of the field at the surface and how the Moon responds to the solar wind.",
-        "th": "มันวัดความเข้มและทิศทางของสนามแม่เหล็กที่ผิว และดูว่าดวงจันทร์ตอบสนองต่อลมสุริยะอย่างไร"
+        "en": "A three-axis magnetometer that measured the strength and direction of the magnetic field at the surface, to study how the Moon responds to the solar wind and to probe its core.",
+        "th": "เครื่องวัดสนามแม่เหล็กแบบ 3 แกน วัดความเข้มและทิศทางของสนามแม่เหล็กบนพื้นผิว เพื่อดูปฏิกิริยาระหว่างดวงจันทร์กับลมสุริยะและตรวจสอบโครงสร้างแกนกลาง"
       },
       "impact": {
         "en": "Some surface spots are unusually magnetic, a clue that the Moon's core once generated a magnetic field.",
@@ -406,8 +615,8 @@
         "th": "ข้าพเจ้าจับอนุภาคมีประจุที่พัดมาจากดวงอาทิตย์"
       },
       "what": {
-        "en": "It measured the speed, density and direction of charged particles from the Sun.",
-        "th": "มันวัดความเร็ว ความหนาแน่น และทิศทางของอนุภาคมีประจุจากดวงอาทิตย์"
+        "en": "Measured the speed, density and direction of charged particles from the Sun, such as protons and electrons.",
+        "th": "ตรวจวัดความเร็ว ความหนาแน่น และทิศทางของอนุภาคมีประจุ เช่น โปรตอนและอิเล็กตรอน ที่พัดมาจากดวงอาทิตย์"
       },
       "impact": {
         "en": "It helped scientists understand the solar wind that reaches the Moon and Earth.",
@@ -638,8 +847,8 @@
         "th": "ข้าพเจ้านับไอออนที่ล่องลอยเหนือพื้นผิว ซึ่งมีน้อยมาก"
       },
       "what": {
-        "en": "Detected charged particles near the surface, including ions from gas released by the lander or seeping up from below.",
-        "th": "ตรวจจับอนุภาคมีประจุใกล้พื้นผิว รวมถึงไอออนจากก๊าซที่ยานลงจอดปล่อยออกมาหรือที่ซึมขึ้นจากใต้พื้นผิว"
+        "en": "Measured the amount, composition and speed of positive ions in the Moon's very thin atmosphere, working with CCIG.",
+        "th": "ตรวจวัดปริมาณ องค์ประกอบ และความเร็วของไอออนบวกในบรรยากาศที่เบาบางรอบดวงจันทร์ (ทำงานร่วมกับ CCIG)"
       },
       "impact": {
         "en": "Showed how thin the Moon's atmosphere is, and that some of the gas came from the lander itself.",
@@ -689,8 +898,8 @@
         "th": "ข้าพเจ้าวัดก๊าซเบาบางใกล้พื้นดิน แล้วถามว่ามันมาจากไหน"
       },
       "what": {
-        "en": "Tracked very thin gas. The document suggests two possible sources: the lander's exhaust and gas seeping up from below.",
-        "th": "ติดตามก๊าซที่เบาบางมาก เอกสารเสนอแหล่งที่เป็นไปได้สองแห่ง ได้แก่ ไอเสียยานลงจอด และก๊าซที่ซึมขึ้นจากใต้พื้นผิว"
+        "en": "Measured the pressure and temperature of the Moon's thin atmosphere, including gas from the lander's exhaust and gas seeping up from below.",
+        "th": "วัดความดันและอุณหภูมิของชั้นบรรยากาศเบาบางของดวงจันทร์ ทั้งก๊าซจากไอเสียยานลงจอดและก๊าซที่ซึมขึ้นจากใต้ผิว"
       },
       "impact": {
         "en": "Helped scientists estimate how little gas the Moon keeps near its surface.",
@@ -730,21 +939,56 @@
     },
     "findings": [
       {
-        "en": "Seismic records helped scientists study the Moon's crust, mantle and core, and recorded deep and shallow moonquakes, meteorite impacts and temperature-driven events.",
-        "th": "ข้อมูลคลื่นไหวสะเทือนช่วยศึกษาโครงสร้างเปลือก เนื้อ และแกนกลางของดวงจันทร์ รวมทั้งเหตุการณ์ไหวสะเทือนระดับลึก ระดับตื้น แรงกระแทกอุกกาบาต และผลจากการเปลี่ยนแปลงอุณหภูมิ"
+        "en": "Vibration measurements show the Moon has three layers: crust, mantle and core.",
+        "th": "จากการตรวจวัดการสั่นสะเทือนบนดวงจันทร์ ดวงจันทร์แบ่งเป็น 3 ชั้น ได้แก่ เปลือก เนื้อ และแกนกลาง"
       },
       {
-        "en": "The magnetometer found leftover magnetism in some regions, which helps scientists study the Moon's magnetic past.",
-        "th": "การตรวจวัดสนามแม่เหล็กพบร่องรอยสนามแม่เหล็กตกค้างในบางบริเวณ ช่วยศึกษาประวัติสนามแม่เหล็กในอดีตของดวงจันทร์"
+        "en": "The Moon has up to four types of moonquake: deep, shallow, meteoroid-induced and thermal.",
+        "th": "ดวงจันทร์มีแผ่นดินไหว (moonquake) มากถึง 4 ประเภท ได้แก่ ระดับลึก ระดับตื้น จากอุกกาบาต และจากความร้อน"
       },
       {
-        "en": "LEAM recorded dust and particles near the surface, including signals during the day-to-night change.",
-        "th": "LEAM ให้ข้อมูลเกี่ยวกับฝุ่นและอนุภาคใกล้พื้นผิว โดยเฉพาะสัญญาณในช่วงเปลี่ยนผ่านระหว่างกลางวันกับกลางคืน"
+        "en": "The Moon is slowly drifting away from Earth. This is measured with laser reflectors (LRRR), which are still in use today.",
+        "th": "ดวงจันทร์ค่อย ๆ ถอยห่างจากโลก วัดได้จากกระจกสะท้อนเลเซอร์ (LRRR) ซึ่งยังใช้วัดระยะทางอยู่จนปัจจุบัน"
       },
       {
-        "en": "The laser reflectors (LRRR) are a separate kind of experiment, used to measure the Earth–Moon distance. They are not one of the ALSEP markers on this map.",
-        "th": "เอกสารกล่าวถึงแผงสะท้อนเลเซอร์ LRRR ที่ใช้วัดระยะทางระหว่างโลกกับดวงจันทร์ด้วย แต่ LRRR เป็นการทดลองอีกประเภทหนึ่ง ไม่ใช่หนึ่งในจุดเครื่องมือ ALSEP บนแผนที่นี้"
+        "en": "Ancient magnetic traces: the Moon has no magnetic field today, but LSM found unusually strong leftover magnetism in some areas. Scientists infer that its core once generated a field, 3–4 billion years ago, before it cooled.",
+        "th": "ร่องรอยสนามแม่เหล็กโบราณ: ปัจจุบันดวงจันทร์ไม่มีสนามแม่เหล็กแล้ว แต่ LSM พบว่าบางพื้นที่ยังมีสนามแม่เหล็กตกค้างสูงผิดปกติ นักวิทยาศาสตร์สรุปว่าแกนกลางเคยสร้างสนามแม่เหล็กเมื่อ 3,000–4,000 ล้านปีก่อน ก่อนจะเย็นตัวลง"
+      },
+      {
+        "en": "Moon dust can rise. LEAM detected dust lifting above the surface as day turned to night. One interpretation is that UV light and the solar wind electrically charge the grains, so they repel each other and rise. This is an interpretation, not a direct observation of dust floating.",
+        "th": "ฝุ่นของดวงจันทร์ลอยได้: LEAM ตรวจพบว่าเมื่อดวงจันทร์เปลี่ยนจากกลางวันเป็นกลางคืน ฝุ่นลอยเหนือพื้นได้เอง คำอธิบายที่เสนอคือรังสี UV และลมสุริยะทำให้เม็ดฝุ่นมีประจุไฟฟ้า ผลักกันจนลอยขึ้น ซึ่งเป็นการตีความ ไม่ใช่การถ่ายภาพการลอยของฝุ่นโดยตรง"
       }
     ]
+  },
+  "origin": {
+    "title": {
+      "en": "Where it began",
+      "th": "จุดเริ่มต้นของโครงการ"
+    },
+    "paragraphs": [
+      {
+        "en": "The Apollo programme began as a national policy of the United States. In 1961, President John F. Kennedy set the goal of showing technological and space leadership over the Soviet Union. The programme went on developing, testing and researching until 1969, when Apollo 11 carried the first humans to the Moon. It continued to study the Moon's geology, and even its dust. That success was the product of countless experiments and inventions.",
+        "th": "ที่มาของโครงการอะพอลโล (Apollo) มีจุดเริ่มต้นจากนโยบายระดับชาติของสหรัฐอเมริกา เพื่อแสดงความเป็นผู้นำด้านเทคโนโลยีและอวกาศเหนือสหภาพโซเวียต ตามคำประกาศของประธานาธิบดี จอห์น เอฟ. เคนเนดี ปี ค.ศ. 1961 โครงการนี้ได้พัฒนา ทดลอง และวิจัยต่อมาจนประสบความสำเร็จในปี ค.ศ. 1969 ที่ได้ส่งมนุษยชาติกลุ่มแรกไปสำรวจดวงจันทร์ ได้เป็นโครงการอะพอลโล 11 (Apollo 11) และโครงการนี้พัฒนาต่อมาเรื่อย ๆ เพื่อสำรวจดวงจันทร์ ไม่ว่าจะเป็นธรณีภาคหรือแม้แต่ฝุ่น ความสำเร็จนี้นับเป็นประวัติศาสตร์ของโลก ซึ่งคงเกิดขึ้นไม่ได้ถ้าไม่ใช่เพราะความสามารถของมนุษย์ที่พยายามพัฒนาความก้าวหน้าทางเทคโนโลยี เบื้องหลังความสำเร็จนี้มีการวิจัย การทดลอง และการประดิษฐ์อุปกรณ์มากมายนับครั้งไม่ถ้วน"
+      },
+      {
+        "en": "Some of the most important equipment is the least visible. Apollo 12 began using ALSEP, the Apollo Lunar Surface Experiments Package: a set of science instruments that astronauts placed on the surface, linked to a central station, to study the Moon and send back data.",
+        "th": "ถ้าให้นึกถึงภารกิจส่งมนุษย์ไปสำรวจดวงจันทร์ครั้งแรก คนส่วนมากคงรู้ว่าไปทำภารกิจสำรวจดวงจันทร์ แต่อาจมองข้ามอุปกรณ์ที่ใช้สำรวจว่ามีอะไรบ้าง อุปกรณ์เบื้องหลังเหล่านี้สำคัญกว่าที่เราคิด และบางชิ้นทำหน้าที่จนวาระสุดท้ายโดยที่ไม่มีใครทราบว่ามีมันอยู่ ในภารกิจอะพอลโล 12 (Apollo 12) ได้เริ่มใช้อุปกรณ์ ALSEP (Apollo Lunar Surface Experiments Package) ซึ่งเป็นชุดอุปกรณ์ทางวิทยาศาสตร์ที่นักบินอวกาศนำไปติดตั้งไว้บนพื้นผิวดวงจันทร์ เพื่อศึกษาและส่งข้อมูล"
+      },
+      {
+        "en": "ALSEP was designed to run automatically after the astronauts returned to Earth, collecting data from the experiments. Put another way, it had to work alone until the end of its life, to add to humanity's knowledge.",
+        "th": "ALSEP ถูกออกแบบมาให้ทำงานโดยอัตโนมัติหลังนักบินอวกาศเดินทางกลับโลก เพื่อเก็บข้อมูลจากการทดลองต่อไป กล่าวอีกอย่างคือมันต้องทำหน้าที่โดยลำพังจนวาระสุดท้าย เพื่อองค์ความรู้ของมนุษยชาติ"
+      }
+    ],
+    "image": {
+      "src": "assets/photos/a14-4.jpg",
+      "caption": {
+        "en": "Saturn V launch",
+        "th": "การปล่อยจรวด Saturn V"
+      }
+    },
+    "credit": {
+      "en": "Photo: NASA photograph (team album)",
+      "th": "ภาพ: ภาพถ่ายจาก NASA (อัลบั้มของทีม)"
+    }
   }
 }
