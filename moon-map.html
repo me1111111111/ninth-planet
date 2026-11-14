@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Moon map · The Ninth Planet</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&family=Noto+Sans+Thai:wght@400;600;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+    }
+  }
+  </script>
+</head>
+<body>
+  <header id="app-header"></header>
+
+  <main class="page">
+    <section class="page-hero">
+      <p class="eyebrow" data-i18n="credits_eyebrow"></p>
+      <h1 class="display" data-i18n="moon_map_title"></h1>
+      <p class="lead" data-i18n="moon_map_sub"></p>
+    </section>
+
+    <section class="block moon-layout">
+      <div class="moon-box"><canvas id="moon" aria-label="The Moon with five Apollo landing sites marked"></canvas></div>
+      <div class="mission-list" id="missions"></div>
+    </section>
+  </main>
+
+  <footer id="app-footer"></footer>
+
+  <script type="module" src="js/main.js"></script>
+  <script type="module">
+    import { createViewer, buildMoon } from './js/moon3d.js';
+    import { loadContent, currentLang, tr, onLangChange } from './js/main.js';
+
+    const content = await loadContent();
+    const pick = (o) => o?.[currentLang()] ?? o?.en ?? '';
+
+    const pins = Object.values(content.missions).map((m) => ({ lat: m.lat, lon: m.lon }));
+    const viewer = createViewer(document.getElementById('moon'));
+    const moon = buildMoon(pins);
+    viewer.root.add(moon.root);
+    viewer.camera.position.set(0, 0, 3.2);
+
+    let focused = false;
+    let time = 0;
+    viewer.setTick((dt) => {
+      if (document.documentElement.dataset.motion === 'reduced') return;
+      time += dt;
+      moon.pulse(time);
+      if (!focused) moon.spin.rotation.y += dt * 0.05;
+    });
+
+    const list = document.getElementById('missions');
+    function renderList() {
+      const items = Object.entries(content.missions).map(([k, m]) => {
+        const deployed = content.instruments
+          .filter((i) => i.missions.includes(k))
+          .map((i) => i.abbr).join(', ');
+        return `<button class="mission" data-k="${k}">
+          <strong>${tr('apollo')} ${k}</strong> · ${pick(m.site)}<br>
+          <small>${tr('instruments')}: ${deployed}</small></button>`;
+      });
+      list.innerHTML = `<button class="pill" data-all>${tr('show_all')}</button>` + items.join('');
+    }
+
+    list.addEventListener('click', (e) => {
+      if (e.target.closest('[data-all]')) {
+        focused = false;
+        list.querySelectorAll('.mission').forEach((x) => x.classList.remove('on'));
+        return;
+      }
+      const b = e.target.closest('[data-k]');
+      if (!b) return;
+      const m = content.missions[b.dataset.k];
+      focused = true;
+      moon.face(m.lat, m.lon);
+      list.querySelectorAll('.mission').forEach((x) => x.classList.toggle('on', x === b));
+    });
+
+    renderList();
+    onLangChange(renderList);
+  </script>
+</body>
+</html>

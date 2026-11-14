@@ -1,0 +1,154 @@
+{
+  "missions": {
+    "12": {
+      "site": { "en": "Oceanus Procellarum", "th": "Oceanus Procellarum (มหาสมุทรแห่งพายุ)" },
+      "lat": -3.01,
+      "lon": -23.42
+    },
+    "14": {
+      "site": { "en": "Fra Mauro", "th": "Fra Mauro" },
+      "lat": -3.65,
+      "lon": -17.47
+    },
+    "15": {
+      "site": { "en": "Hadley-Apennine", "th": "Hadley-Apennine" },
+      "lat": 26.13,
+      "lon": 3.63
+    },
+    "16": {
+      "site": { "en": "Descartes Highlands", "th": "Descartes Highlands" },
+      "lat": -8.97,
+      "lon": 15.5
+    },
+    "17": {
+      "site": { "en": "Taurus-Littrow", "th": "Taurus-Littrow" },
+      "lat": 20.19,
+      "lon": 30.77
+    }
+  },
+  "instruments": [
+    {
+      "id": "central",
+      "abbr": "Central",
+      "category": ["support"],
+      "missions": ["12"],
+      "status": { "en": "Retired", "th": "ปลดระวางแล้ว", "tone": "gold" },
+      "maker": {
+        "name": "Bendix Corporation",
+        "place": { "en": "Ann Arbor, Michigan, USA", "th": "Ann Arbor, Michigan, USA" },
+        "lat": 42.28,
+        "lon": -83.74
+      },
+      "name": { "en": "ALSEP central station", "th": "สถานีกลาง ALSEP" },
+      "short": { "en": "Relays the instruments' science home.", "th": "ส่งข้อมูลทางวิทยาศาสตร์จากเครื่องมือกลับบ้าน" },
+      "question": { "en": "How did the science get home?", "th": "ข้อมูลวิทยาศาสตร์เดินทางกลับบ้านได้อย่างไร?" },
+      "story": { "en": "I relayed measurements from instruments on the Moon to teams on Earth.", "th": "ข้าพเจ้ารับค่าการวัดจากเครื่องมือบนดวงจันทร์ แล้วส่งให้ทีมงานบนโลก" },
+      "what": { "en": "It connected the experiments, distributed their power and sent their data to Earth.", "th": "มันเชื่อมการทดลองทั้งหมดเข้าด้วยกัน จ่ายพลังงานให้ และส่งข้อมูลกลับโลก" },
+      "impact": { "en": "Years of measurements kept arriving long after the astronauts went home.", "th": "ข้อมูลหลายปีทยอยส่งมาต่อเนื่อง หลังนักบินอวกาศกลับโลกไปแล้ว" },
+      "credit": { "en": "Photo: NASA via Wikimedia Commons", "th": "ภาพ: NASA ผ่าน Wikimedia Commons" },
+      "images": [
+        { "src": "assets/img/central-1.jpg", "caption": { "en": "ALSEP central station on the lunar surface", "th": "สถานีกลาง ALSEP บนพื้นผิวดวงจันทร์" } }
+      ]
+    },
+    {
+      "id": "pse",
+      "abbr": "PSE",
+      "category": ["inside"],
+      "missions": ["12", "14", "15", "16"],
+      "status": { "en": "Retired", "th": "ปลดระวางแล้ว", "tone": "gold" },
+      "name": { "en": "Passive Seismic Experiment", "th": "การทดลองตรวจวัดแผ่นดินไหวแบบพาสซีฟ" },
+      "short": { "en": "What makes the Moon shake?", "th": "อะไรทำให้ดวงจันทร์สั่น?" },
+      "question": { "en": "What makes the Moon shake?", "th": "อะไรทำให้ดวงจันทร์สั่น?" },
+      "story": { "en": "Small vibrations opened a window into the Moon.", "th": "แรงสั่นเล็กๆ เปิดหน้าต่างให้เรามองเข้าไปในดวงจันทร์" },
+      "what": { "en": "It listened for moonquakes and meteorite impacts, including the thump of spacecraft stages hitting the surface on purpose.", "th": "มันฟังแผ่นดินไหวบนดวงจันทร์และอุกกาบาตที่พุ่งชน รวมถึงแรงกระแทกเมื่อชิ้นส่วนยานถูกตั้งใจพุ่งชนพื้นผิว" },
+      "impact": { "en": "It revealed layers inside the Moon and four kinds of moonquakes: deep, shallow, meteoroid and thermal.", "th": "เผยให้เห็นชั้นภายในดวงจันทร์ และแผ่นดินไหวดวงจันทร์ 4 ประเภท ได้แก่ ลึก ตื้น จากอุกกาบาต และจากความร้อน" },
+      "credit": { "en": "Photo: NASA via Wikimedia Commons", "th": "ภาพ: NASA ผ่าน Wikimedia Commons" },
+      "images": [
+        { "src": "assets/img/pse-1.jpg", "caption": { "en": "Passive Seismic Experiment wrapped in thermal foil", "th": "การทดลองตรวจวัดแผ่นดินไหวแบบพาสซีฟ หุ้มด้วยฟอยล์ความร้อน" } }
+      ]
+    },
+    {
+      "id": "ase",
+      "abbr": "ASE",
+      "category": ["inside"],
+      "missions": ["14", "16"],
+      "name": { "en": "Active Seismic Experiment", "th": "การทดลองสร้างคลื่นแผ่นดินไหวแบบแอคทีฟ" },
+      "short": { "en": "Listening for echoes under the surface.", "th": "ฟังเสียงสะท้อนใต้พื้นผิว" },
+      "question": { "en": "What lies beneath the surface?", "th": "มีอะไรอยู่ใต้พื้นผิว?" },
+      "story": { "en": "Astronauts set off small charges and listened for the echoes that came back.", "th": "นักบินอวกาศจุดประจุขนาดเล็ก แล้วฟังเสียงสะท้อนที่ย้อนกลับมา" },
+      "what": { "en": "Geophones picked up the echoes, which show how thick the soil and rock layers are.", "th": "จีโอโฟนรับเสียงสะท้อน ซึ่งบอกได้ว่าชั้นดินและชั้นหินหนาแค่ไหน" },
+      "impact": { "en": "Geologists on Earth use the same idea to map rock layers underground.", "th": "นักธรณีวิทยาบนโลกใช้หลักการเดียวกันเพื่อทำแผนที่ชั้นหินใต้ดิน" },
+      "credit": { "en": "Photos and diagram: NASA via Wikimedia Commons", "th": "ภาพและแผนภาพ: NASA ผ่าน Wikimedia Commons" },
+      "images": [
+        { "src": "assets/img/ase-2.jpg", "caption": { "en": "Apollo 14 surface scene", "th": "ภาพบนพื้นผิว อะพอลโล 14" } },
+        { "src": "assets/img/ase-1.jpg", "caption": { "en": "Diagram of the Active Seismic Experiment (NASA)", "th": "แผนภาพการทดลองแผ่นดินไหวเชิงรุก (NASA)" } },
+        { "src": "assets/img/ase-3.jpg", "caption": { "en": "Apollo 16 surface scene", "th": "ภาพบนพื้นผิว อะพอลโล 16" } }
+      ]
+    },
+    {
+      "id": "hfe",
+      "abbr": "HFE",
+      "category": ["inside"],
+      "missions": ["15", "16", "17"],
+      "status": { "en": "Apollo 16 attempt failed", "th": "ความพยายามที่อะพอลโล 16 ล้มเหลว", "tone": "muted" },
+      "name": { "en": "Heat Flow Experiment", "th": "การทดลองการถ่ายเทความร้อน" },
+      "short": { "en": "Measuring heat from deep within.", "th": "วัดความร้อนที่ซึมออกมาจากใต้ดินลึก" },
+      "question": { "en": "How hot is it under the Moon's skin?", "th": "ใต้ผิวดวงจันทร์ร้อนแค่ไหน?" },
+      "story": { "en": "Astronauts drilled into the ground to feel the heat rising from the Moon's interior.", "th": "นักบินอวกาศเจาะลงดินเพื่อวัดความร้อนที่ซึมขึ้นมาจากภายในดวงจันทร์" },
+      "what": { "en": "The probes went 1.5 to 2.5 meters down to measure temperature and how fast heat flows toward the surface.", "th": "หัววัดถูกฝังลึก 1.5–2.5 เมตร เพื่อวัดอุณหภูมิและอัตราการไหลของความร้อนขึ้นสู่ผิว" },
+      "impact": { "en": "Together with other data, it helps show how the Moon loses heat from inside.", "th": "เมื่อรวมกับข้อมูลอื่น ช่วยให้เข้าใจว่าดวงจันทร์คายความร้อนจากภายในอย่างไร" },
+      "credit": { "en": "Photo: NASA via Wikimedia Commons", "th": "ภาพ: NASA ผ่าน Wikimedia Commons" },
+      "images": [
+        { "src": "assets/img/hfe-1.jpg", "caption": { "en": "Heat flow probe in the lunar soil", "th": "หัววัดการไหลของความร้อนในดินดวงจันทร์" } }
+      ]
+    },
+    {
+      "id": "lsm",
+      "abbr": "LSM",
+      "category": ["fields"],
+      "missions": ["12", "15", "16"],
+      "name": { "en": "Lunar Surface Magnetometer", "th": "เครื่องวัดสนามแม่เหล็กบนผิวดวงจันทร์" },
+      "short": { "en": "Measuring the Moon's faint, ancient magnetism.", "th": "วัดแม่เหล็กจางๆ ที่หลงเหลือจากอดีตของดวงจันทร์" },
+      "question": { "en": "Is the Moon still magnetic?", "th": "ดวงจันทร์ยังมีแม่เหล็กอยู่ไหม?" },
+      "story": { "en": "I measured magnetic fields the Moon remembers from its past.", "th": "ข้าพเจ้าวัดสนามแม่เหล็กที่ดวงจันทร์ยังจดจำจากอดีต" },
+      "what": { "en": "It measured the strength and direction of the field at the surface and how the Moon responds to the solar wind.", "th": "มันวัดความเข้มและทิศทางของสนามแม่เหล็กที่ผิว และดูว่าดวงจันทร์ตอบสนองต่อลมสุริยะอย่างไร" },
+      "impact": { "en": "Some surface spots are unusually magnetic, a clue that the Moon's core once generated a magnetic field.", "th": "บางจุดบนผิวมีแม่เหล็กสูงผิดปกติ เป็นเบาะแสว่าแกนกลางดวงจันทร์เคยสร้างสนามแม่เหล็กขึ้นมา" },
+      "credit": { "en": "Photo: NASA via Wikimedia Commons", "th": "ภาพ: NASA ผ่าน Wikimedia Commons" },
+      "images": [
+        { "src": "assets/img/lsm-1.jpg", "caption": { "en": "Lunar Surface Magnetometer with its gold booms", "th": "เครื่องวัดสนามแม่เหล็กบนผิวดวงจันทร์ กับแขนโลหะสีทอง" } }
+      ]
+    },
+    {
+      "id": "sws",
+      "abbr": "SWS",
+      "category": ["particles"],
+      "missions": ["12", "15"],
+      "name": { "en": "Solar Wind Spectrometer", "th": "เครื่องวัดสเปกตรัมลมสุริยะ" },
+      "short": { "en": "Catching particles from the Sun.", "th": "จับอนุภาคที่พัดมาจากดวงอาทิตย์" },
+      "question": { "en": "What does the Sun send our way?", "th": "ดวงอาทิตย์ส่งอะไรมาถึงเราบ้าง?" },
+      "story": { "en": "I catch charged particles streaming from the Sun.", "th": "ข้าพเจ้าจับอนุภาคมีประจุที่พัดมาจากดวงอาทิตย์" },
+      "what": { "en": "It measured the speed, density and direction of charged particles from the Sun.", "th": "มันวัดความเร็ว ความหนาแน่น และทิศทางของอนุภาคมีประจุจากดวงอาทิตย์" },
+      "impact": { "en": "It helped scientists understand the solar wind that reaches the Moon and Earth.", "th": "ช่วยให้นักวิทยาศาสตร์เข้าใจลมสุริยะที่มาถึงดวงจันทร์และโลก" },
+      "credit": { "en": "Photos: NASA via Wikimedia Commons", "th": "ภาพ: NASA ผ่าน Wikimedia Commons" },
+      "images": [
+        { "src": "assets/img/sws-1.jpg", "caption": { "en": "Apollo 15 surface scene", "th": "ภาพบนพื้นผิว อะพอลโล 15" } },
+        { "src": "assets/img/sws-2.jpg", "caption": { "en": "Apollo 12 surface scene", "th": "ภาพบนพื้นผิว อะพอลโล 12" } }
+      ]
+    },
+    {
+      "id": "leam",
+      "abbr": "LEAM",
+      "category": ["particles"],
+      "missions": ["17"],
+      "status": { "en": "Interpretation debated", "th": "การตีความยังถกเถียงกัน", "tone": "gold" },
+      "name": { "en": "Lunar Ejecta and Meteorites", "th": "การทดลองฝุ่นและอุกกาบาตบนดวงจันทร์" },
+      "short": { "en": "Clues to a lunar dust mystery.", "th": "เบาะแสของปริศนาฝุ่นดวงจันทร์" },
+      "question": { "en": "Why does Moon dust float?", "th": "ทำไมฝุ่นดวงจันทร์ถึงลอยได้?" },
+      "story": { "en": "As day turned to night on the Moon, dust seemed to lift off the ground on its own.", "th": "เมื่อดวงจันทร์เปลี่ยนจากกลางวันเป็นกลางคืน ฝุ่นดูเหมือนจะลอยขึ้นจากพื้นได้เอง" },
+      "what": { "en": "It detected tiny dust and meteoroid particles just above the surface.", "th": "มันตรวจจับอนุภาคฝุ่นและเศษอุกกาบาตจิ๋วที่อยู่เหนือพื้นผิว" },
+      "impact": { "en": "Sunlight and the solar wind may charge dust grains so they repel each other and rise. Scientists still debate the details.", "th": "แสงอาทิตย์และลมสุริยะอาจทำให้เม็ดฝุ่นมีประจุจนผลักกันและลอยขึ้น นักวิทยาศาสตร์ยังถกเถียงในรายละเอียด" },
+      "credit": { "en": "Photo: NASA via Wikimedia Commons", "th": "ภาพ: NASA ผ่าน Wikimedia Commons" },
+      "images": []
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>The Ninth Planet · Apollo ALSEP</title>
+  <meta name="description" content="A lunar museum for every explorer: the stories of the ALSEP instruments that Apollo astronauts left on the Moon." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&family=Noto+Sans+Thai:wght@400;600;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+    }
+  }
+  </script>
+</head>
+<body>
+  <header id="app-header"></header>
+
+  <main>
+    <section class="hero">
+      <canvas id="hero-moon" aria-label="A slowly rotating 3D Moon with the Apollo landing sites marked"></canvas>
+      <div class="giant" aria-hidden="true" data-i18n="hero_giant">APOLLO</div>
+
+      <div class="hero-copy">
+        <p class="eyebrow" data-i18n="hero_tag"></p>
+        <h1 class="display" data-i18n="hero_title"></h1>
+        <p class="lead" style="margin:0 auto" data-i18n="hero_sub"></p>
+        <div class="cta">
+          <a class="btn" href="exhibition.html" data-i18n="btn_enter"></a>
+          <a class="btn ghost" href="moon-map.html" data-i18n="btn_map"></a>
+        </div>
+        <p class="caption" data-i18n="hero_caption"></p>
+      </div>
+
+      <div class="stats">
+        <div class="stat" data-i18n="hero_stat1"></div>
+        <div class="stat" data-i18n="hero_stat2"></div>
+      </div>
+    </section>
+
+    <section class="block">
+      <h2 class="title reveal" data-i18n="story_title"></h2>
+      <p class="lead reveal" data-i18n="story_sub"></p>
+      <div class="features" id="featured"></div>
+    </section>
+  </main>
+
+  <footer id="app-footer"></footer>
+
+  <script type="module" src="js/main.js"></script>
+  <script type="module" src="js/hero.js"></script>
+</body>
+</html>
