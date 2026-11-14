@@ -180,6 +180,33 @@ export function attachDrag(canvas, getMoon, { onDrag } = {}) {
   };
 }
 
+// ---------- glow around the Moon ----------
+// A soft cyan halo that sits behind the Moon. It is a flat sprite at the Moon's centre,
+// so the sphere hides its middle and only the outer glow shows.
+// radius is the sprite's half-size in Moon units (1 = the Moon's own edge).
+export function addHalo(parent, radius = 1.3) {
+  const c = document.createElement('canvas');
+  c.width = c.height = 256;
+  const g = c.getContext('2d');
+  const edge = 1 / (2 * radius);              // where the Moon's edge falls inside the sprite
+  const grd = g.createRadialGradient(128, 128, 0, 128, 128, 128);
+  grd.addColorStop(0, 'rgba(166,240,247,0)');
+  grd.addColorStop(Math.max(0, edge - 0.02), 'rgba(166,240,247,0)');
+  grd.addColorStop(Math.min(1, edge + 0.03), 'rgba(166,240,247,0.55)');
+  grd.addColorStop(Math.min(1, edge + 0.22), 'rgba(166,240,247,0.14)');
+  grd.addColorStop(1, 'rgba(166,240,247,0)');
+  g.fillStyle = grd;
+  g.fillRect(0, 0, 256, 256);
+  const tex = new THREE.CanvasTexture(c);
+  tex.colorSpace = THREE.SRGBColorSpace;
+  const sprite = new THREE.Sprite(new THREE.SpriteMaterial({
+    map: tex, transparent: true, depthWrite: false, blending: THREE.AdditiveBlending,
+  }));
+  sprite.scale.setScalar(radius * 2);
+  parent.add(sprite);
+  return sprite;
+}
+
 // ---------- viewer ----------
 // Set pause() when the Moon is hidden, so it stops drawing. resume() starts it again.
 export function createViewer(canvas) {

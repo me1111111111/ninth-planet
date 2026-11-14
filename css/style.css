@@ -287,32 +287,53 @@ h2.title {
 /* ---------- home hero ---------- */
 .hero {
   position: relative;
-  min-height: 100vh;
+  min-height: calc(100vh - 70px);   /* the sticky header takes about 70px of the first screen */
   overflow: hidden;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   text-align: center;
-  padding: 90px 20px 40px;
+  padding: 96px 20px 40px;
 }
-#hero-moon { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 0; display: block; }
+/* the Moon: drawn above APOLLO, so its horizon cuts across the lower edge of the letters */
+#hero-moon {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  z-index: 2; display: block; pointer-events: none;
+  transition: opacity 0.3s linear;
+}
+/* scroll fade: darkens the Moon as you scroll down, and it rises again as you scroll up */
+.hero-fade {
+  position: absolute; inset: 0; z-index: 3; pointer-events: none; opacity: 0;
+  background: linear-gradient(180deg, rgba(3, 5, 11, 0) 30%, rgba(3, 5, 11, 0.92) 100%);
+  transition: opacity 0.3s linear;
+}
+/* vignette: darker edges, like looking through a lens */
+.hero::after {
+  content: "";
+  position: absolute; inset: 0; z-index: 4; pointer-events: none;
+  background: radial-gradient(ellipse at 50% 40%, transparent 42%, rgba(3, 5, 11, 0.78) 100%);
+}
+/* APOLLO: steel wordmark, tilted back slightly so it reads as curved */
 .giant {
-  position: absolute;
-  top: 9%;
-  left: 50%;
-  z-index: 1;
-  width: min(92vw, 1000px);
-  height: auto;
-  transform: translateX(-50%);
-  pointer-events: none;
-  user-select: none;
-  filter: drop-shadow(0 0 40px rgba(166, 240, 247, 0.18)) drop-shadow(0 20px 40px rgba(0, 0, 0, 0.6));
+  position: relative; z-index: 1;
+  width: min(90vw, 900px); height: auto; margin-top: 2vh;
+  transform: perspective(1000px) rotateX(16deg);
+  transform-origin: 50% 100%;
+  pointer-events: none; user-select: none;
+  filter: drop-shadow(0 0 36px rgba(166, 240, 247, 0.3)) drop-shadow(0 18px 36px rgba(0, 0, 0, 0.65));
 }
-.hero-copy { position: relative; z-index: 2; max-width: 860px; margin-top: 30vh; }
-.hero-copy .display { margin-top: 14px; }
-.cta { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin: 26px 0 16px; }
-.stats { position: relative; z-index: 2; display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin-top: 26px; }
+/* headline and tagline overlap the top of APOLLO, drawn above both the Moon and the wordmark */
+.hero-copy { position: relative; z-index: 5; max-width: 860px; margin-top: -9vh; }
+.hero-copy .eyebrow { background: #0b121c; box-shadow: 0 0 22px rgba(232, 183, 90, 0.2); }
+.hero-copy .display { margin: 0.1em 0 0.2em; text-shadow: 0 6px 30px rgba(0, 0, 0, 0.85); }
+.hero-copy .lead { margin: 0 auto; }
+.hero-foot {
+  position: relative; z-index: 5;
+  margin-top: auto; padding-top: 6vh;
+  display: flex; flex-direction: column; align-items: center;
+}
+.cta { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin: 22px 0 14px; }
+.stats { position: relative; display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin-top: 22px; }
 .stat {
   padding: 13px 22px;
   border-radius: 16px;
@@ -712,9 +733,17 @@ html[data-motion="reduced"] .astro .bob { animation: none; }
 .mm-dossier-top small { color: var(--muted); }
 .mm-entry { padding: 22px 24px 26px; animation: mmRise 0.45s var(--ease) both; }
 @keyframes mmRise { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
-.mm-plinth { position: relative; aspect-ratio: 16 / 10; border-radius: 16px; overflow: hidden; background: radial-gradient(circle at 50% 40%, #22324a, #070b14 75%); border: 1px solid var(--line); }
+.mm-plinth { position: relative; aspect-ratio: 1 / 1; border-radius: 16px; overflow: hidden; background: radial-gradient(circle at 50% 40%, #22324a, #070b14 75%); border: 1px solid var(--line); }
 .mm-plinth-img { position: absolute; left: 0; right: 0; bottom: 0; width: 100%; height: 100%; object-fit: contain; opacity: 0.9; }
-.mm-object { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; filter: drop-shadow(0 18px 24px rgba(0, 0, 0, 0.6)); }
+/* the instrument stands on the centre of the plinth's top surface.
+   In a square box that centre is about 47% from the top; the feet sit there,
+   and the picture is 46% of the box high (width follows its own proportions) */
+.mm-object {
+  position: absolute; left: 50%; bottom: 53%; transform: translateX(-50%);
+  height: 46%; width: auto; max-width: 76%;
+  object-fit: contain;
+  filter: drop-shadow(0 8px 10px rgba(0, 0, 0, 0.55));
+}
 .mm-entry h2 { font-size: clamp(1.5rem, 2.4vw, 2rem); font-weight: 800; margin: 14px 0 4px; line-height: 1.2; }
 .mm-kicker { color: var(--gold); letter-spacing: 0.12em; font-weight: 700; font-size: 0.8rem; margin: 0; }
 .mm-facts { display: grid; gap: 14px; margin: 14px 0 0; }

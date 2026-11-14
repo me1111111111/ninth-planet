@@ -108,7 +108,8 @@
           "caption": {
             "en": "Concept illustration: ALSEP central station",
             "th": "ภาพแนวคิด: สถานีควบคุมกลาง ALSEP"
-          }
+          },
+          "feet": 0.936
         }
       ]
     },
@@ -172,7 +173,8 @@
           "caption": {
             "en": "Concept illustration: Passive Seismic Experiment",
             "th": "ภาพแนวคิด: เครื่องวัดแผ่นดินไหวแบบพาสซีฟ"
-          }
+          },
+          "feet": 0.906
         }
       ]
     },
@@ -245,7 +247,8 @@
           "caption": {
             "en": "Concept illustration: Active Seismic Experiment",
             "th": "ภาพแนวคิด: ชุดทดลองแผ่นดินไหวแบบแอ็กทีฟ"
-          }
+          },
+          "feet": 0.788
         }
       ]
     },
@@ -308,7 +311,8 @@
           "caption": {
             "en": "Concept illustration: Heat Flow Experiment",
             "th": "ภาพแนวคิด: เครื่องวัดการไหลของความร้อน"
-          }
+          },
+          "feet": 0.92
         }
       ],
       "note": {
@@ -370,7 +374,8 @@
           "caption": {
             "en": "Concept illustration: Lunar Surface Magnetometer",
             "th": "ภาพแนวคิด: เครื่องวัดสนามแม่เหล็กบนพื้นผิวดวงจันทร์"
-          }
+          },
+          "feet": 0.967
         }
       ]
     },
@@ -435,7 +440,8 @@
           "caption": {
             "en": "Concept illustration: Solar Wind Spectrometer",
             "th": "ภาพแนวคิด: เครื่องวัดอนุภาคลมสุริยะ"
-          }
+          },
+          "feet": 0.982
         }
       ]
     },
@@ -488,7 +494,8 @@
           "caption": {
             "en": "Concept illustration: Lunar Ejecta and Meteorites",
             "th": "ภาพแนวคิด: เครื่องตรวจวัดฝุ่นและอุกกาบาตขนาดเล็ก"
-          }
+          },
+          "feet": 0.982
         }
       ],
       "note": {
@@ -536,7 +543,8 @@
           "caption": {
             "en": "Concept illustration: Lunar Seismic Profiling Experiment",
             "th": "ภาพแนวคิด: ชุดสำรวจใต้พื้นผิวด้วยคลื่นไหวสะเทือน"
-          }
+          },
+          "feet": 0.791
         }
       ],
       "credit": {
@@ -593,7 +601,8 @@
           "caption": {
             "en": "Concept illustration: Lunar Surface Gravimeter",
             "th": "ภาพแนวคิด: เครื่องวัดแรงโน้มถ่วงบนพื้นผิวดวงจันทร์"
-          }
+          },
+          "feet": 0.956
         }
       ],
       "credit": {
@@ -643,7 +652,8 @@
           "caption": {
             "en": "Concept illustration: Suprathermal Ion Detector",
             "th": "ภาพแนวคิด: เครื่องตรวจวัดไอออนเหนือความร้อน"
-          }
+          },
+          "feet": 0.978
         }
       ],
       "credit": {
@@ -693,7 +703,8 @@
           "caption": {
             "en": "Concept illustration: Cold Cathode Ion Gauge",
             "th": "ภาพแนวคิด: เครื่องวัดก๊าซแบบแคโทดเย็น"
-          }
+          },
+          "feet": 0.938
         }
       ],
       "credit": {

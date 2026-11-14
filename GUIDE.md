@@ -250,3 +250,13 @@ Good luck with the challenge.
 - **Drag to turn:** drag the Moon in the Show maps dialog or on the Moon map page. It keeps a little momentum, then settles.
 - **Earth panel:** when a maker has not been researched yet, the panel shows the Earth illustration with a note, instead of an empty black box.
 - **Pin positions:** unchanged. They were checked against the new sphere, and the known dark maria still land on dark ground.
+
+---
+
+## 16. Version 5: landing page layering, Moon glow, scroll fade, dossier objects
+
+- **APOLLO** is behind the Moon's horizon, with a slight tilt so the letters read as curved. The headline and tagline sit over the top of the wordmark.
+- **Glow**: a soft cyan halo surrounds the Moon. It is added in `js/moon3d.js` (`addHalo`).
+- **Scroll fade**: scroll down and the Moon darkens and fades; scroll up and it rises again. The settings are in `js/hero.js` (`updateFade`).
+- **Dossier**: instruments stand on the centre of the plinth's top surface. Each picture's visible base is measured and stored as `feet` in `data/content.json`, so new pictures can be placed the same way.
+- **Horizon position**: change `HORIZON_Y` in `js/hero.js` to move the Moon's horizon up or down across APOLLO.

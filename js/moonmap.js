@@ -105,6 +105,15 @@ function renderSiteChips() {
     : `<p class="mm-empty">${tr('mm_none')}</p>`;
 }
 
+// The plinth's top surface centre is 47% down a square box. The object's height is 46% of the box,
+// and its visible base (measured per picture as "feet") is placed on that centre line.
+function objectBottom(img) {
+  const surface = 47, height = 46;
+  const feet = img.feet ?? 0.97;
+  const boxBottomFromTop = surface + (1 - feet) * height;
+  return (100 - boxBottomFromTop).toFixed(2);
+}
+
 function renderDossier() {
   const ins = byId[instrumentId];
   const box = $('dossier');
@@ -123,7 +132,7 @@ function renderDossier() {
     <div class="mm-entry">
       <div class="mm-plinth">
         <img class="mm-plinth-img" src="assets/scene/museum-plinth.png" alt="">
-        ${illus ? `<img class="mm-object" src="${illus.src}" alt="${pick(illus.caption)}">` : ''}
+        ${illus ? `<img class="mm-object" src="${illus.src}" alt="${pick(illus.caption)}" style="bottom:${objectBottom(illus)}%">` : ''}
       </div>
       <p class="mm-kicker">${ins.abbr}</p>
       <h2>${pick(ins.name)}</h2>
