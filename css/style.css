@@ -737,3 +737,7 @@ html[data-motion="reduced"] .astro .bob { animation: none; }
 @media (max-width: 900px) {
   .mm-grid, .mm-below { grid-template-columns: 1fr; }
 }
+
+.earth-fallback { height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px; padding: 16px; background: #000; text-align: center; }
+.earth-fallback img { width: 62%; max-width: 280px; height: auto; }
+.earth-fallback p { margin: 0; color: var(--muted); }

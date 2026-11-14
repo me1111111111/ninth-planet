@@ -2,7 +2,7 @@
 // The 3D Moon shows the real Apollo landing sites. Labels are placed over the Moon by
 // projecting each site from 3D into the screen, so they stay attached as the Moon turns.
 
-import { createViewer, buildMoon, latLonToVec3 } from './moon3d.js';
+import { createViewer, buildMoon, latLonToVec3, attachDrag } from './moon3d.js';
 import { loadContent, currentLang, tr, onLangChange } from './main.js';
 
 const content = await loadContent();
@@ -26,6 +26,7 @@ const viewer = createViewer(canvas);
 viewer.camera.position.set(0, 0, 3.3);
 const moon = buildMoon(sites.map((s) => ({ lat: s.lat, lon: s.lon })));
 viewer.root.add(moon.root);
+attachDrag(canvas, () => moon, { onDrag: () => { focused = true; } });
 
 let time = 0;
 viewer.setTick((dt) => {
@@ -34,6 +35,7 @@ viewer.setTick((dt) => {
     moon.pulse(time);
     if (!focused) moon.spin.rotation.y += dt * 0.05;
   }
+  moon.step(dt);
   placeLabels();
 });
 

@@ -20,7 +20,7 @@ ninth-planet/
 │   └── exhibit.js      Exhibition script: gallery, story, maps
 ├── data/content.json   ALL the instrument text (Thai and English) and photo list
 ├── assets/
-│   ├── models/moon.glb The 3D Moon (by RenderX, see credits)
+│   ├── textures/moon.jpg The Moon's surface (from the RenderX model, see credits)
 │   └── img/            Instrument photos (see assets/img/README.txt)
 └── GUIDE.md            This file
 ```
@@ -56,7 +56,7 @@ The site is *static*: plain HTML, CSS and JavaScript. No server or database is n
 
 > **Why not double-click?** The site loads `data/content.json` and the 3D Moon. Browsers block those when you open the file directly. Live Server avoids this.
 
-Check the first load. The Moon may take a few seconds because `moon.glb` is about 15 MB. A plain grey sphere shows while it loads.
+Check the first load. The Moon should appear almost at once, because its texture is small.
 
 ---
 
@@ -186,7 +186,7 @@ On your computer and your phone:
 
 | Problem | What to try |
 |---|---|
-| Moon is a plain grey ball | `moon.glb` did not load. Check it is at `assets/models/moon.glb` (exact name, lowercase). Then reload with Ctrl+F5. |
+| Moon is a plain grey ball | The texture did not load. Check it is at `assets/textures/moon.jpg` (exact name, lowercase). Then reload with Ctrl+F5. |
 | Moon loads but markers sit in the wrong place | The model may be turned differently. Tell the team and we can add a rotation offset in `js/moon3d.js`. |
 | Photos missing | Check the file name in `content.json` matches the file in `assets/img/` exactly, including `.jpg`. |
 | Text shows a code name (e.g. `hero_title`) | That key is missing in `DICT` in `js/main.js`. Check both `en` and `th`. |
@@ -238,5 +238,15 @@ Good luck with the challenge.
 
 - The asset pack's illustrations are AI-generated concept images, not NASA photographs. The site labels them that way.
 - The illustration PNGs are large (about 2 MB each). If pages feel slow, convert them to WebP with alpha, and update the paths.
-- The 3D Moon still uses `moon.glb`, which is not in the asset pack. Keep the file in `assets/models/`.
+- The 3D Moon is a smooth sphere wearing `assets/textures/moon.jpg`. The old 15 MB model is no longer needed, and was removed from the project to make pages load faster. Keep your original upload as a backup if you like.
 - Pin positions on the 3D Moon need a check in a real browser, because the test environment for this version could not draw the 3D Moon.
+
+---
+
+## 15. Version 4: faster Moon, drag to turn, and the maps dialog
+
+- **Why it was slow:** the 15 MB model had 272,000 vertices. The browser had to read and process all of it on the page, and it froze the screen while doing so. That is why the close button could not be clicked while the Moon was loading. The Moon is now a smooth sphere with the texture only.
+- **Why the dialog reopened slowly:** each time Show maps was pressed, a new 3D context was created. The one Moon viewer is now created once, reused, and paused when closed.
+- **Drag to turn:** drag the Moon in the Show maps dialog or on the Moon map page. It keeps a little momentum, then settles.
+- **Earth panel:** when a maker has not been researched yet, the panel shows the Earth illustration with a note, instead of an empty black box.
+- **Pin positions:** unchanged. They were checked against the new sphere, and the known dark maria still land on dark ground.

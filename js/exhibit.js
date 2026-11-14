@@ -1,6 +1,6 @@
 // js/exhibit.js — exhibition page: instrument cards, photo gallery, story and maps.
 
-import { createViewer, buildMoon } from './moon3d.js';
+import { createViewer, buildMoon, attachDrag } from './moon3d.js';
 import { loadContent, currentLang, tr, onLangChange, readAloud, stopReading, observeReveal } from './main.js';
 
 const content = await loadContent();
@@ -173,12 +173,14 @@ inspect.addEventListener('close', () => stopReading());
 inspect.addEventListener('click', (e) => { if (e.target === inspect) inspect.close(); });
 
 // ---------- maps ----------
-// A fresh canvas each time: a WebGL canvas cannot be reused after its context is lost.
-function freshCanvas(id) {
-  const old = $(id);
-  const fresh = old.cloneNode(false);
-  old.replaceWith(fresh);
-  return fresh;
+// One Moon viewer for the whole page. It is created the first time Show maps is pressed,
+// then reused, and paused whenever the dialog is closed.
+let mapMoon = null;
+attachDrag($('moonview'), () => mapMoon);
+
+function getMoonView() {
+  moonView ??= createViewer($('moonview'));
+  return moonView;
 }
 
 $('btn-maps').addEventListener('click', () => {
@@ -188,7 +190,7 @@ $('btn-maps').addEventListener('click', () => {
 });
 
 function showMaps(ins) {
-  // Earth: where it was built, with satellite imagery
+  // Earth: where it was built, with satellite imagery when the maker is known
   const el = $('earthmap');
   earthMap?.remove();
   earthMap = null;
@@ -204,27 +206,35 @@ function showMaps(ins) {
       .openPopup();
     setTimeout(() => earthMap?.invalidateSize(), 80);
   } else {
-    el.innerHTML = `<p class="pending">${tr('research_pending')}</p>`;
+    el.innerHTML = `
+      <div class="earth-fallback">
+        <img src="assets/scene/earth.png" alt="${tr('earth_alt')}">
+        <p>${tr('research_pending')}</p>
+      </div>`;
   }
 
   // Moon: where it was left, with a pulsing marker at the landing site
-  moonView?.dispose();
+  const view = getMoonView();
   const mission = content.missions[ins.missions[0]];
-  moonView = createViewer(freshCanvas('moonview'));
-  const moon = buildMoon([{ lat: mission.lat, lon: mission.lon }]);
-  moon.face(mission.lat, mission.lon);
-  moonView.root.add(moon.root);
-  moonView.camera.position.set(0, 0, 3.2);
+  view.root.traverse((o) => o.material?.dispose?.());
+  view.root.clear();
+  mapMoon = buildMoon([{ lat: mission.lat, lon: mission.lon }]);
+  mapMoon.face(mission.lat, mission.lon);
+  view.root.add(mapMoon.root);
+  view.camera.position.set(0, 0, 3.2);
   let t = 0;
-  moonView.setTick((dt) => { t += dt; moon.pulse(t); });
+  view.setTick((dt) => {
+    t += dt;
+    if (mapMoon) { mapMoon.step(dt); mapMoon.pulse(t); }
+  });
+  view.resume();
   $('moon-caption').textContent = `${tr('map_moon')} — ${pick(mission.site)}`;
 }
 
 mapdlg.addEventListener('close', () => {
   earthMap?.remove();
   earthMap = null;
-  moonView?.dispose();
-  moonView = null;
+  moonView?.pause();
 });
 mapdlg.addEventListener('click', (e) => { if (e.target === mapdlg) mapdlg.close(); });
 

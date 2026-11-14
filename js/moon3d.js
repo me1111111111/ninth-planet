@@ -1,43 +1,36 @@
-// js/moon3d.js — 3D helpers built on three.js.
-// Loads the Moon model (assets/models/moon.glb), adds glowing landing-site markers,
-// and provides a small viewer that handles sizing, animation and cleanup.
+// js/moon3d.js — the 3D Moon.
+// A plain sphere wears the Moon texture (assets/textures/moon.jpg). This is much lighter
+// than the 15 MB model it replaces, and the pin coordinates line up exactly with it.
+// The Moon can be dragged to turn, with a little momentum.
 
 import * as THREE from 'three';
-import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 
 export const MOON_RADIUS = 1;
-const MOON_URL = 'assets/models/moon.glb';
+const MOON_TEXTURE = 'assets/textures/moon.jpg';
 const deg = THREE.MathUtils.degToRad;
+const clamp = (v, a, b) => Math.max(a, Math.min(b, v));
 
-// ---------- loading the Moon model (once, shared by every viewer) ----------
-let modelPromise = null;
-function loadMoonModel() {
-  modelPromise ??= new GLTFLoader().loadAsync(MOON_URL).catch((err) => {
-    console.warn('Moon model could not be loaded. A plain sphere is shown instead.', err);
-    return null;
+// ---------- one shared texture, loaded once ----------
+let texturePromise = null;
+function moonTexture() {
+  texturePromise ??= new Promise((resolve) => {
+    new THREE.TextureLoader().load(
+      MOON_TEXTURE,
+      (tex) => {
+        tex.flipY = false;                       // checked: this makes the texture match the pin coordinates
+        tex.colorSpace = THREE.SRGBColorSpace;
+        resolve(tex);
+      },
+      undefined,
+      () => { console.warn('Moon texture not found at ' + MOON_TEXTURE); resolve(null); }
+    );
   });
-  return modelPromise;
+  return texturePromise;
 }
 
-// Rotation that turns the Moon.glb surface so the texture lines up with the
-// latitude/longitude used for pins. Measured from the model's own UV coordinates
-// (fit error 0.0007, checked against the dark maria in the texture).
-const MOON_ORIENTATION = new THREE.Quaternion(-0.242108, -0.476082, 0.143581, 0.833135);
-
-// Orient, scale and centre the imported model so it fits a sphere of radius MOON_RADIUS
-function fitToMoon(scene) {
-  const holder = new THREE.Group();
-  holder.quaternion.copy(MOON_ORIENTATION);
-  holder.add(scene);
-  holder.updateMatrixWorld(true);
-  const box = new THREE.Box3().setFromObject(holder);
-  const size = box.getSize(new THREE.Vector3());
-  const center = box.getCenter(new THREE.Vector3());
-  const s = (2 * MOON_RADIUS) / Math.max(size.x, size.y, size.z);
-  holder.scale.setScalar(s);
-  holder.position.copy(center).multiplyScalar(-s);
-  return holder;
-}
+// one geometry for every Moon: a smooth sphere is all the Moon needs
+let sphereGeometry = null;
+const getSphere = () => (sphereGeometry ??= new THREE.SphereGeometry(MOON_RADIUS, 128, 96));
 
 // ---------- latitude / longitude -> point on the sphere ----------
 export function latLonToVec3(lat, lon, r = MOON_RADIUS) {
@@ -50,7 +43,7 @@ export function latLonToVec3(lat, lon, r = MOON_RADIUS) {
   );
 }
 
-// ---------- glowing marker ----------
+// ---------- glowing markers ----------
 let glowTex = null;
 function glowTexture() {
   if (glowTex) return glowTex;
@@ -72,7 +65,7 @@ function glowTexture() {
 function makeMarker(lat, lon) {
   const g = new THREE.Group();
   const dot = new THREE.Mesh(
-    new THREE.SphereGeometry(0.018, 16, 12),
+    new THREE.SphereGeometry(0.018, 12, 10),
     new THREE.MeshBasicMaterial({ color: 0xffe3a3 })
   );
   const halo = new THREE.Sprite(new THREE.SpriteMaterial({
@@ -84,39 +77,28 @@ function makeMarker(lat, lon) {
   }));
   halo.scale.setScalar(0.2);
   g.add(dot, halo);
-  g.position.copy(latLonToVec3(lat, lon, MOON_RADIUS + 0.012)); // lift slightly off the surface
+  g.position.copy(latLonToVec3(lat, lon, MOON_RADIUS + 0.012));
   g.userData = { halo, phase: Math.random() * Math.PI * 2 };
   return g;
 }
 
-function pulseMarkers(markers, t) {
-  for (const m of markers) {
-    const { halo, phase } = m.userData;
-    const k = 0.5 + 0.5 * Math.sin(t * 2.4 + phase);
-    halo.scale.setScalar(0.16 + 0.12 * k);
-    halo.material.opacity = 0.55 + 0.45 * k;
-  }
-}
-
 // ---------- the Moon ----------
-// Returns { root, spin, face(lat, lon), pulse(t) }.
-//   root  tilts the Moon, spin turns it.
-//   face  turns the Moon so a landing site faces the camera.
+// Returns { root, spin, face(lat, lon), pulse(t), step(dt) }.
+//   root  tilts the Moon, spin turns it. Everything on the surface belongs in `spin`.
+//   face  turns the Moon so a site faces the camera.
+//   step  applies the momentum left after a drag.
 export function buildMoon(pins = []) {
   const tilt = new THREE.Group();
   const spin = new THREE.Group();
   tilt.add(spin);
 
-  // plain sphere until the GLB has loaded (or if it fails)
-  const placeholder = new THREE.Mesh(
-    new THREE.SphereGeometry(MOON_RADIUS, 64, 48),
-    new THREE.MeshStandardMaterial({ color: 0x8a8a92, roughness: 1 })
-  );
-  spin.add(placeholder);
-  loadMoonModel().then((gltf) => {
-    if (!gltf) return;
-    spin.remove(placeholder);
-    spin.add(fitToMoon(gltf.scene.clone(true)));
+  const material = new THREE.MeshStandardMaterial({ color: 0xbfc3c9, roughness: 1, metalness: 0 });
+  spin.add(new THREE.Mesh(getSphere(), material));
+  moonTexture().then((tex) => {
+    if (!tex) return;
+    material.map = tex;
+    material.color.set(0xffffff);
+    material.needsUpdate = true;
   });
 
   const markers = pins.map((p) => {
@@ -125,21 +107,86 @@ export function buildMoon(pins = []) {
     return m;
   });
 
-  return {
+  const moon = {
     root: tilt,
     spin,
+    vy: 0,   // turning speed after a drag (radians per second)
+    vx: 0,   // tilting speed after a drag
     face(lat, lon) {
       tilt.rotation.x = deg(lat);
       spin.rotation.y = -(Math.PI / 2 + deg(lon));
     },
-    pulse(t) { pulseMarkers(markers, t); },
+    pulse(t) {
+      for (const m of markers) {
+        const { halo, phase } = m.userData;
+        const k = 0.5 + 0.5 * Math.sin(t * 2.4 + phase);
+        halo.scale.setScalar(0.16 + 0.12 * k);
+        halo.material.opacity = 0.55 + 0.45 * k;
+      }
+    },
+    step(dt) {
+      if (Math.abs(moon.vy) > 1e-3) {
+        spin.rotation.y += moon.vy * dt;
+        moon.vy *= Math.exp(-dt * 3);
+      }
+      if (Math.abs(moon.vx) > 1e-3) {
+        tilt.rotation.x = clamp(tilt.rotation.x + moon.vx * dt, -1.2, 1.2);
+        moon.vx *= Math.exp(-dt * 3);
+      }
+    },
+  };
+  return moon;
+}
+
+// ---------- drag to turn ----------
+// getMoon is a function so the viewer can swap in a different Moon later.
+// Returns a function that removes the listeners.
+export function attachDrag(canvas, getMoon, { onDrag } = {}) {
+  let last = null;
+  canvas.style.touchAction = 'none';
+  canvas.style.cursor = 'grab';
+
+  const down = (e) => {
+    last = { x: e.clientX, y: e.clientY };
+    canvas.setPointerCapture?.(e.pointerId);
+    canvas.style.cursor = 'grabbing';
+    onDrag?.();
+    const m = getMoon();
+    if (m) { m.vy = 0; m.vx = 0; }
+  };
+  const move = (e) => {
+    if (!last) return;
+    const m = getMoon();
+    const dx = e.clientX - last.x, dy = e.clientY - last.y;
+    last = { x: e.clientX, y: e.clientY };
+    if (!m) return;
+    const k = 0.008;
+    m.spin.rotation.y += dx * k;
+    m.root.rotation.x = clamp(m.root.rotation.x + dy * k * 0.6, -1.2, 1.2);
+    m.vy = dx * k * 60;          // momentum: what the last movement was worth per second
+    m.vx = dy * k * 0.6 * 60;
+  };
+  const up = () => { last = null; canvas.style.cursor = 'grab'; };
+
+  canvas.addEventListener('pointerdown', down);
+  canvas.addEventListener('pointermove', move);
+  canvas.addEventListener('pointerup', up);
+  canvas.addEventListener('pointercancel', up);
+  return () => {
+    canvas.removeEventListener('pointerdown', down);
+    canvas.removeEventListener('pointermove', move);
+    canvas.removeEventListener('pointerup', up);
+    canvas.removeEventListener('pointercancel', up);
   };
 }
 
 // ---------- viewer ----------
+// Set pause() when the Moon is hidden, so it stops drawing. resume() starts it again.
 export function createViewer(canvas) {
-  const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
-  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+  const renderer = new THREE.WebGLRenderer({
+    canvas, antialias: true, alpha: true, powerPreference: 'low-power',
+  });
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.5));
 
   const scene = new THREE.Scene();
   const camera = new THREE.PerspectiveCamera(40, 1, 0.01, 100);
@@ -157,7 +204,7 @@ export function createViewer(canvas) {
 
   const resize = () => {
     const w = canvas.clientWidth, h = canvas.clientHeight;
-    if (!w || !h) return; // hidden: wait for the ResizeObserver
+    if (!w || !h) return;               // hidden: wait for the ResizeObserver
     renderer.setSize(w, h, false);
     camera.aspect = w / h;
     camera.updateProjectionMatrix();
@@ -167,11 +214,14 @@ export function createViewer(canvas) {
   resize();
 
   const clock = new THREE.Clock();
-  let tick = null, running = true, frameId = 0;
+  let tick = null, running = true, paused = false, frameId = 0;
   const loop = () => {
     if (!running) return;
-    tick?.(clock.getDelta());
-    renderer.render(scene, camera);
+    const dt = clock.getDelta();
+    if (!paused) {
+      tick?.(dt);
+      renderer.render(scene, camera);
+    }
     frameId = requestAnimationFrame(loop);
   };
   loop();
@@ -179,12 +229,14 @@ export function createViewer(canvas) {
   return {
     scene, camera, root,
     setTick(fn) { tick = fn; },
+    pause() { paused = true; },
+    resume() { paused = false; },
     dispose() {
       running = false;
       cancelAnimationFrame(frameId);
       ro.disconnect();
       renderer.dispose();
-      renderer.forceContextLoss(); // free the WebGL context
+      renderer.forceContextLoss();
     },
   };
 }

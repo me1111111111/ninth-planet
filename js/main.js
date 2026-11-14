@@ -52,6 +52,7 @@ export const DICT = {
     assets_illus: 'Concept illustrations: AI-generated, from the Ninth Planet asset pack. They are not NASA photographs or measured reconstructions.',
     assets_fonts: 'Fonts: Space Grotesk, Noto Sans Thai and IBM Plex Mono, all under the SIL Open Font License. Licence texts are in the fonts folder.',
     assets_source: 'Source notes: see docs/sources.md.',
+    earth_alt: 'Concept illustration of Earth. It is not a map.',
     credits_eyebrow: 'The people & the paper trail', credits_title: 'Exploration is a shared story.',
     credits_sub: 'Meet the team and explore the sources behind the lunar collection.',
     team_title: 'The Ninth Planet team',
@@ -113,6 +114,7 @@ export const DICT = {
     assets_illus: 'ภาพแนวคิด: สร้างด้วย AI จากชุดทรัพยากรของ The Ninth Planet ไม่ใช่ภาพถ่ายจาก NASA และไม่ใช่การสร้างใหม่ที่วัดได้',
     assets_fonts: 'ฟอนต์: Space Grotesk, Noto Sans Thai และ IBM Plex Mono ทั้งหมดอยู่ภายใต้ SIL Open Font License ไฟล์ลิขสิทธิ์อยู่ในโฟลเดอร์ fonts',
     assets_source: 'หมายเหตุแหล่งที่มา: ดูที่ docs/sources.md',
+    earth_alt: 'ภาพแนวคิดโลก ไม่ใช่แผนที่',
     credits_eyebrow: 'ผู้คนและหลักฐาน', credits_title: 'การสำรวจคือเรื่องราวร่วมกัน',
     credits_sub: 'พบกับทีมงานและแหล่งข้อมูลเบื้องหลังคอลเลกชันดวงจันทร์',
     team_title: 'ทีม The Ninth Planet',
@@ -256,7 +258,7 @@ document.addEventListener('click', (e) => {
     applyLang();
     return;
   }
-  const sizeBtn = t.closest('[data-size]');
+  const sizeBtn = t.closest('.size-switch [data-size]');   // only the text-size buttons, not <html data-size>
   if (sizeBtn) return applySize(sizeBtn.dataset.size);
   const closeBtn = t.closest('[data-close]');
   if (closeBtn) closeBtn.closest('dialog')?.close();
