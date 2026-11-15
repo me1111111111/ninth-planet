@@ -456,99 +456,6 @@ function initAstronauts() {
   onScroll();
 }
 
-// ---------- click and tap sparkle burst ----------
-// Every tap or click throws a small burst of glittering stars from that point.
-let burstCanvas = null, bctx = null, bparts = [], bRunning = false, bLast = 0;
-const BURST_TINTS = ['255,255,255', '166,240,247', '255,214,140'];
-
-function resizeBurst() {
-  const dpr = Math.min(window.devicePixelRatio || 1, 2);
-  burstCanvas.width = window.innerWidth * dpr;
-  burstCanvas.height = window.innerHeight * dpr;
-  bctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-}
-
-function initBurst() {
-  burstCanvas = document.createElement('canvas');
-  burstCanvas.id = 'burst';
-  burstCanvas.setAttribute('aria-hidden', 'true');
-  document.body.appendChild(burstCanvas);
-  bctx = burstCanvas.getContext('2d');
-  resizeBurst();
-  window.addEventListener('resize', resizeBurst);
-  document.addEventListener('pointerdown', (e) => spawnBurst(e.clientX, e.clientY), { passive: true });
-}
-
-function spawnBurst(x, y) {
-  if (document.documentElement.dataset.motion === 'reduced') return;
-  for (let i = 0; i < 16; i++) {
-    const a = (i / 16) * Math.PI * 2 + Math.random() * 0.4;
-    const speed = 90 + Math.random() * 170;
-    bparts.push({
-      x, y,
-      vx: Math.cos(a) * speed,
-      vy: Math.sin(a) * speed,
-      life: 0,
-      max: 0.6 + Math.random() * 0.5,
-      size: 1.6 + Math.random() * 2.4,
-      tint: BURST_TINTS[Math.floor(Math.random() * BURST_TINTS.length)],
-    });
-  }
-  // a brighter centre flash
-  bparts.push({ x, y, vx: 0, vy: 0, life: 0, max: 0.35, size: 9, tint: '255,255,255', flash: true });
-  if (!bRunning) {
-    bRunning = true;
-    bLast = performance.now();
-    requestAnimationFrame(burstFrame);
-  }
-}
-
-function drawSparkle(x, y, r, alpha, tint) {
-  bctx.globalAlpha = alpha;
-  bctx.fillStyle = `rgb(${tint})`;
-  bctx.beginPath();
-  bctx.arc(x, y, r * 0.55, 0, Math.PI * 2);
-  bctx.fill();
-  // four thin points, like a star
-  bctx.strokeStyle = `rgb(${tint})`;
-  bctx.lineWidth = 0.8;
-  bctx.beginPath();
-  bctx.moveTo(x - r * 2.2, y); bctx.lineTo(x + r * 2.2, y);
-  bctx.moveTo(x, y - r * 2.2); bctx.lineTo(x, y + r * 2.2);
-  bctx.stroke();
-}
-
-function burstFrame(now) {
-  const dt = Math.min(0.05, (now - bLast) / 1000);
-  bLast = now;
-  bctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
-  bctx.globalCompositeOperation = 'lighter';
-  const drag = Math.exp(-dt * 2.6);
-  bparts = bparts.filter((p) => {
-    p.life += dt;
-    if (p.life > p.max) return false;
-    p.x += p.vx * dt;
-    p.y += p.vy * dt;
-    p.vx *= drag;
-    p.vy = p.vy * drag + 30 * dt;          // a little drift downward
-    const k = 1 - p.life / p.max;
-    if (p.flash) {
-      drawSparkle(p.x, p.y, p.size * (1 + p.life * 3), k * 0.9, p.tint);
-    } else {
-      drawSparkle(p.x, p.y, p.size * (0.5 + 0.5 * k), k, p.tint);
-    }
-    return true;
-  });
-  bctx.globalAlpha = 1;
-  bctx.globalCompositeOperation = 'source-over';
-  if (bparts.length) {
-    requestAnimationFrame(burstFrame);
-  } else {
-    bRunning = false;
-    bctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
-  }
-}
-
 // ---------- boot ----------
 document.documentElement.classList.add('js');
 renderChrome();
@@ -561,5 +468,4 @@ if (motionBox) motionBox.checked = storedMotion === 'reduced';
 applyLang();
 initStars();
 initAstronauts();
-initBurst();
 observeReveal();

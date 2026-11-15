@@ -959,19 +959,3 @@ html, body { max-width: 100%; overflow-x: hidden; }
   .cta { flex-direction: column; align-items: stretch; width: min(88vw, 340px); }
   .cta .btn { text-align: center; }
 }
-
-/* ==========================================================================
-   v8: stars and astronauts stay visible. Only the page background darkens on scroll.
-   Order, back to front: background -> dark-blue-to-black layer -> stars and astronauts -> moon -> text
-   ========================================================================== */
-.scroll-dark { z-index: 0 !important; }
-#space { z-index: 1 !important; }
-.astro-layer { display: block !important; z-index: 1 !important; }
-.astro { width: clamp(56px, 9vw, 150px) !important; }
-.astro img { opacity: 0.95; }
-
-/* click / tap sparkle burst */
-#burst {
-  position: fixed; inset: 0; width: 100%; height: 100%;
-  z-index: 60; pointer-events: none;
-}
