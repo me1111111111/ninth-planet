@@ -1025,9 +1025,13 @@
         "en": "The main power source of the Apollo missions (ALSEP)",
         "th": "แหล่งพลังงานที่สำคัญของภารกิจอะพอลโล (ALSEP)"
       },
+      "rtg_title": {
+        "en": "Radioisotope thermoelectric generator (RTG)",
+        "th": "เครื่องกำเนิดไฟฟ้าเทอร์โมอิเล็กทริกไอโซโทปรังสี (RTG)"
+      },
       "rtg": {
-        "en": "The radioisotope thermoelectric generator (RTG) is the power source for ALSEP. It uses heat from the radioactive decay of plutonium-238, and thermocouples turn that heat into about 70 watts of electricity. The RTG's base forms the base of ALSEP's second subassembly.",
-        "th": "เครื่องกำเนิดไฟฟ้าเทอร์โมอิเล็กทริกไอโซโทปรังสี (RTG) เป็นแหล่งพลังงานสำหรับ ALSEP มันใช้ความร้อนจากการสลายตัวของกัมมันตรังสีของพลูโทเนียม-238 และเทอร์โมคัปเปิลเปลี่ยนความร้อนนั้นเป็นพลังงานประมาณ 70 วัตต์ ฐานของ RTG เป็นฐานของชุดย่อยที่สองของ ALSEP"
+        "en": "This unit uses heat from the radioactive decay of plutonium-238. Thermocouples convert that heat into about 70 watts of electricity, and its base forms the base of ALSEP's second subassembly.",
+        "th": "อุปกรณ์นี้ใช้ความร้อนจากการสลายตัวของกัมมันตรังสีของพลูโทเนียม-238 เทอร์โมคัปเปิลเปลี่ยนความร้อนนั้นเป็นพลังงานไฟฟ้าประมาณ 70 วัตต์ และฐานของอุปกรณ์นี้เป็นฐานของชุดย่อยที่สองของ ALSEP"
       },
       "images": [
         {
@@ -1036,22 +1040,6 @@
           "caption": {
             "en": "RTG from Apollo 14, with the central station behind it",
             "th": "RTG จากอะพอลโล 14 โดยมีสถานีกลางอยู่ด้านหลัง"
-          }
-        },
-        {
-          "src": "assets/diagrams/snap-27-diagram.jpg",
-          "kind": "diagram",
-          "caption": {
-            "en": "NASA drawing: SNAP-27 radioisotope generator",
-            "th": "แบบร่าง NASA: เครื่องกำเนิดไฟฟ้า SNAP-27"
-          }
-        },
-        {
-          "src": "assets/instruments/snap-27.png",
-          "kind": "illustration",
-          "caption": {
-            "en": "Concept illustration: SNAP-27",
-            "th": "ภาพแนวคิด: SNAP-27"
           }
         }
       ]

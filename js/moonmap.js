@@ -183,10 +183,15 @@ function renderExtras() {
         </button>
         <figcaption class="small">${pick(im.caption)}</figcaption>
       </figure>`).join('')}</div>
-    <h2>${pick(pw.title)}</h2>
-    <p>${pick(pw.text)}</p>
-    <p>${pick(pw.rtg)}</p>
-    <p class="small">${pick(pw.clarify)}</p>`;
+    <div class="mm-power-box mm-snap-box">
+      <h2>${pick(pw.title)}</h2>
+      <p>${pick(pw.text)}</p>
+      <p class="small">${pick(pw.clarify)}</p>
+    </div>
+    <div class="mm-power-box mm-rtg-box">
+      <h3>${pick(pw.rtg_title)}</h3>
+      <p>${pick(pw.rtg)}</p>
+    </div>`;
   $('findings').innerHTML = `
     <h2>${tr('mm_findings_title')}</h2>
     <ul>${mm.findings.map((f) => `<li>${pick(f)}</li>`).join('')}</ul>`;
