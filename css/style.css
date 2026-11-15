@@ -976,3 +976,64 @@ html, body { max-width: 100%; overflow-x: hidden; }
   position: fixed; inset: 0; width: 100%; height: 100%;
   z-index: 60; pointer-events: none;
 }
+
+/* ==========================================================================
+   v11: landing order and readability, power section, About notes, scroll cue
+   ========================================================================== */
+
+/* APOLLO now sits in front of the Moon: the Moon is behind, the wordmark on top of it */
+#hero-moon { z-index: 2 !important; }
+.hero-shadow { z-index: 3 !important; }
+.hero-apollo { z-index: 4 !important; filter: drop-shadow(0 0 28px rgba(0, 0, 0, 0.55)) drop-shadow(0 0 36px rgba(166, 240, 247, 0.25)) !important; }
+.hero-fade { z-index: 5 !important; }
+.hero-copy, .hero-foot, .scroll-cue { z-index: 6 !important; }
+
+/* the tagline pill: easier to read over the wordmark */
+.hero-copy .eyebrow {
+  font-size: 0.98rem;
+  padding: 10px 20px;
+  background: #050a12;
+  border-color: rgba(232, 183, 90, 0.85);
+  box-shadow: 0 0 0 4px rgba(5, 10, 18, 0.65), 0 0 24px rgba(232, 183, 90, 0.35);
+  letter-spacing: 0.16em;
+}
+/* the subtitle: larger and brighter */
+.hero-copy .lead { font-size: 1.3rem; color: #e9f0fb; text-shadow: 0 2px 16px rgba(0, 0, 0, 0.9); }
+/* the headline: a little smaller, and the line breaks sit between words */
+.hero-copy .display { font-size: clamp(2rem, 4.6vw, 3.8rem); text-wrap: balance; }
+
+/* scroll cue: tells the visitor there is more below */
+.scroll-cue {
+  position: absolute; z-index: 6; right: 3%; bottom: 3%;
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 10px 16px; border-radius: 999px;
+  color: var(--ink); text-decoration: none; font-size: 0.9rem;
+  border: 1px solid rgba(166, 240, 247, 0.45);
+  background: rgba(5, 8, 16, 0.6);
+  animation: cueBob 2.4s ease-in-out infinite;
+}
+.scroll-cue:hover { border-color: var(--cyan); box-shadow: 0 0 18px rgba(166, 240, 247, 0.4); }
+@keyframes cueBob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(6px); } }
+@media (max-width: 900px) { .scroll-cue { display: none; } }
+
+/* origin: a stronger heading */
+#origin-title { font-size: clamp(2rem, 4.2vw, 3rem); font-weight: 800; }
+
+/* power section: heading, picture row, and text */
+.power-head { font-size: 1.15rem; font-weight: 800; color: var(--gold); margin: 0 0 12px; letter-spacing: 0.02em; }
+.power-gallery { display: flex; gap: 12px; overflow-x: auto; padding-bottom: 6px; }
+.power-fig { margin: 0; flex: 0 0 150px; }
+.power-thumb {
+  display: block; width: 100%; height: 120px; padding: 0; cursor: pointer;
+  border: 1px solid var(--line); border-radius: 14px; overflow: hidden;
+  background: radial-gradient(circle at 50% 40%, #22324a, #070b14 75%);
+  transition: transform 0.35s var(--ease), box-shadow 0.35s, border-color 0.35s;
+}
+.power-thumb img { width: 100%; height: 100%; object-fit: contain; display: block; }
+.power-thumb:hover { transform: translateY(-3px); border-color: var(--cyan); box-shadow: 0 0 18px rgba(166, 240, 247, 0.35); }
+.power-fig figcaption { margin-top: 6px; line-height: 1.4; }
+
+/* About notes on instrument dossiers and exhibit stories */
+.about { margin-top: 18px; padding: 14px 16px; border-radius: 14px; border: 1px solid var(--line); background: rgba(255, 255, 255, 0.03); }
+.about .kicker { margin-bottom: 6px; }
+.about p { margin: 0; line-height: 1.8; color: #dfe8f5; }

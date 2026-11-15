@@ -165,6 +165,7 @@ function renderDossier() {
         <div><dt>${tr('impact')}</dt><dd>${pick(ins.impact)}</dd></div>
       </dl>
       ${ins.note ? `<p class="mm-alert">${pick(ins.note)}</p>` : ''}
+      ${ins.about ? `<div class="about"><p class="kicker">${tr('about_title')}</p><p>${pick(ins.about)}</p></div>` : ''}
       <p class="mm-credit">${pick(ins.credit)}</p>
     </div>`;
 }
@@ -172,16 +173,20 @@ function renderDossier() {
 // ---------- power and findings (static text from the content file) ----------
 function renderExtras() {
   const mm = content.moonMap;
+  const pw = mm.power;
   $('power').innerHTML = `
-    <div class="mm-power-img">
-      <img src="assets/instruments/snap-27.png" alt="${pick({
-        en: 'Concept illustration of SNAP-27 power generator',
-        th: 'ภาพแนวคิดเครื่องกำเนิดไฟฟ้าจากไอโซโทปรังสี SNAP-27',
-      })}">
-    </div>
-    <h2>${pick(mm.power.title)}</h2>
-    <p>${pick(mm.power.text)}</p>
-    <p class="small">${pick(mm.power.clarify)}</p>`;
+    <h2 class="power-head">${pick(pw.heading)}</h2>
+    <div class="power-gallery">${pw.images.map((im, i) => `
+      <figure class="power-fig">
+        <button class="power-thumb" data-pi="${i}" aria-label="${pick(im.caption)}">
+          <img src="${im.src}" alt="">
+        </button>
+        <figcaption class="small">${pick(im.caption)}</figcaption>
+      </figure>`).join('')}</div>
+    <h2>${pick(pw.title)}</h2>
+    <p>${pick(pw.text)}</p>
+    <p>${pick(pw.rtg)}</p>
+    <p class="small">${pick(pw.clarify)}</p>`;
   $('findings').innerHTML = `
     <h2>${tr('mm_findings_title')}</h2>
     <ul>${mm.findings.map((f) => `<li>${pick(f)}</li>`).join('')}</ul>`;
@@ -231,6 +236,18 @@ $('filters').addEventListener('click', (e) => {
 });
 
 $('show-all').addEventListener('click', () => { focused = false; });
+
+// the power pictures open larger in the same photo dialog
+$('power').addEventListener('click', (e) => {
+  const b = e.target.closest('[data-pi]');
+  if (!b) return;
+  const im = content.moonMap.power.images[Number(b.dataset.pi)];
+  $('photo-img').src = im.src;
+  $('photo-img').alt = pick(im.caption);
+  $('photo-cap').textContent = pick(im.caption);
+  $('photo-credit').textContent = pick(content.origin.credit);
+  $('photo-dialog').showModal();
+});
 
 // photos open larger in the photo dialog
 $('site-photos').addEventListener('click', (e) => {

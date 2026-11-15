@@ -326,6 +326,14 @@
             "en": "Concept illustration: ALSEP central station",
             "th": "ภาพแนวคิด: สถานีกลาง ALSEP"
           }
+        },
+        {
+          "src": "assets/diagrams/central-diagram.jpg",
+          "kind": "diagram",
+          "caption": {
+            "en": "NASA drawing: ALSEP central station",
+            "th": "แบบร่าง NASA: สถานีกลาง ALSEP"
+          }
         }
       ]
     },
@@ -389,6 +397,14 @@
           "caption": {
             "en": "Concept illustration: Passive Seismic Experiment",
             "th": "ภาพแนวคิด: การทดลองตรวจวัดแผ่นดินไหวแบบพาสซีฟ"
+          }
+        },
+        {
+          "src": "assets/diagrams/pse-diagram.jpg",
+          "kind": "diagram",
+          "caption": {
+            "en": "NASA drawing: Passive Seismic Experiment",
+            "th": "แบบร่าง NASA: การทดลองตรวจวัดแผ่นดินไหวแบบพาสซีฟ"
           }
         }
       ]
@@ -588,6 +604,14 @@
             "en": "Concept illustration: Lunar Surface Magnetometer",
             "th": "ภาพแนวคิด: เครื่องวัดสนามแม่เหล็กบนผิวดวงจันทร์"
           }
+        },
+        {
+          "src": "assets/diagrams/lsm-diagram.jpg",
+          "kind": "diagram",
+          "caption": {
+            "en": "NASA drawing: Lunar Surface Magnetometer",
+            "th": "แบบร่าง NASA: เครื่องวัดสนามแม่เหล็กบนผิวดวงจันทร์"
+          }
         }
       ]
     },
@@ -636,6 +660,14 @@
           "caption": {
             "en": "Solar Wind Spectrometer on the lunar surface",
             "th": "เครื่องวัดสเปกตรัมลมสุริยะบนพื้นผิวดวงจันทร์"
+          }
+        },
+        {
+          "src": "assets/diagrams/sws-diagram.jpg",
+          "kind": "diagram",
+          "caption": {
+            "en": "NASA drawing: Solar Wind Spectrometer",
+            "th": "แบบร่าง NASA: เครื่องวัดสเปกตรัมลมสุริยะ"
           }
         }
       ]
@@ -698,6 +730,14 @@
             "en": "Concept illustration: Lunar Ejecta and Meteorites",
             "th": "ภาพแนวคิด: การทดลองฝุ่นและอุกกาบาตบนดวงจันทร์"
           }
+        },
+        {
+          "src": "assets/diagrams/leam-diagram.jpg",
+          "kind": "diagram",
+          "caption": {
+            "en": "NASA drawing: Lunar Ejecta and Meteorites",
+            "th": "แบบร่าง NASA: การทดลองฝุ่นและอุกกาบาต"
+          }
         }
       ],
       "note": {
@@ -745,6 +785,22 @@
           "caption": {
             "en": "Concept illustration: Lunar Seismic Profiling",
             "th": "ภาพแนวคิด: ชุดสำรวจใต้พื้นผิวด้วยคลื่นไหวสะเทือน"
+          }
+        },
+        {
+          "src": "assets/img/lspe-photo-1.jpg",
+          "kind": "photo",
+          "caption": {
+            "en": "Lunar Seismic Profiling Experiment on the surface",
+            "th": "การทดลองสำรวจใต้พื้นผิวด้วยคลื่นไหวสะเทือนบนพื้นผิว"
+          }
+        },
+        {
+          "src": "assets/diagrams/lspe-diagram.jpg",
+          "kind": "diagram",
+          "caption": {
+            "en": "NASA drawing: Lunar Seismic Profiling Experiment",
+            "th": "แบบร่าง NASA: ชุดสำรวจใต้พื้นผิวด้วยคลื่นไหวสะเทือน"
           }
         }
       ],
@@ -802,6 +858,14 @@
           "caption": {
             "en": "Lunar Surface Gravimeter on the lunar surface",
             "th": "เครื่องวัดแรงโน้มถ่วงบนพื้นผิวดวงจันทร์"
+          }
+        },
+        {
+          "src": "assets/diagrams/lsg-diagram.jpg",
+          "kind": "diagram",
+          "caption": {
+            "en": "NASA drawing: Lunar Surface Gravimeter",
+            "th": "แบบร่าง NASA: เครื่องวัดแรงโน้มถ่วงบนพื้นผิวดวงจันทร์"
           }
         }
       ],
@@ -866,6 +930,10 @@
       "credit": {
         "en": "Photos: NASA via Wikimedia Commons and the team's album. Illustrations: AI-generated concept.",
         "th": "ภาพถ่าย: NASA ผ่าน Wikimedia Commons และอัลบั้มของทีม ภาพประกอบ: แนวคิดที่สร้างด้วย AI"
+      },
+      "about": {
+        "en": "The Suprathermal Ion Detector Experiment (SIDE) shares its housing with the Cold Cathode Gauge Experiment (CCGE / CCIG).",
+        "th": "การทดลองเครื่องตรวจจับไอออนเหนือความร้อน (SIDE) ใช้ตัวเรือนร่วมกับการทดลองเกจแคโทดเย็น (CCGE / CCIG)"
       }
     },
     {
@@ -913,25 +981,29 @@
           }
         },
         {
-          "src": "assets/img/ccig-diagram.jpg",
-          "kind": "diagram",
-          "caption": {
-            "en": "Cold Cathode Ion Gauge (CCIG) diagram",
-            "th": "แผนภาพเครื่องวัดก๊าซแบบแคโทดเย็น (CCIG)"
-          }
-        },
-        {
           "src": "assets/img/ccig-photo-2.jpg",
           "kind": "photo",
           "caption": {
             "en": "ALSEP instruments and cables on the lunar surface",
             "th": "อุปกรณ์ ALSEP และสายบนพื้นผิวดวงจันทร์"
           }
+        },
+        {
+          "src": "assets/diagrams/ccig-diagram.jpg",
+          "kind": "diagram",
+          "caption": {
+            "en": "NASA Figure 13: the CCIG in its deployed configuration",
+            "th": "รูปที่ 13 ของ NASA: เครื่องวัด CCIG ในรูปแบบที่ติดตั้งแล้ว"
+          }
         }
       ],
       "credit": {
         "en": "Photos: NASA via Wikimedia Commons and the team's album. Illustrations: AI-generated concept.",
         "th": "ภาพถ่าย: NASA ผ่าน Wikimedia Commons และอัลบั้มของทีม ภาพประกอบ: แนวคิดที่สร้างด้วย AI"
+      },
+      "about": {
+        "en": "The Cold Cathode Gauge Experiment (CCGE, also written CCIG) was built by Norton Research Corporation and was part of the Apollo ALSEP surface experiments. It was packaged in the same housing as the Suprathermal Ion Detector Experiment (SIDE).",
+        "th": "การทดลองเกจแคโทดเย็น (CCGE หรือ CCIG) ถูกสร้างขึ้นโดย Norton Research Corporation และรวมอยู่ในชุดการทดลองพื้นผิวดวงจันทร์ Apollo (ALSEP) มันถูกบรรจุอยู่ในตัวเรือนเดียวกันกับการทดลองเครื่องตรวจจับไอออนเหนือความร้อน (SIDE)"
       }
     }
   ],
@@ -948,7 +1020,41 @@
       "clarify": {
         "en": "SNAP-27 supplied power. It was not a seismometer, magnetometer or particle detector.",
         "th": "SNAP-27 เป็นระบบจ่ายพลังงาน ไม่ใช่เครื่องมือวัดแผ่นดินไหว สนามแม่เหล็ก หรืออนุภาคโดยตรง"
-      }
+      },
+      "heading": {
+        "en": "The main power source of the Apollo missions (ALSEP)",
+        "th": "แหล่งพลังงานที่สำคัญของภารกิจอะพอลโล (ALSEP)"
+      },
+      "rtg": {
+        "en": "The radioisotope thermoelectric generator (RTG) is the power source for ALSEP. It uses heat from the radioactive decay of plutonium-238, and thermocouples turn that heat into about 70 watts of electricity. The RTG's base forms the base of ALSEP's second subassembly.",
+        "th": "เครื่องกำเนิดไฟฟ้าเทอร์โมอิเล็กทริกไอโซโทปรังสี (RTG) เป็นแหล่งพลังงานสำหรับ ALSEP มันใช้ความร้อนจากการสลายตัวของกัมมันตรังสีของพลูโทเนียม-238 และเทอร์โมคัปเปิลเปลี่ยนความร้อนนั้นเป็นพลังงานประมาณ 70 วัตต์ ฐานของ RTG เป็นฐานของชุดย่อยที่สองของ ALSEP"
+      },
+      "images": [
+        {
+          "src": "assets/img/rtg-photo-1.jpg",
+          "kind": "photo",
+          "caption": {
+            "en": "RTG from Apollo 14, with the central station behind it",
+            "th": "RTG จากอะพอลโล 14 โดยมีสถานีกลางอยู่ด้านหลัง"
+          }
+        },
+        {
+          "src": "assets/diagrams/snap-27-diagram.jpg",
+          "kind": "diagram",
+          "caption": {
+            "en": "NASA drawing: SNAP-27 radioisotope generator",
+            "th": "แบบร่าง NASA: เครื่องกำเนิดไฟฟ้า SNAP-27"
+          }
+        },
+        {
+          "src": "assets/instruments/snap-27.png",
+          "kind": "illustration",
+          "caption": {
+            "en": "Concept illustration: SNAP-27",
+            "th": "ภาพแนวคิด: SNAP-27"
+          }
+        }
+      ]
     },
     "findings": [
       {
@@ -979,6 +1085,10 @@
       "th": "จุดเริ่มต้นของโครงการ"
     },
     "paragraphs": [
+      {
+        "en": "Before Apollo, the Space Race began in 1957, when the Soviet Union launched Sputnik 1, the first artificial satellite. In April 1961 Yuri Gagarin became the first human in space. That same year President John F. Kennedy set the goal of landing a person on the Moon before the decade was out.",
+        "th": "ก่อนอะพอลโล การแข่งขันด้านอวกาศเริ่มขึ้นในปี ค.ศ. 1957 เมื่อสหภาพโซเวียตปล่อยดาวเทียมดวงแรก สปุตนิก 1 ในเดือนเมษายน ค.ศ. 1961 ยูริ กาการิน กลายเป็นมนุษย์คนแรกในอวกาศ ในปีเดียวกันนั้น ประธานาธิบดี จอห์น เอฟ. เคนเนดี ตั้งเป้าหมายส่งมนุษย์ลงดวงจันทร์ให้ได้ก่อนสิ้นทศวรรษ"
+      },
       {
         "en": "The Apollo programme began as a national policy of the United States. In 1961, President John F. Kennedy set the goal of showing technological and space leadership over the Soviet Union. The programme went on developing, testing and researching until 1969, when Apollo 11 carried the first humans to the Moon. It continued to study the Moon's geology, and even its dust. That success was the product of countless experiments and inventions.",
         "th": "ที่มาของโครงการอะพอลโล (Apollo) มีจุดเริ่มต้นจากนโยบายระดับชาติของสหรัฐอเมริกา เพื่อแสดงความเป็นผู้นำด้านเทคโนโลยีและอวกาศเหนือสหภาพโซเวียต ตามคำประกาศของประธานาธิบดี จอห์น เอฟ. เคนเนดี ปี ค.ศ. 1961 โครงการนี้ได้พัฒนา ทดลอง และวิจัยต่อมาจนประสบความสำเร็จในปี ค.ศ. 1969 ที่ได้ส่งมนุษยชาติกลุ่มแรกไปสำรวจดวงจันทร์ ได้เป็นโครงการอะพอลโล 11 (Apollo 11) และโครงการนี้พัฒนาต่อมาเรื่อย ๆ เพื่อสำรวจดวงจันทร์ ไม่ว่าจะเป็นธรณีภาคหรือแม้แต่ฝุ่น ความสำเร็จนี้นับเป็นประวัติศาสตร์ของโลก ซึ่งคงเกิดขึ้นไม่ได้ถ้าไม่ใช่เพราะความสามารถของมนุษย์ที่พยายามพัฒนาความก้าวหน้าทางเทคโนโลยี เบื้องหลังความสำเร็จนี้มีการวิจัย การทดลอง และการประดิษฐ์อุปกรณ์มากมายนับครั้งไม่ถ้วน"

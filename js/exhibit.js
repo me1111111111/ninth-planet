@@ -77,7 +77,7 @@ function storyHTML(ins) {
       <dt>${tr('missions')}</dt><dd>${missions}</dd>
       ${status ? `<dt>${tr('status')}</dt><dd>${status}</dd>` : ''}
     </dl>
-    ${ins.note ? `<p class="mm-alert">${pick(ins.note)}</p>` : ''}`;
+    ${ins.note ? `<p class="mm-alert">${pick(ins.note)}</p>` : ''}${ins.about ? `<div class="about"><p class="kicker">${tr('about_title')}</p><p>${pick(ins.about)}</p></div>` : ''}`;
 }
 
 // ---------- photo gallery ----------
