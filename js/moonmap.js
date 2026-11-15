@@ -174,23 +174,26 @@ function renderDossier() {
 function renderExtras() {
   const mm = content.moonMap;
   const pw = mm.power;
-  $('power').innerHTML = `
-    <h2 class="power-head">${pick(pw.heading)}</h2>
-    <div class="power-gallery">${pw.images.map((im, i) => `
+  const gallery = (images, offset) => `
+    <div class="power-gallery">${images.map((im, i) => `
       <figure class="power-fig">
-        <button class="power-thumb" data-pi="${i}" aria-label="${pick(im.caption)}">
+        <button class="power-thumb" data-pi="${offset + i}" aria-label="${pick(im.caption)}">
           <img src="${im.src}" alt="">
         </button>
         <figcaption class="small">${pick(im.caption)}</figcaption>
-      </figure>`).join('')}</div>
+      </figure>`).join('')}</div>`;
+  $('power').innerHTML = `
+    <div class="mm-power-box mm-rtg-box">
+      <h2 class="power-head">${pick(pw.heading)}</h2>
+      <h3>${pick(pw.rtg_title)}</h3>
+      ${gallery(pw.rtg_images, 0)}
+      <p>${pick(pw.rtg)}</p>
+    </div>
     <div class="mm-power-box mm-snap-box">
       <h2>${pick(pw.title)}</h2>
+      ${gallery(pw.images, pw.rtg_images.length)}
       <p>${pick(pw.text)}</p>
       <p class="small">${pick(pw.clarify)}</p>
-    </div>
-    <div class="mm-power-box mm-rtg-box">
-      <h3>${pick(pw.rtg_title)}</h3>
-      <p>${pick(pw.rtg)}</p>
     </div>`;
   $('findings').innerHTML = `
     <h2>${tr('mm_findings_title')}</h2>
@@ -246,7 +249,8 @@ $('show-all').addEventListener('click', () => { focused = false; });
 $('power').addEventListener('click', (e) => {
   const b = e.target.closest('[data-pi]');
   if (!b) return;
-  const im = content.moonMap.power.images[Number(b.dataset.pi)];
+  const images = [...content.moonMap.power.rtg_images, ...content.moonMap.power.images];
+  const im = images[Number(b.dataset.pi)];
   $('photo-img').src = im.src;
   $('photo-img').alt = pick(im.caption);
   $('photo-cap').textContent = pick(im.caption);

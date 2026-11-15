@@ -18,6 +18,8 @@ Instrument photos
   ccig-photo-1.jpg       ALSEP equipment, close-up (CCIG, check)
   ccig-photo-2.jpg       ALSEP instruments and cables (CCIG, check)
   ccig-diagram.jpg       CCIG diagram
+  rtg-photo-2.jpg        ALSEP RTG and equipment on the lunar surface
+  rtg-diagram.png        RTG components and ALSEP deployment diagram
 
 Mission photos are in assets/photos/ (4 for Apollo 12 and 14, 3 for Apollo 15, 16 and 17).
 Every photo name here is listed in data/content.json. Check the "(check)" photos against the
