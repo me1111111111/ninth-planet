@@ -967,6 +967,7 @@ html, body { max-width: 100%; overflow-x: hidden; }
 .scroll-dark { z-index: 0 !important; }
 #space { z-index: 1 !important; }
 .astro-layer { display: block !important; z-index: 1 !important; }
+.hero > .astro-layer { position: absolute; z-index: 4 !important; }
 .astro { width: clamp(56px, 9vw, 150px) !important; }
 .astro img { opacity: 0.95; }
 

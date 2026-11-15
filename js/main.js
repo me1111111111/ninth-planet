@@ -441,7 +441,8 @@ function initAstronauts() {
     <div class="astro" style="top:${s.top}%;${s.left !== undefined ? `left:${s.left}%` : `right:${s.right}%`};width:${s.width}px">
       <div class="bob" style="animation-delay:-${s.delay}s"><img src="${s.img}" alt="" loading="lazy"></div>
     </div>`).join('');
-  document.body.prepend(layer);
+  const hero = document.querySelector('.hero');
+  (hero || document.body).prepend(layer);
 
   const els = [...layer.querySelectorAll('.astro')];
   const onScroll = () => {
