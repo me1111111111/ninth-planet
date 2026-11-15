@@ -28,8 +28,8 @@ viewer.setTick((dt) => {
   time += dt;
   if (document.documentElement.dataset.motion !== 'reduced') {
     moon.spin.rotation.y += dt * 0.06;
-    moon.pulse(time);
   }
+  moon.pulse(time, viewer.camera);
 });
 
 // ---------- scroll fade: the Moon fades as you scroll down, and rises again as you scroll up ----------
@@ -41,6 +41,8 @@ function updateFade() {
   const p = clamp(window.scrollY / (heroEl.offsetHeight * 0.9), 0, 1);
   canvas.style.opacity = String(1 - p * 0.85);
   fadeEl.style.opacity = String(p);
+  // below the hero, the page sinks from dark blue to black as you scroll
+  document.getElementById('scroll-dark').style.opacity = String(clamp(window.scrollY / (window.innerHeight * 1.2), 0, 0.92));
   scrollTicking = false;
 }
 window.addEventListener('scroll', () => {

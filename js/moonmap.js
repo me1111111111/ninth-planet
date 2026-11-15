@@ -33,7 +33,7 @@ let time = 0;
 viewer.setTick((dt) => {
   if (document.documentElement.dataset.motion !== 'reduced') {
     time += dt;
-    moon.pulse(time);
+    moon.pulse(time, viewer.camera);
     if (!focused) moon.spin.rotation.y += dt * 0.05;
   }
   moon.step(dt);

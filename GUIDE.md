@@ -271,3 +271,22 @@ Good luck with the challenge.
 - **Team document:** the origin section on the home page, a mission block on the moon map (dates, landing site, power, summary), and the five findings are all in `data/content.json`. The Thai text is the team's, with light spacing fixes. The English is a translation to check.
 - **Photos:** the 17 extra photos are in `assets/photos/` and appear in each mission's photo strip. The origin section uses the Saturn V launch.
 - **Team and credits:** three members are listed with their names in Thai and English. The credits page includes the tools and AI used: Claude and ChatGPT (GPT), Canva, VS Code, GitHub, Vercel, Three.js, Leaflet and Esri imagery, and the fonts.
+
+---
+
+## 18. Version 7: landing page layers and corrected exhibit images
+
+**Landing page, back to front**
+1. Page background (dark blue), then the star field (fixed, behind everything).
+2. APOLLO wordmark (sits behind the Moon's horizon).
+3. The rotating 3D Moon (`js/moon3d.js`, `js/hero.js`). Markers on the far side are hidden so they cannot show past the edge.
+4. The shadow gradient (`assets/scene/shadow-gradient.png`). This is the team's image converted into a black overlay whose opacity follows its darkness: white at the top is clear, and black at the bottom is opaque.
+5. The scroll fade on the Moon, and the page below the hero sinks from dark blue to black as you scroll (`#scroll-dark`).
+6. Headline, tagline and buttons on top.
+
+**Why the landing page looked broken:** the SVG sizing fix from version 6 had given the APOLLO wordmark a square size, so it stretched to about 750 px tall and pushed the text out of view. Every SVG now takes its size from its own shape.
+
+**Exhibit images, checked against the edit guide**
+- Each gallery now uses only the photos whose contents match their instrument. Two photos had been swapped (for example, the LSM gallery showed the SWS photo).
+- The wrong concept illustrations for **SWS, LSG, SIDE and CCIG** were removed. Those instruments show "Photo coming soon" until real photos are added.
+- To add the real photos, save them into `assets/img/` and add them to that instrument's `"images"` list in `data/content.json`. The edit guide's screenshots show the real pictures, but they are screenshots, so I could not use them as image files.

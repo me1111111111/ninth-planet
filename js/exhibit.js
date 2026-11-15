@@ -225,7 +225,7 @@ function showMaps(ins) {
   let t = 0;
   view.setTick((dt) => {
     t += dt;
-    if (mapMoon) { mapMoon.step(dt); mapMoon.pulse(t); }
+    if (mapMoon) { mapMoon.step(dt); mapMoon.pulse(t, view.camera); }
   });
   view.resume();
   $('moon-caption').textContent = `${tr('map_moon')} — ${pick(mission.site)}`;

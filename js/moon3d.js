@@ -8,6 +8,7 @@ import * as THREE from 'three';
 export const MOON_RADIUS = 1;
 const MOON_TEXTURE = 'assets/textures/moon.jpg';
 const deg = THREE.MathUtils.degToRad;
+const _p = new THREE.Vector3(), _c = new THREE.Vector3();
 const clamp = (v, a, b) => Math.max(a, Math.min(b, v));
 
 // ---------- one shared texture, loaded once ----------
@@ -116,12 +117,22 @@ export function buildMoon(pins = []) {
       tilt.rotation.x = deg(lat);
       spin.rotation.y = -(Math.PI / 2 + deg(lon));
     },
-    pulse(t) {
+    // Pulse the markers. When a camera is given, markers on the far side are hidden,
+    // so they cannot show as blobs past the Moon's edge.
+    pulse(t, cam) {
       for (const m of markers) {
         const { halo, phase } = m.userData;
         const k = 0.5 + 0.5 * Math.sin(t * 2.4 + phase);
         halo.scale.setScalar(0.16 + 0.12 * k);
         halo.material.opacity = 0.55 + 0.45 * k;
+        if (cam) {
+          const p = m.getWorldPosition(_p);
+          const c = tilt.getWorldPosition(_c);
+          const facing = p.clone().sub(c).normalize().dot(cam.position.clone().sub(p).normalize());
+          const visible = facing > 0.12;
+          halo.visible = visible;
+          m.children[0].visible = visible;
+        }
       }
     },
     step(dt) {

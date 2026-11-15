@@ -889,3 +889,73 @@ body { -webkit-text-size-adjust: 100%; }
 html, body { max-width: 100%; overflow-x: hidden; }
 
 @media (max-width: 900px) { .hero::after { background: radial-gradient(ellipse at 50% 45%, transparent 55%, rgba(3, 5, 11, 0.55) 100%); } }
+
+/* ==========================================================================
+   v7: landing page layers, back to front
+   page background -> stars (fixed, behind everything) -> APOLLO -> Moon
+   -> shadow gradient -> scroll fade -> text. Below the hero the page sinks to black on scroll.
+   ========================================================================== */
+.hero {
+  position: relative;
+  isolation: isolate;
+  height: calc(100vh - 70px);
+  min-height: 640px;
+  overflow: hidden;
+  padding: 0;
+  display: block;
+  text-align: center;
+}
+.hero::after { display: none; }                     /* the shadow image replaces the old vignette */
+.hero-apollo {
+  position: absolute; left: 50%; top: 8%; z-index: 1;
+  width: min(92vw, 1000px); height: auto;
+  transform: translateX(-50%) perspective(1000px) rotateX(16deg);
+  transform-origin: 50% 100%;
+  pointer-events: none; user-select: none;
+  filter: drop-shadow(0 0 36px rgba(166, 240, 247, 0.3));
+}
+#hero-moon {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  z-index: 2; display: block; pointer-events: none;
+  transition: opacity 0.3s linear;
+}
+.hero-shadow {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  object-fit: cover; z-index: 3; pointer-events: none; user-select: none;
+}
+.hero-fade {
+  position: absolute; inset: 0; z-index: 4; pointer-events: none; opacity: 0;
+  background: linear-gradient(180deg, rgba(3, 5, 11, 0) 30%, rgba(3, 5, 11, 0.92) 100%);
+  transition: opacity 0.3s linear;
+}
+.hero-copy {
+  position: absolute; z-index: 5; left: 50%; top: 22%;
+  transform: translateX(-50%);
+  width: min(90vw, 860px); margin: 0;
+}
+.hero-copy .display { margin: 0.1em 0 0.2em; text-shadow: 0 6px 30px rgba(0, 0, 0, 0.85); }
+.hero-foot {
+  position: absolute; z-index: 5; left: 50%; bottom: 4%;
+  transform: translateX(-50%);
+  width: min(92vw, 860px);
+  display: flex; flex-direction: column; align-items: center;
+}
+.cta { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin: 0 0 12px; }
+.stats { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin-top: 14px; }
+
+/* the page below the hero sinks from dark blue to black as you scroll */
+.scroll-dark {
+  position: fixed; inset: 0; z-index: 1; pointer-events: none; opacity: 0;
+  background: #000;
+}
+
+@media (max-width: 900px) {
+  .hero { min-height: 620px; }
+  .hero-apollo { top: 6%; }
+  .hero-copy { top: 19%; }
+  .hero-foot { bottom: 3%; }
+  .stats { flex-direction: column; align-items: center; }
+  .stat { width: min(88vw, 340px); }
+  .cta { flex-direction: column; align-items: stretch; width: min(88vw, 340px); }
+  .cta .btn { text-align: center; }
+}

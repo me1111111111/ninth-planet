@@ -299,13 +299,13 @@
         "th": "ข้อมูลจากการทดลองหลายชุดถูกส่งกลับโลกต่อเนื่องหลายปี แม้นักบินอวกาศจะกลับไปแล้ว"
       },
       "credit": {
-        "en": "Photos: NASA via Wikimedia Commons · Illustration: AI-generated concept",
-        "th": "ภาพถ่าย: NASA ผ่าน Wikimedia Commons · ภาพประกอบ: แนวคิดที่สร้างด้วย AI"
+        "en": "Photos: NASA via Wikimedia Commons and the team's album. Illustrations: AI-generated concept.",
+        "th": "ภาพถ่าย: NASA ผ่าน Wikimedia Commons และอัลบั้มของทีม ภาพประกอบ: แนวคิดที่สร้างด้วย AI"
       },
       "images": [
         {
+          "src": "assets/img/sws-1.jpg",
           "kind": "photo",
-          "src": "assets/img/central-1.jpg",
           "caption": {
             "en": "ALSEP central station on the lunar surface",
             "th": "สถานีกลาง ALSEP บนพื้นผิวดวงจันทร์"
@@ -316,9 +316,8 @@
           "kind": "illustration",
           "caption": {
             "en": "Concept illustration: ALSEP central station",
-            "th": "ภาพแนวคิด: สถานีควบคุมกลาง ALSEP"
-          },
-          "feet": 0.936
+            "th": "ภาพแนวคิด: สถานีกลาง ALSEP"
+          }
         }
       ]
     },
@@ -364,13 +363,13 @@
         "th": "เผยให้เห็นชั้นภายในดวงจันทร์ และแผ่นดินไหวดวงจันทร์ 4 ประเภท ได้แก่ ลึก ตื้น จากอุกกาบาต และจากความร้อน"
       },
       "credit": {
-        "en": "Photos: NASA via Wikimedia Commons · Illustration: AI-generated concept",
-        "th": "ภาพถ่าย: NASA ผ่าน Wikimedia Commons · ภาพประกอบ: แนวคิดที่สร้างด้วย AI"
+        "en": "Photos: NASA via Wikimedia Commons and the team's album. Illustrations: AI-generated concept.",
+        "th": "ภาพถ่าย: NASA ผ่าน Wikimedia Commons และอัลบั้มของทีม ภาพประกอบ: แนวคิดที่สร้างด้วย AI"
       },
       "images": [
         {
+          "src": "assets/img/central-1.jpg",
           "kind": "photo",
-          "src": "assets/img/pse-1.jpg",
           "caption": {
             "en": "Passive Seismic Experiment wrapped in thermal foil",
             "th": "การทดลองตรวจวัดแผ่นดินไหวแบบพาสซีฟ หุ้มด้วยฟอยล์ความร้อน"
@@ -381,9 +380,8 @@
           "kind": "illustration",
           "caption": {
             "en": "Concept illustration: Passive Seismic Experiment",
-            "th": "ภาพแนวคิด: เครื่องวัดแผ่นดินไหวแบบพาสซีฟ"
-          },
-          "feet": 0.906
+            "th": "ภาพแนวคิด: การทดลองตรวจวัดแผ่นดินไหวแบบพาสซีฟ"
+          }
         }
       ]
     },
@@ -422,32 +420,32 @@
         "th": "นักธรณีวิทยาบนโลกใช้หลักการเดียวกันเพื่อทำแผนที่ชั้นหินใต้ดิน"
       },
       "credit": {
-        "en": "Photos: NASA via Wikimedia Commons · Illustration: AI-generated concept",
-        "th": "ภาพถ่าย: NASA ผ่าน Wikimedia Commons · ภาพประกอบ: แนวคิดที่สร้างด้วย AI"
+        "en": "Photos: NASA via Wikimedia Commons and the team's album. Illustrations: AI-generated concept.",
+        "th": "ภาพถ่าย: NASA ผ่าน Wikimedia Commons และอัลบั้มของทีม ภาพประกอบ: แนวคิดที่สร้างด้วย AI"
       },
       "images": [
         {
+          "src": "assets/img/pse-1.jpg",
           "kind": "photo",
-          "src": "assets/img/ase-2.jpg",
           "caption": {
-            "en": "Apollo 14 surface scene",
-            "th": "ภาพบนพื้นผิว อะพอลโล 14"
+            "en": "NASA figure: Active Seismic Experiment",
+            "th": "ภาพจาก NASA: การทดลองแผ่นดินไหวเชิงรุก"
           }
         },
         {
-          "kind": "photo",
           "src": "assets/img/ase-1.jpg",
+          "kind": "photo",
           "caption": {
-            "en": "Diagram of the Active Seismic Experiment (NASA)",
-            "th": "แผนภาพการทดลองแผ่นดินไหวเชิงรุก (NASA)"
+            "en": "Apollo surface photograph, ALSEP area",
+            "th": "ภาพถ่ายพื้นผิวดวงจันทร์ บริเวณ ALSEP"
           }
         },
         {
+          "src": "assets/img/ase-2.jpg",
           "kind": "photo",
-          "src": "assets/img/ase-3.jpg",
           "caption": {
-            "en": "Apollo 16 surface scene",
-            "th": "ภาพบนพื้นผิว อะพอลโล 16"
+            "en": "Apollo surface photograph with instrument",
+            "th": "ภาพถ่ายพื้นผิวดวงจันทร์พร้อมอุปกรณ์"
           }
         },
         {
@@ -455,9 +453,8 @@
           "kind": "illustration",
           "caption": {
             "en": "Concept illustration: Active Seismic Experiment",
-            "th": "ภาพแนวคิด: ชุดทดลองแผ่นดินไหวแบบแอ็กทีฟ"
-          },
-          "feet": 0.788
+            "th": "ภาพแนวคิด: การทดลองแผ่นดินไหวเชิงรุก"
+          }
         }
       ]
     },
@@ -502,16 +499,16 @@
         "th": "เมื่อรวมกับข้อมูลอื่น ช่วยให้เข้าใจว่าดวงจันทร์คายความร้อนจากภายในอย่างไร"
       },
       "credit": {
-        "en": "Photos: NASA via Wikimedia Commons · Illustration: AI-generated concept",
-        "th": "ภาพถ่าย: NASA ผ่าน Wikimedia Commons · ภาพประกอบ: แนวคิดที่สร้างด้วย AI"
+        "en": "Photos: NASA via Wikimedia Commons and the team's album. Illustrations: AI-generated concept.",
+        "th": "ภาพถ่าย: NASA ผ่าน Wikimedia Commons และอัลบั้มของทีม ภาพประกอบ: แนวคิดที่สร้างด้วย AI"
       },
       "images": [
         {
+          "src": "assets/img/ase-3.jpg",
           "kind": "photo",
-          "src": "assets/img/hfe-1.jpg",
           "caption": {
-            "en": "Heat flow probe in the lunar soil",
-            "th": "หัววัดการไหลของความร้อนในดินดวงจันทร์"
+            "en": "Heat flow probe rods on the lunar surface",
+            "th": "หัววัดการไหลของความร้อนบนพื้นผิวดวงจันทร์"
           }
         },
         {
@@ -519,9 +516,8 @@
           "kind": "illustration",
           "caption": {
             "en": "Concept illustration: Heat Flow Experiment",
-            "th": "ภาพแนวคิด: เครื่องวัดการไหลของความร้อน"
-          },
-          "feet": 0.92
+            "th": "ภาพแนวคิด: การทดลองการถ่ายเทความร้อน"
+          }
         }
       ],
       "note": {
@@ -565,16 +561,16 @@
         "th": "บางจุดบนผิวมีแม่เหล็กสูงผิดปกติ เป็นเบาะแสว่าแกนกลางดวงจันทร์เคยสร้างสนามแม่เหล็กขึ้นมา"
       },
       "credit": {
-        "en": "Photos: NASA via Wikimedia Commons · Illustration: AI-generated concept",
-        "th": "ภาพถ่าย: NASA ผ่าน Wikimedia Commons · ภาพประกอบ: แนวคิดที่สร้างด้วย AI"
+        "en": "Photos: NASA via Wikimedia Commons and the team's album. Illustrations: AI-generated concept.",
+        "th": "ภาพถ่าย: NASA ผ่าน Wikimedia Commons และอัลบั้มของทีม ภาพประกอบ: แนวคิดที่สร้างด้วย AI"
       },
       "images": [
         {
+          "src": "assets/img/hfe-1.jpg",
           "kind": "photo",
-          "src": "assets/img/lsm-1.jpg",
           "caption": {
             "en": "Lunar Surface Magnetometer with its gold booms",
-            "th": "เครื่องวัดสนามแม่เหล็กบนผิวดวงจันทร์ กับแขนโลหะสีทอง"
+            "th": "เครื่องวัดสนามแม่เหล็กบนพื้นผิวดวงจันทร์ กับแขนโลหะสีทอง"
           }
         },
         {
@@ -582,9 +578,8 @@
           "kind": "illustration",
           "caption": {
             "en": "Concept illustration: Lunar Surface Magnetometer",
-            "th": "ภาพแนวคิด: เครื่องวัดสนามแม่เหล็กบนพื้นผิวดวงจันทร์"
-          },
-          "feet": 0.967
+            "th": "ภาพแนวคิด: เครื่องวัดสนามแม่เหล็กบนผิวดวงจันทร์"
+          }
         }
       ]
     },
@@ -623,34 +618,17 @@
         "th": "ช่วยให้นักวิทยาศาสตร์เข้าใจลมสุริยะที่มาถึงดวงจันทร์และโลก"
       },
       "credit": {
-        "en": "Photos: NASA via Wikimedia Commons · Illustration: AI-generated concept",
-        "th": "ภาพถ่าย: NASA ผ่าน Wikimedia Commons · ภาพประกอบ: แนวคิดที่สร้างด้วย AI"
+        "en": "Photos: NASA via Wikimedia Commons and the team's album. Illustrations: AI-generated concept.",
+        "th": "ภาพถ่าย: NASA ผ่าน Wikimedia Commons และอัลบั้มของทีม ภาพประกอบ: แนวคิดที่สร้างด้วย AI"
       },
       "images": [
         {
+          "src": "assets/img/lsm-1.jpg",
           "kind": "photo",
-          "src": "assets/img/sws-1.jpg",
           "caption": {
-            "en": "Apollo 15 surface scene",
-            "th": "ภาพบนพื้นผิว อะพอลโล 15"
+            "en": "Solar Wind Spectrometer on the lunar surface",
+            "th": "เครื่องวัดสเปกตรัมลมสุริยะบนพื้นผิวดวงจันทร์"
           }
-        },
-        {
-          "kind": "photo",
-          "src": "assets/img/sws-2.jpg",
-          "caption": {
-            "en": "Apollo 12 surface scene",
-            "th": "ภาพบนพื้นผิว อะพอลโล 12"
-          }
-        },
-        {
-          "src": "assets/instruments/sws.png",
-          "kind": "illustration",
-          "caption": {
-            "en": "Concept illustration: Solar Wind Spectrometer",
-            "th": "ภาพแนวคิด: เครื่องวัดอนุภาคลมสุริยะ"
-          },
-          "feet": 0.982
         }
       ]
     },
@@ -693,18 +671,25 @@
         "th": "แสงอาทิตย์และลมสุริยะอาจทำให้เม็ดฝุ่นมีประจุจนผลักกันและลอยขึ้น นักวิทยาศาสตร์ยังถกเถียงในรายละเอียด"
       },
       "credit": {
-        "en": "Concept illustration, AI-generated",
-        "th": "ภาพแนวคิด สร้างด้วย AI"
+        "en": "Photos: NASA via Wikimedia Commons and the team's album. Illustrations: AI-generated concept.",
+        "th": "ภาพถ่าย: NASA ผ่าน Wikimedia Commons และอัลบั้มของทีม ภาพประกอบ: แนวคิดที่สร้างด้วย AI"
       },
       "images": [
+        {
+          "src": "assets/img/sws-2.jpg",
+          "kind": "photo",
+          "caption": {
+            "en": "Lunar Ejecta and Meteorites experiment on the surface",
+            "th": "การทดลอง LEAM บนพื้นผิวดวงจันทร์"
+          }
+        },
         {
           "src": "assets/instruments/leam.png",
           "kind": "illustration",
           "caption": {
             "en": "Concept illustration: Lunar Ejecta and Meteorites",
-            "th": "ภาพแนวคิด: เครื่องตรวจวัดฝุ่นและอุกกาบาตขนาดเล็ก"
-          },
-          "feet": 0.982
+            "th": "ภาพแนวคิด: การทดลองฝุ่นและอุกกาบาตบนดวงจันทร์"
+          }
         }
       ],
       "note": {
@@ -750,15 +735,14 @@
           "src": "assets/instruments/lspe.png",
           "kind": "illustration",
           "caption": {
-            "en": "Concept illustration: Lunar Seismic Profiling Experiment",
+            "en": "Concept illustration: Lunar Seismic Profiling",
             "th": "ภาพแนวคิด: ชุดสำรวจใต้พื้นผิวด้วยคลื่นไหวสะเทือน"
-          },
-          "feet": 0.791
+          }
         }
       ],
       "credit": {
-        "en": "Concept illustration, AI-generated",
-        "th": "ภาพแนวคิด สร้างด้วย AI"
+        "en": "Photos: NASA via Wikimedia Commons and the team's album. Illustrations: AI-generated concept.",
+        "th": "ภาพถ่าย: NASA ผ่าน Wikimedia Commons และอัลบั้มของทีม ภาพประกอบ: แนวคิดที่สร้างด้วย AI"
       }
     },
     {
@@ -803,20 +787,10 @@
         "en": "Detecting gravitational waves was the experiment's aim. The record does not show that such waves were detected.",
         "th": "การตรวจจับคลื่นความโน้มถ่วงคือเป้าหมายของการทดลอง แต่บันทึกไม่ได้แสดงว่าตรวจพบคลื่นดังกล่าว"
       },
-      "images": [
-        {
-          "src": "assets/instruments/lsg.png",
-          "kind": "illustration",
-          "caption": {
-            "en": "Concept illustration: Lunar Surface Gravimeter",
-            "th": "ภาพแนวคิด: เครื่องวัดแรงโน้มถ่วงบนพื้นผิวดวงจันทร์"
-          },
-          "feet": 0.956
-        }
-      ],
+      "images": [],
       "credit": {
-        "en": "Concept illustration, AI-generated",
-        "th": "ภาพแนวคิด สร้างด้วย AI"
+        "en": "Photos: NASA via Wikimedia Commons and the team's album. Illustrations: AI-generated concept.",
+        "th": "ภาพถ่าย: NASA ผ่าน Wikimedia Commons และอัลบั้มของทีม ภาพประกอบ: แนวคิดที่สร้างด้วย AI"
       }
     },
     {
@@ -854,20 +828,10 @@
         "en": "Showed how thin the Moon's atmosphere is, and that some of the gas came from the lander itself.",
         "th": "แสดงให้เห็นว่าบรรยากาศดวงจันทร์เบาบางเพียงใด และก๊าซบางส่วนมาจากตัวยานเอง"
       },
-      "images": [
-        {
-          "src": "assets/instruments/side.png",
-          "kind": "illustration",
-          "caption": {
-            "en": "Concept illustration: Suprathermal Ion Detector",
-            "th": "ภาพแนวคิด: เครื่องตรวจวัดไอออนเหนือความร้อน"
-          },
-          "feet": 0.978
-        }
-      ],
+      "images": [],
       "credit": {
-        "en": "Concept illustration, AI-generated",
-        "th": "ภาพแนวคิด สร้างด้วย AI"
+        "en": "Photos: NASA via Wikimedia Commons and the team's album. Illustrations: AI-generated concept.",
+        "th": "ภาพถ่าย: NASA ผ่าน Wikimedia Commons และอัลบั้มของทีม ภาพประกอบ: แนวคิดที่สร้างด้วย AI"
       }
     },
     {
@@ -905,20 +869,10 @@
         "en": "Helped scientists estimate how little gas the Moon keeps near its surface.",
         "th": "ช่วยให้นักวิทยาศาสตร์ประเมินว่าดวงจันทร์มีก๊าซใกล้ผิวน้อยเพียงใด"
       },
-      "images": [
-        {
-          "src": "assets/instruments/ccig.png",
-          "kind": "illustration",
-          "caption": {
-            "en": "Concept illustration: Cold Cathode Ion Gauge",
-            "th": "ภาพแนวคิด: เครื่องวัดก๊าซแบบแคโทดเย็น"
-          },
-          "feet": 0.938
-        }
-      ],
+      "images": [],
       "credit": {
-        "en": "Concept illustration, AI-generated",
-        "th": "ภาพแนวคิด สร้างด้วย AI"
+        "en": "Photos: NASA via Wikimedia Commons and the team's album. Illustrations: AI-generated concept.",
+        "th": "ภาพถ่าย: NASA ผ่าน Wikimedia Commons และอัลบั้มของทีม ภาพประกอบ: แนวคิดที่สร้างด้วย AI"
       }
     }
   ],
