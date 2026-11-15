@@ -47,6 +47,34 @@
             "en": "Astronaut beside equipment on the surface",
             "th": "นักบินอวกาศข้างอุปกรณ์บนพื้นผิว"
           }
+        },
+        {
+          "src": "assets/photos/a12-5.jpg",
+          "caption": {
+            "en": "Earth above the lunar horizon",
+            "th": "โลกอยู่เหนือเส้นขอบฟ้าของดวงจันทร์"
+          }
+        },
+        {
+          "src": "assets/photos/a12-6.jpg",
+          "caption": {
+            "en": "Lunar landscape with the lunar module in the distance",
+            "th": "พื้นผิวดวงจันทร์ มียานลงจอดอยู่ไกล ๆ"
+          }
+        },
+        {
+          "src": "assets/photos/a12-7.jpg",
+          "caption": {
+            "en": "Apollo 12 crew portrait",
+            "th": "ภาพถ่ายลูกเรืออะพอลโล 12"
+          }
+        },
+        {
+          "src": "assets/photos/a12-8.jpg",
+          "caption": {
+            "en": "Astronaut beside ALSEP equipment",
+            "th": "นักบินอวกาศข้างอุปกรณ์ ALSEP"
+          }
         }
       ],
       "photo_credit": {
@@ -101,6 +129,34 @@
             "en": "Saturn V launch",
             "th": "การปล่อยจรวด Saturn V"
           }
+        },
+        {
+          "src": "assets/photos/a14-5.jpg",
+          "caption": {
+            "en": "Astronaut and lunar module on the surface",
+            "th": "นักบินอวกาศกับยานลงจอดบนพื้นผิว"
+          }
+        },
+        {
+          "src": "assets/photos/a14-6.jpg",
+          "caption": {
+            "en": "Apollo 14 crew portrait",
+            "th": "ภาพถ่ายลูกเรืออะพอลโล 14"
+          }
+        },
+        {
+          "src": "assets/photos/a14-7.jpg",
+          "caption": {
+            "en": "Astronaut with the flag",
+            "th": "นักบินอวกาศกับธงชาติ"
+          }
+        },
+        {
+          "src": "assets/photos/a14-8.jpg",
+          "caption": {
+            "en": "Saturn V launch",
+            "th": "การปล่อยจรวด Saturn V"
+          }
         }
       ],
       "photo_credit": {
@@ -148,6 +204,27 @@
             "en": "Astronaut with the flag and lunar module",
             "th": "นักบินอวกาศกับธงชาติและยานลงจอด"
           }
+        },
+        {
+          "src": "assets/photos/a15-4.jpg",
+          "caption": {
+            "en": "Lunar Roving Vehicle on the Moon",
+            "th": "ยานสำรวจบนพื้นผิวดวงจันทร์"
+          }
+        },
+        {
+          "src": "assets/photos/a15-5.jpg",
+          "caption": {
+            "en": "Apollo 15 crew portrait",
+            "th": "ภาพถ่ายลูกเรืออะพอลโล 15"
+          }
+        },
+        {
+          "src": "assets/photos/a15-6.jpg",
+          "caption": {
+            "en": "Astronaut beside the lunar module",
+            "th": "นักบินอวกาศข้างยานลงจอด"
+          }
         }
       ],
       "photo_credit": {
@@ -191,6 +268,27 @@
         },
         {
           "src": "assets/photos/a16-3.jpg",
+          "caption": {
+            "en": "Lunar module and astronaut on the surface",
+            "th": "ยานลงจอดกับนักบินอวกาศบนพื้นผิว"
+          }
+        },
+        {
+          "src": "assets/photos/a16-4.jpg",
+          "caption": {
+            "en": "Apollo 16 lunar surface image",
+            "th": "ภาพพื้นผิวดวงจันทร์จากภารกิจอะพอลโล 16"
+          }
+        },
+        {
+          "src": "assets/photos/a16-5.jpg",
+          "caption": {
+            "en": "Apollo 16 crew portrait",
+            "th": "ภาพถ่ายลูกเรืออะพอลโล 16"
+          }
+        },
+        {
+          "src": "assets/photos/a16-6.jpg",
           "caption": {
             "en": "Lunar module and astronaut on the surface",
             "th": "ยานลงจอดกับนักบินอวกาศบนพื้นผิว"
@@ -241,6 +339,27 @@
           "caption": {
             "en": "Astronaut, rover and flag",
             "th": "นักบินอวกาศ ยานสำรวจ และธงชาติ"
+          }
+        },
+        {
+          "src": "assets/photos/a17-4.jpg",
+          "caption": {
+            "en": "Apollo 17 lunar module during preparation",
+            "th": "ยานลงจอดอะพอลโล 17 ระหว่างการเตรียมการ"
+          }
+        },
+        {
+          "src": "assets/photos/a17-5.jpg",
+          "caption": {
+            "en": "Apollo 17 crew portrait",
+            "th": "ภาพถ่ายลูกเรืออะพอลโล 17"
+          }
+        },
+        {
+          "src": "assets/photos/a17-6.jpg",
+          "caption": {
+            "en": "Lunar module and equipment on the surface",
+            "th": "ยานลงจอดและอุปกรณ์บนพื้นผิวดวงจันทร์"
           }
         }
       ],
@@ -305,6 +424,14 @@
       "images": [
         {
           "src": "assets/img/sws-1.jpg",
+          "kind": "photo",
+          "caption": {
+            "en": "ALSEP central station on the lunar surface",
+            "th": "สถานีกลาง ALSEP บนพื้นผิวดวงจันทร์"
+          }
+        },
+        {
+          "src": "assets/img/central-2.jpg",
           "kind": "photo",
           "caption": {
             "en": "ALSEP central station on the lunar surface",
@@ -684,6 +811,14 @@
           }
         },
         {
+          "src": "assets/img/leam-2.jpg",
+          "kind": "photo",
+          "caption": {
+            "en": "Lunar Ejecta and Meteorites equipment at the lunar site",
+            "th": "อุปกรณ์ LEAM บริเวณจุดทดลองบนดวงจันทร์"
+          }
+        },
+        {
           "src": "assets/instruments/leam.png",
           "kind": "illustration",
           "caption": {
@@ -787,7 +922,16 @@
         "en": "Detecting gravitational waves was the experiment's aim. The record does not show that such waves were detected.",
         "th": "การตรวจจับคลื่นความโน้มถ่วงคือเป้าหมายของการทดลอง แต่บันทึกไม่ได้แสดงว่าตรวจพบคลื่นดังกล่าว"
       },
-      "images": [],
+      "images": [
+        {
+          "src": "assets/img/lsg-1.jpg",
+          "kind": "photo",
+          "caption": {
+            "en": "Lunar Surface Gravimeter on the lunar surface",
+            "th": "เครื่องวัดแรงโน้มถ่วงบนพื้นผิวดวงจันทร์"
+          }
+        }
+      ],
       "credit": {
         "en": "Photos: NASA via Wikimedia Commons and the team's album. Illustrations: AI-generated concept.",
         "th": "ภาพถ่าย: NASA ผ่าน Wikimedia Commons และอัลบั้มของทีม ภาพประกอบ: แนวคิดที่สร้างด้วย AI"
@@ -828,7 +972,40 @@
         "en": "Showed how thin the Moon's atmosphere is, and that some of the gas came from the lander itself.",
         "th": "แสดงให้เห็นว่าบรรยากาศดวงจันทร์เบาบางเพียงใด และก๊าซบางส่วนมาจากตัวยานเอง"
       },
-      "images": [],
+      "images": [
+        {
+          "src": "assets/img/side-ccig-1.jpg",
+          "kind": "photo",
+          "caption": {
+            "en": "ALSEP equipment at the lunar site",
+            "th": "อุปกรณ์ ALSEP บริเวณจุดทดลองบนดวงจันทร์"
+          }
+        },
+        {
+          "src": "assets/img/side-ccig-2.jpg",
+          "kind": "photo",
+          "caption": {
+            "en": "Close-up of ALSEP surface equipment",
+            "th": "ภาพใกล้ของอุปกรณ์ ALSEP บนพื้นผิวดวงจันทร์"
+          }
+        },
+        {
+          "src": "assets/img/side-ccig-3.jpg",
+          "kind": "photo",
+          "caption": {
+            "en": "ALSEP instruments and cables on the lunar surface",
+            "th": "เครื่องมือและสายเคเบิล ALSEP บนพื้นผิวดวงจันทร์"
+          }
+        },
+        {
+          "src": "assets/img/side-ccig-4.jpg",
+          "kind": "photo",
+          "caption": {
+            "en": "Instrument assembly on the Moon",
+            "th": "ชุดเครื่องมือทดลองบนดวงจันทร์"
+          }
+        }
+      ],
       "credit": {
         "en": "Photos: NASA via Wikimedia Commons and the team's album. Illustrations: AI-generated concept.",
         "th": "ภาพถ่าย: NASA ผ่าน Wikimedia Commons และอัลบั้มของทีม ภาพประกอบ: แนวคิดที่สร้างด้วย AI"
@@ -869,7 +1046,48 @@
         "en": "Helped scientists estimate how little gas the Moon keeps near its surface.",
         "th": "ช่วยให้นักวิทยาศาสตร์ประเมินว่าดวงจันทร์มีก๊าซใกล้ผิวน้อยเพียงใด"
       },
-      "images": [],
+      "images": [
+        {
+          "src": "assets/img/side-ccig-1.jpg",
+          "kind": "photo",
+          "caption": {
+            "en": "ALSEP equipment at the lunar site",
+            "th": "อุปกรณ์ ALSEP บริเวณจุดทดลองบนดวงจันทร์"
+          }
+        },
+        {
+          "src": "assets/img/ccig-1.jpg",
+          "kind": "diagram",
+          "caption": {
+            "en": "Cold Cathode Ion Gauge (CCIG) diagram",
+            "th": "แผนผังเครื่องวัดก๊าซแบบแคโทดเย็น (CCIG)"
+          }
+        },
+        {
+          "src": "assets/img/side-ccig-2.jpg",
+          "kind": "photo",
+          "caption": {
+            "en": "Close-up of ALSEP surface equipment",
+            "th": "ภาพใกล้ของอุปกรณ์ ALSEP บนพื้นผิวดวงจันทร์"
+          }
+        },
+        {
+          "src": "assets/img/side-ccig-3.jpg",
+          "kind": "photo",
+          "caption": {
+            "en": "ALSEP instruments and cables on the lunar surface",
+            "th": "เครื่องมือและสายเคเบิล ALSEP บนพื้นผิวดวงจันทร์"
+          }
+        },
+        {
+          "src": "assets/img/side-ccig-4.jpg",
+          "kind": "photo",
+          "caption": {
+            "en": "Instrument assembly on the Moon",
+            "th": "ชุดเครื่องมือทดลองบนดวงจันทร์"
+          }
+        }
+      ],
       "credit": {
         "en": "Photos: NASA via Wikimedia Commons and the team's album. Illustrations: AI-generated concept.",
         "th": "ภาพถ่าย: NASA ผ่าน Wikimedia Commons และอัลบั้มของทีม ภาพประกอบ: แนวคิดที่สร้างด้วย AI"

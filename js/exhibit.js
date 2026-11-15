@@ -116,7 +116,9 @@ function showImage(i, animate = true) {
     img.src = item.src;
     img.alt = pick(item.caption);
     $('gcap').textContent = pick(item.caption);
-    $('gkind').textContent = item.kind === 'illustration' ? tr('kind_illus') : tr('kind_photo');
+    $('gkind').textContent = item.kind === 'diagram'
+      ? tr('kind_diagram')
+      : item.kind === 'illustration' ? tr('kind_illus') : tr('kind_photo');
     $('gcount').textContent = `${gIndex + 1} / ${images.length}`;
     markStrip();
     requestAnimationFrame(() => img.classList.remove('swap'));
@@ -244,7 +246,12 @@ onLangChange(() => {
   if (current && inspect.open) {
     story.innerHTML = storyHTML(current);
     $('gcap').textContent = pick(current.images[gIndex]?.caption) ?? '';
-    if (current.images[gIndex]) $('gkind').textContent = current.images[gIndex].kind === 'illustration' ? tr('kind_illus') : tr('kind_photo');
+    if (current.images[gIndex]) {
+      const kind = current.images[gIndex].kind;
+      $('gkind').textContent = kind === 'diagram'
+        ? tr('kind_diagram')
+        : kind === 'illustration' ? tr('kind_illus') : tr('kind_photo');
+    }
     renderStrip(current.images);
     markStrip();
   }
