@@ -1,7 +1,4 @@
-// js/moon3d.js — the 3D Moon.
-// A plain sphere wears the Moon texture (assets/textures/moon.jpg). This is much lighter
-// than the 15 MB model it replaces, and the pin coordinates line up exactly with it.
-// The Moon can be dragged to turn, with a little momentum.
+
 
 import * as THREE from 'three';
 
@@ -11,14 +8,13 @@ const deg = THREE.MathUtils.degToRad;
 const _p = new THREE.Vector3(), _c = new THREE.Vector3();
 const clamp = (v, a, b) => Math.max(a, Math.min(b, v));
 
-// ---------- one shared texture, loaded once ----------
 let texturePromise = null;
 function moonTexture() {
   texturePromise ??= new Promise((resolve) => {
     new THREE.TextureLoader().load(
       MOON_TEXTURE,
       (tex) => {
-        tex.flipY = false;                       // checked: this makes the texture match the pin coordinates
+        tex.flipY = false;                       
         tex.colorSpace = THREE.SRGBColorSpace;
         resolve(tex);
       },
@@ -29,11 +25,9 @@ function moonTexture() {
   return texturePromise;
 }
 
-// one geometry for every Moon: a smooth sphere is all the Moon needs
 let sphereGeometry = null;
 const getSphere = () => (sphereGeometry ??= new THREE.SphereGeometry(MOON_RADIUS, 128, 96));
 
-// ---------- latitude / longitude -> point on the sphere ----------
 export function latLonToVec3(lat, lon, r = MOON_RADIUS) {
   const phi = deg(90 - lat);
   const theta = deg(lon + 180);
@@ -44,7 +38,6 @@ export function latLonToVec3(lat, lon, r = MOON_RADIUS) {
   );
 }
 
-// ---------- glowing markers ----------
 let glowTex = null;
 function glowTexture() {
   if (glowTex) return glowTex;
@@ -83,11 +76,6 @@ function makeMarker(lat, lon) {
   return g;
 }
 
-// ---------- the Moon ----------
-// Returns { root, spin, face(lat, lon), pulse(t), step(dt) }.
-//   root  tilts the Moon, spin turns it. Everything on the surface belongs in `spin`.
-//   face  turns the Moon so a site faces the camera.
-//   step  applies the momentum left after a drag.
 export function buildMoon(pins = []) {
   const tilt = new THREE.Group();
   const spin = new THREE.Group();
@@ -111,14 +99,14 @@ export function buildMoon(pins = []) {
   const moon = {
     root: tilt,
     spin,
-    vy: 0,   // turning speed after a drag (radians per second)
-    vx: 0,   // tilting speed after a drag
+    vy: 0,   
+    vx: 0,   
     face(lat, lon) {
       tilt.rotation.x = deg(lat);
       spin.rotation.y = -(Math.PI / 2 + deg(lon));
     },
-    // Pulse the markers. When a camera is given, markers on the far side are hidden,
-    // so they cannot show as blobs past the Moon's edge.
+    
+    
     pulse(t, cam) {
       for (const m of markers) {
         const { halo, phase } = m.userData;
@@ -149,9 +137,6 @@ export function buildMoon(pins = []) {
   return moon;
 }
 
-// ---------- drag to turn ----------
-// getMoon is a function so the viewer can swap in a different Moon later.
-// Returns a function that removes the listeners.
 export function attachDrag(canvas, getMoon, { onDrag } = {}) {
   let last = null;
   canvas.style.touchAction = 'none';
@@ -174,7 +159,7 @@ export function attachDrag(canvas, getMoon, { onDrag } = {}) {
     const k = 0.008;
     m.spin.rotation.y += dx * k;
     m.root.rotation.x = clamp(m.root.rotation.x + dy * k * 0.6, -1.2, 1.2);
-    m.vy = dx * k * 60;          // momentum: what the last movement was worth per second
+    m.vy = dx * k * 60;          
     m.vx = dy * k * 0.6 * 60;
   };
   const up = () => { last = null; canvas.style.cursor = 'grab'; };
@@ -191,15 +176,11 @@ export function attachDrag(canvas, getMoon, { onDrag } = {}) {
   };
 }
 
-// ---------- glow around the Moon ----------
-// A soft cyan halo that sits behind the Moon. It is a flat sprite at the Moon's centre,
-// so the sphere hides its middle and only the outer glow shows.
-// radius is the sprite's half-size in Moon units (1 = the Moon's own edge).
 export function addHalo(parent, radius = 1.3) {
   const c = document.createElement('canvas');
   c.width = c.height = 256;
   const g = c.getContext('2d');
-  const edge = 1 / (2 * radius);              // where the Moon's edge falls inside the sprite
+  const edge = 1 / (2 * radius);              
   const grd = g.createRadialGradient(128, 128, 0, 128, 128, 128);
   grd.addColorStop(0, 'rgba(166,240,247,0)');
   grd.addColorStop(Math.max(0, edge - 0.02), 'rgba(166,240,247,0)');
@@ -218,8 +199,6 @@ export function addHalo(parent, radius = 1.3) {
   return sprite;
 }
 
-// ---------- viewer ----------
-// Set pause() when the Moon is hidden, so it stops drawing. resume() starts it again.
 export function createViewer(canvas) {
   const renderer = new THREE.WebGLRenderer({
     canvas, antialias: true, alpha: true, powerPreference: 'low-power',
@@ -242,7 +221,7 @@ export function createViewer(canvas) {
 
   const resize = () => {
     const w = canvas.clientWidth, h = canvas.clientHeight;
-    if (!w || !h) return;               // hidden: wait for the ResizeObserver
+    if (!w || !h) return;               
     renderer.setSize(w, h, false);
     camera.aspect = w / h;
     camera.updateProjectionMatrix();

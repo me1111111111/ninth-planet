@@ -1,5 +1,4 @@
-// js/main.js — shared pieces used on every page:
-// header and footer, Thai/English switch, settings, star field, reveal animation, read-aloud.
+
 
 export const DICT = {
   en: {
@@ -160,19 +159,16 @@ export const DICT = {
   },
 };
 
-// ---------- language ----------
 let lang = localStorage.getItem('lang') || 'en';
 const langListeners = [];
 export const currentLang = () => lang;
 export const tr = (key) => DICT[lang][key] ?? DICT.en[key] ?? key;
 export const onLangChange = (fn) => langListeners.push(fn);
 
-// ---------- content (loaded once) ----------
 let contentPromise = null;
 export const loadContent = () =>
   (contentPromise ??= fetch('data/content.json').then((r) => r.json()));
 
-// ---------- read aloud ----------
 export function readAloud(text) {
   if (!('speechSynthesis' in window) || !text) return;
   speechSynthesis.cancel();
@@ -184,7 +180,6 @@ export function stopReading() {
   if ('speechSynthesis' in window) speechSynthesis.cancel();
 }
 
-// ---------- reveal on scroll ----------
 const revealIO = 'IntersectionObserver' in window
   ? new IntersectionObserver((entries) => {
       for (const e of entries) {
@@ -203,7 +198,6 @@ export function observeReveal(root = document) {
   });
 }
 
-// ---------- header & footer ----------
 const PAGES = [
   ['index.html', 'nav_home'],
   ['exhibition.html', 'nav_exhibition'],
@@ -265,7 +259,6 @@ function applyLang() {
   langListeners.forEach((fn) => fn(lang));
 }
 
-// ---------- settings & clicks ----------
 function applyMotion(reduced) {
   document.documentElement.dataset.motion = reduced ? 'reduced' : 'full';
   localStorage.setItem('motion', reduced ? 'reduced' : 'full');
@@ -297,7 +290,7 @@ document.addEventListener('click', (e) => {
     applyLang();
     return;
   }
-  const sizeBtn = t.closest('.size-switch [data-size]');   // only the text-size buttons, not <html data-size>
+  const sizeBtn = t.closest('.size-switch [data-size]');   
   if (sizeBtn) return applySize(sizeBtn.dataset.size);
   const closeBtn = t.closest('[data-close]');
   if (closeBtn) closeBtn.closest('dialog')?.close();
@@ -306,10 +299,6 @@ document.addEventListener('change', (e) => {
   if (e.target.id === 'motion-toggle') applyMotion(e.target.checked);
 });
 
-// ---------- star field ----------
-// Stars have depth: near stars flow faster when you scroll, far stars drift slowly.
-// Each star twinkles and pulses on its own rhythm; some get a little cross sparkle.
-// Occasionally a shooting star streaks across.
 let stage, sctx, W = 0, H = 0, dpr = 1, stars = [], glowCanvas = null;
 let targetY = 0, smoothY = 0, shooter = null, nextShooter = 0;
 const TINTS = ['255,255,255', '166,240,247', '255,214,140'];
@@ -378,7 +367,7 @@ function drawShooter(now) {
 function frame(now) {
   const reduced = document.documentElement.dataset.motion === 'reduced';
   targetY = window.scrollY;
-  smoothY = reduced ? targetY : smoothY + (targetY - smoothY) * 0.085; // soft, flowing inertia
+  smoothY = reduced ? targetY : smoothY + (targetY - smoothY) * 0.085; 
 
   sctx.clearRect(0, 0, W, H);
   sctx.globalCompositeOperation = 'lighter';
@@ -432,9 +421,6 @@ function initStars() {
   requestAnimationFrame(frame);
 }
 
-// ---------- floating astronauts (two, from the asset pack) ----------
-// Decorative only: pointer-events off, empty alt text, placed in the side margins,
-// and hidden on narrow screens so they never sit over reading text.
 function initAstronauts() {
   const spots = [
     { img: 'assets/scene/astronaut-front.png', top: 55, left: 0.5, width: 120, speed: 0.22, rot: -0.02, delay: 0 },
@@ -463,8 +449,6 @@ function initAstronauts() {
   onScroll();
 }
 
-// ---------- click and tap sparkle burst ----------
-// Every tap or click throws a small burst of glittering stars from that point.
 let burstCanvas = null, bctx = null, bparts = [], bRunning = false, bLast = 0;
 const BURST_TINTS = ['255,255,255', '166,240,247', '255,214,140'];
 
@@ -501,7 +485,7 @@ function spawnBurst(x, y) {
       tint: BURST_TINTS[Math.floor(Math.random() * BURST_TINTS.length)],
     });
   }
-  // a brighter centre flash
+  
   bparts.push({ x, y, vx: 0, vy: 0, life: 0, max: 0.35, size: 9, tint: '255,255,255', flash: true });
   if (!bRunning) {
     bRunning = true;
@@ -516,7 +500,7 @@ function drawSparkle(x, y, r, alpha, tint) {
   bctx.beginPath();
   bctx.arc(x, y, r * 0.55, 0, Math.PI * 2);
   bctx.fill();
-  // four thin points, like a star
+  
   bctx.strokeStyle = `rgb(${tint})`;
   bctx.lineWidth = 0.8;
   bctx.beginPath();
@@ -537,7 +521,7 @@ function burstFrame(now) {
     p.x += p.vx * dt;
     p.y += p.vy * dt;
     p.vx *= drag;
-    p.vy = p.vy * drag + 30 * dt;          // a little drift downward
+    p.vy = p.vy * drag + 30 * dt;          
     const k = 1 - p.life / p.max;
     if (p.flash) {
       drawSparkle(p.x, p.y, p.size * (1 + p.life * 3), k * 0.9, p.tint);
@@ -556,7 +540,6 @@ function burstFrame(now) {
   }
 }
 
-// ---------- boot ----------
 document.documentElement.classList.add('js');
 renderChrome();
 const storedMotion = localStorage.getItem('motion')

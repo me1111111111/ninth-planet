@@ -1,4 +1,4 @@
-// js/exhibit.js — exhibition page: instrument cards, photo gallery, story and maps.
+
 
 import { createViewer, buildMoon, attachDrag } from './moon3d.js';
 import { loadContent, currentLang, tr, onLangChange, readAloud, stopReading, observeReveal } from './main.js';
@@ -15,12 +15,11 @@ const mapdlg = $('mapdlg');
 const story = $('story');
 
 let filter = 'all';
-let current = null;     // instrument open in the inspector
-let gIndex = 0;         // which photo is showing
+let current = null;     
+let gIndex = 0;         
 let earthMap = null;
 let moonView = null;
 
-// ---------- grid ----------
 function renderGrid() {
   const q = search.value.trim().toLowerCase();
   const list = content.instruments.filter((ins) => {
@@ -62,7 +61,6 @@ $('chips').addEventListener('click', (e) => {
   renderGrid();
 });
 
-// ---------- story panel ----------
 function storyHTML(ins) {
   const missions = ins.missions.map((m) => `${tr('apollo')} ${m}`).join(', ');
   const status = ins.status ? `<span class="tag ${ins.status.tone || ''}">${pick(ins.status)}</span>` : '';
@@ -80,7 +78,6 @@ function storyHTML(ins) {
     ${ins.note ? `<p class="mm-alert">${pick(ins.note)}</p>` : ''}${ins.about ? `<div class="about"><p class="kicker">${tr('about_title')}</p><p>${pick(ins.about)}</p></div>` : ''}`;
 }
 
-// ---------- photo gallery ----------
 function renderStrip(images) {
   $('strip').innerHTML = images.map((it, i) =>
     `<button class="thumbbtn" data-i="${i}" aria-label="${pick(it.caption)}"><img src="${it.src}" alt=""></button>`
@@ -124,7 +121,7 @@ function showImage(i, animate = true) {
     requestAnimationFrame(() => img.classList.remove('swap'));
   };
 
-  // "file browser" feel: slide and fade out, swap, slide back in
+  
   if (animate && img.getAttribute('src')) {
     img.classList.add('swap');
     setTimeout(apply, 320);
@@ -145,7 +142,6 @@ document.addEventListener('keydown', (e) => {
   if (e.key === 'ArrowRight') showImage(gIndex + 1);
 });
 
-// swipe on touch screens
 let swipeX = null;
 $('stage').addEventListener('pointerdown', (e) => { swipeX = e.clientX; });
 $('stage').addEventListener('pointerup', (e) => {
@@ -155,7 +151,6 @@ $('stage').addEventListener('pointerup', (e) => {
   if (Math.abs(dx) > 40) showImage(gIndex + (dx < 0 ? 1 : -1));
 });
 
-// ---------- inspector ----------
 function openInspect(ins) {
   if (!ins) return;
   current = ins;
@@ -174,9 +169,6 @@ $('btn-read').addEventListener('click', () => {
 inspect.addEventListener('close', () => stopReading());
 inspect.addEventListener('click', (e) => { if (e.target === inspect) inspect.close(); });
 
-// ---------- maps ----------
-// One Moon viewer for the whole page. It is created the first time Show maps is pressed,
-// then reused, and paused whenever the dialog is closed.
 let mapMoon = null;
 attachDrag($('moonview'), () => mapMoon);
 
@@ -192,7 +184,7 @@ $('btn-maps').addEventListener('click', () => {
 });
 
 function showMaps(ins) {
-  // Earth: where it was built, with satellite imagery when the maker is known
+  
   const el = $('earthmap');
   earthMap?.remove();
   earthMap = null;
@@ -215,7 +207,7 @@ function showMaps(ins) {
       </div>`;
   }
 
-  // Moon: where it was left, with a pulsing marker at the landing site
+  
   const view = getMoonView();
   const mission = content.missions[ins.missions[0]];
   view.root.traverse((o) => o.material?.dispose?.());
@@ -240,7 +232,6 @@ mapdlg.addEventListener('close', () => {
 });
 mapdlg.addEventListener('click', (e) => { if (e.target === mapdlg) mapdlg.close(); });
 
-// ---------- language changes ----------
 onLangChange(() => {
   renderGrid();
   if (current && inspect.open) {
@@ -261,7 +252,6 @@ onLangChange(() => {
   }
 });
 
-// ---------- first render; open an instrument if the URL has #id ----------
 renderGrid();
 const fromHash = location.hash.slice(1);
 if (fromHash && byId[fromHash]) openInspect(byId[fromHash]);

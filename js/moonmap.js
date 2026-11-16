@@ -1,6 +1,4 @@
-// js/moonmap.js — moon map page.
-// The 3D Moon shows the real Apollo landing sites. Labels are placed over the Moon by
-// projecting each site from 3D into the screen, so they stay attached as the Moon turns.
+
 
 import { createViewer, buildMoon, latLonToVec3, attachDrag } from './moon3d.js';
 import { loadContent, currentLang, tr, onLangChange } from './main.js';
@@ -12,16 +10,15 @@ const $ = (id) => document.getElementById(id);
 const byId = Object.fromEntries(content.instruments.map((i) => [i.id, i]));
 const sites = Object.entries(content.missions).map(([k, m]) => ({ key: k, ...m }));
 
-let group = 'all';     // all | inside | fields | particles
+let group = 'all';     
 let siteKey = '12';
 let instrumentId = 'pse';
-let focused = false;   // true once a site has been chosen, so the Moon stops turning
+let focused = false;   
 
 const instrumentsAt = (k) => content.instruments.filter(
   (i) => i.missions.includes(k) && (group === 'all' || i.category.includes(group)));
 const siteVisible = (k) => instrumentsAt(k).length > 0;
 
-// ---------- 3D Moon ----------
 const canvas = $('moon');
 const viewer = createViewer(canvas);
 viewer.camera.position.set(0, 0, 3.3);
@@ -40,7 +37,6 @@ viewer.setTick((dt) => {
   placeLabels();
 });
 
-// ---------- site labels ----------
 const labelLayer = $('labels');
 
 function renderLabels() {
@@ -59,8 +55,6 @@ function markLabels() {
   });
 }
 
-// Project every visible site onto the screen, hide the ones on the far side,
-// and nudge labels apart vertically so they never stack on top of each other.
 function placeLabels() {
   const w = canvas.clientWidth, h = canvas.clientHeight;
   if (!w || !h) return;
@@ -80,7 +74,7 @@ function placeLabels() {
     const x = (p.x + 1) / 2 * w;
     const y = (1 - p.y) / 2 * h;
     const lw = el.offsetWidth;
-    // open the label to the right of the site, or to the left near the edge
+    
     const lx = x + 14 + lw > w - 8 ? x - 14 - lw : x + 14;
     placed.push({ el, lx, y });
   }
@@ -92,8 +86,6 @@ function placeLabels() {
   for (const p of placed) p.el.style.transform = `translate(${p.lx}px, ${p.y - 18}px)`;
 }
 
-// ---------- instrument chips and dossier ----------
-// Mission block: dates, landing site, power, summary and the mission's photos
 function renderSiteInfo() {
   const m = content.missions[siteKey];
   $('site-info').innerHTML = `
@@ -126,8 +118,6 @@ function renderSiteChips() {
     : `<p class="mm-empty">${tr('mm_none')}</p>`;
 }
 
-// The plinth's top surface centre is 47% down a square box. The object's height is 46% of the box,
-// and its visible base (measured per picture as "feet") is placed on that centre line.
 function objectBottom(img) {
   const surface = 47, height = 46;
   const feet = img.feet ?? 0.97;
@@ -170,7 +160,6 @@ function renderDossier() {
     </div>`;
 }
 
-// ---------- power and findings (static text from the content file) ----------
 function renderExtras() {
   const mm = content.moonMap;
   const pw = mm.power;
@@ -200,7 +189,6 @@ function renderExtras() {
     <ul>${mm.findings.map((f) => `<li>${pick(f)}</li>`).join('')}</ul>`;
 }
 
-// ---------- selection ----------
 function selectSite(key, face) {
   siteKey = key;
   if (face) {
@@ -245,7 +233,6 @@ $('filters').addEventListener('click', (e) => {
 
 $('show-all').addEventListener('click', () => { focused = false; });
 
-// the power pictures open larger in the same photo dialog
 $('power').addEventListener('click', (e) => {
   const b = e.target.closest('[data-pi]');
   if (!b) return;
@@ -258,7 +245,6 @@ $('power').addEventListener('click', (e) => {
   $('photo-dialog').showModal();
 });
 
-// photos open larger in the photo dialog
 $('site-photos').addEventListener('click', (e) => {
   const b = e.target.closest('[data-i]');
   if (!b) return;
@@ -271,7 +257,6 @@ $('site-photos').addEventListener('click', (e) => {
   $('photo-dialog').showModal();
 });
 
-// ---------- first render and language changes ----------
 renderLabels();
 renderExtras();
 selectSite('12', false);

@@ -1,17 +1,16 @@
-// js/hero.js — home page: the Moon with its glow, the scroll fade, and the featured cards.
+
 
 import { createViewer, buildMoon, addHalo } from './moon3d.js';
 import { loadContent, currentLang, tr, onLangChange, observeReveal } from './main.js';
 
-const HERO_MOON_SCALE = 1.4;   // size of the Moon on the home page (1 = normal)
-const HORIZON_Y = 0.67;        // height of the Moon's top edge in the scene; sets where its horizon crosses APOLLO
+const HERO_MOON_SCALE = 1.4;   
+const HORIZON_Y = 0.67;        
 
 const content = await loadContent();
 const byId = Object.fromEntries(content.instruments.map((i) => [i.id, i]));
 const pick = (o) => o?.[currentLang()] ?? o?.en ?? '';
 const clamp = (v, a, b) => Math.max(a, Math.min(b, v));
 
-// ---------- the Moon ----------
 const canvas = document.getElementById('hero-moon');
 const viewer = createViewer(canvas);
 viewer.camera.position.set(0, 0.25, 3.6);
@@ -20,7 +19,7 @@ const pins = Object.values(content.missions).map((m) => ({ lat: m.lat, lon: m.lo
 const moon = buildMoon(pins);
 moon.root.scale.setScalar(HERO_MOON_SCALE);
 moon.root.position.y = HORIZON_Y - HERO_MOON_SCALE;
-addHalo(moon.root, 1.3);          // the glow around the Moon
+addHalo(moon.root, 1.3);          
 viewer.root.add(moon.root);
 
 let time = 0;
@@ -32,7 +31,6 @@ viewer.setTick((dt) => {
   moon.pulse(time, viewer.camera);
 });
 
-// ---------- scroll fade: the Moon fades as you scroll down, and rises again as you scroll up ----------
 const heroEl = document.querySelector('.hero');
 const fadeEl = document.getElementById('hero-fade');
 let scrollTicking = false;
@@ -41,7 +39,7 @@ function updateFade() {
   const p = clamp(window.scrollY / (heroEl.offsetHeight * 0.9), 0, 1);
   canvas.style.opacity = String(1 - p * 0.85);
   fadeEl.style.opacity = String(p);
-  // below the hero, the page sinks from dark blue to black as you scroll
+  
   document.getElementById('scroll-dark').style.opacity = String(clamp(window.scrollY / (window.innerHeight * 1.2), 0, 0.92));
   scrollTicking = false;
 }
@@ -53,7 +51,6 @@ window.addEventListener('scroll', () => {
 }, { passive: true });
 updateFade();
 
-// ---------- origin: the team's introduction to the programme and ALSEP ----------
 const o = content.origin;
 function renderOrigin() {
   if (!o) return;
@@ -68,7 +65,6 @@ function renderOrigin() {
 renderOrigin();
 onLangChange(renderOrigin);
 
-// ---------- featured cards ----------
 function renderFeatured() {
   const box = document.getElementById('featured');
   if (!box) return;

@@ -1,6 +1,4 @@
-/* ==========================================================================
-   The Ninth Planet — cinematic dark theme
-   ========================================================================== */
+
 
 :root {
   --bg: #03050b;
@@ -43,7 +41,6 @@ body {
 }
 body.thai { font-family: "Noto Sans Thai", "Thonburi", "Sukhumvit Set", "Space Grotesk", system-ui, sans-serif; line-height: 1.9; }
 
-/* vignette: darkens the edges of the whole screen, like a film frame */
 body::after {
   content: "";
   position: fixed;
@@ -67,12 +64,10 @@ img { max-width: 100%; display: block; }
 
 main, footer { position: relative; z-index: 2; }
 
-/* scroll-reveal: only hidden when JavaScript is running */
 .js .reveal { transition: opacity 0.9s var(--ease), transform 0.9s var(--ease); }
 .js .reveal:not(.in) { opacity: 0; transform: translateY(28px); }
-.js .reveal.in { opacity: 1; }   /* no transform here, so hover effects still work */
+.js .reveal.in { opacity: 1; }   
 
-/* ---------- header ---------- */
 .site {
   position: sticky;
   top: 0;
@@ -189,7 +184,6 @@ main, footer { position: relative; z-index: 2; }
   .links { order: 3; width: 100%; margin-left: 0; justify-content: center; }
 }
 
-/* ---------- buttons & chips ---------- */
 .btn, .pill, .chip, .nav-btn, .close, .mission, .thumbbtn {
   font: inherit;
   cursor: pointer;
@@ -236,7 +230,6 @@ main, footer { position: relative; z-index: 2; }
 .chip:hover { border-color: rgba(166, 240, 247, 0.6); box-shadow: 0 0 18px rgba(166, 240, 247, 0.3); transform: translateY(-2px); }
 .chip.active { background: var(--cyan); color: #041018; border-color: transparent; box-shadow: 0 0 24px rgba(166, 240, 247, 0.5); }
 
-/* ---------- typography ---------- */
 .eyebrow {
   display: inline-block;
   letter-spacing: 0.22em;
@@ -284,10 +277,9 @@ h2.title {
 .page { min-height: 60vh; }
 .page-hero { max-width: 1200px; margin: 0 auto; padding: 64px 22px 10px; }
 
-/* ---------- home hero ---------- */
 .hero {
   position: relative;
-  min-height: calc(100vh - 70px);   /* the sticky header takes about 70px of the first screen */
+  min-height: calc(100vh - 70px);   
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -295,25 +287,25 @@ h2.title {
   text-align: center;
   padding: 96px 20px 40px;
 }
-/* the Moon: drawn above APOLLO, so its horizon cuts across the lower edge of the letters */
+
 #hero-moon {
   position: absolute; inset: 0; width: 100%; height: 100%;
   z-index: 2; display: block; pointer-events: none;
   transition: opacity 0.3s linear;
 }
-/* scroll fade: darkens the Moon as you scroll down, and it rises again as you scroll up */
+
 .hero-fade {
   position: absolute; inset: 0; z-index: 3; pointer-events: none; opacity: 0;
   background: linear-gradient(180deg, rgba(3, 5, 11, 0) 30%, rgba(3, 5, 11, 0.92) 100%);
   transition: opacity 0.3s linear;
 }
-/* vignette: darker edges, like looking through a lens */
+
 .hero::after {
   content: "";
   position: absolute; inset: 0; z-index: 4; pointer-events: none;
   background: radial-gradient(ellipse at 50% 40%, transparent 42%, rgba(3, 5, 11, 0.78) 100%);
 }
-/* APOLLO: steel wordmark, tilted back slightly so it reads as curved */
+
 .giant {
   position: relative; z-index: 1;
   width: min(90vw, 900px); height: auto; margin-top: 2vh;
@@ -322,7 +314,7 @@ h2.title {
   pointer-events: none; user-select: none;
   filter: drop-shadow(0 0 36px rgba(166, 240, 247, 0.3)) drop-shadow(0 18px 36px rgba(0, 0, 0, 0.65));
 }
-/* headline and tagline overlap the top of APOLLO, drawn above both the Moon and the wordmark */
+
 .hero-copy { position: relative; z-index: 5; max-width: 860px; margin-top: -9vh; }
 .hero-copy .eyebrow { background: #0b121c; box-shadow: 0 0 22px rgba(232, 183, 90, 0.2); }
 .hero-copy .display { margin: 0.1em 0 0.2em; text-shadow: 0 6px 30px rgba(0, 0, 0, 0.85); }
@@ -344,7 +336,6 @@ h2.title {
 }
 .stat:hover { transform: translateY(-4px); border-color: rgba(166, 240, 247, 0.5); box-shadow: 0 0 30px rgba(166, 240, 247, 0.3), var(--shadow); }
 
-/* ---------- cards ---------- */
 .card {
   position: relative;
   display: block;
@@ -430,7 +421,6 @@ h2.title {
 }
 .tag.gold { border-color: rgba(232, 183, 90, 0.7); color: var(--gold); box-shadow: 0 0 14px rgba(232, 183, 90, 0.2); }
 
-/* ---------- toolbar ---------- */
 .toolbar { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; margin-bottom: 26px; }
 .toolbar input[type="search"] {
   flex: 1;
@@ -447,7 +437,6 @@ h2.title {
 .toolbar input[type="search"]:focus { border-color: rgba(166, 240, 247, 0.7); box-shadow: 0 0 22px rgba(166, 240, 247, 0.25); }
 .chips { display: flex; gap: 8px; flex-wrap: wrap; }
 
-/* ---------- modals ---------- */
 dialog.modal {
   width: min(1180px, 95vw);
   max-height: 92vh;
@@ -608,7 +597,6 @@ dialog.modal::backdrop { background: rgba(2, 4, 10, 0.78); backdrop-filter: blur
   .modal-grid, .map-grid { grid-template-columns: 1fr; }
 }
 
-/* ---------- moon map page ---------- */
 .moon-layout { display: grid; grid-template-columns: 1.2fr 1fr; gap: 28px; align-items: center; }
 .moon-box { position: relative; aspect-ratio: 1 / 1; max-width: 580px; width: 100%; justify-self: center; }
 #moon { width: 100%; height: 100%; display: block; }
@@ -631,7 +619,6 @@ dialog.modal::backdrop { background: rgba(2, 4, 10, 0.78); backdrop-filter: blur
 .mission-list > .pill { align-self: flex-start; }
 @media (max-width: 860px) { .moon-layout { grid-template-columns: 1fr; } }
 
-/* ---------- credits ---------- */
 .team { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 18px; }
 .member { display: flex; gap: 16px; align-items: center; padding: 20px; }
 .member .orb {
@@ -649,7 +636,6 @@ dialog.modal::backdrop { background: rgba(2, 4, 10, 0.78); backdrop-filter: blur
 .sources a:hover { text-shadow: 0 0 14px rgba(166, 240, 247, 0.7); }
 .ack { max-width: 780px; color: var(--muted); }
 
-/* ---------- footer ---------- */
 .site-footer {
   position: relative;
   margin-top: 70px;
@@ -661,16 +647,10 @@ dialog.modal::backdrop { background: rgba(2, 4, 10, 0.78); backdrop-filter: blur
 }
 .site-footer p { margin: 4px 0; }
 
-/* ==========================================================================
-   Asset pack pieces: icons, floating astronauts, moon map
-   ========================================================================== */
-
-/* icons from the asset pack */
 .icon-btn img, .close img, .nav-btn img { display: block; margin: auto; }
 .nav-btn img { width: 20px; height: 20px; }
 .brand img { flex: 0 0 auto; }
 
-/* two floating astronauts: side margins, behind content, never over text */
 .astro-layer { position: fixed; inset: 0; z-index: 1; pointer-events: none; overflow: hidden; }
 .astro { position: absolute; will-change: transform; }
 .astro .bob { animation: bob 8s ease-in-out infinite; }
@@ -682,7 +662,6 @@ dialog.modal::backdrop { background: rgba(2, 4, 10, 0.78); backdrop-filter: blur
 html[data-motion="reduced"] .astro .bob { animation: none; }
 @media (max-width: 760px) { .astro-layer { display: none; } }
 
-/* moon map: explorer layout */
 .mm-grid { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(320px, 0.9fr); gap: 22px; align-items: stretch; }
 .mm-panel { position: relative; background: var(--glass); border: 1px solid var(--line); border-radius: 22px; box-shadow: var(--shadow); overflow: hidden; }
 .mm-head { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; padding: 16px 20px; border-bottom: 1px solid var(--line); }
@@ -735,9 +714,7 @@ html[data-motion="reduced"] .astro .bob { animation: none; }
 @keyframes mmRise { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
 .mm-plinth { position: relative; aspect-ratio: 1 / 1; border-radius: 16px; overflow: hidden; background: radial-gradient(circle at 50% 40%, #22324a, #070b14 75%); border: 1px solid var(--line); }
 .mm-plinth-img { position: absolute; left: 0; right: 0; bottom: 0; width: 100%; height: 100%; object-fit: contain; opacity: 0.9; }
-/* the instrument stands on the centre of the plinth's top surface.
-   In a square box that centre is about 47% from the top; the feet sit there,
-   and the picture is 46% of the box high (width follows its own proportions) */
+
 .mm-object {
   position: absolute; left: 50%; bottom: 53%; transform: translateX(-50%);
   height: 46%; width: auto; max-width: 76%;
@@ -776,11 +753,6 @@ html[data-motion="reduced"] .astro .bob { animation: none; }
 .earth-fallback img { width: 62%; max-width: 280px; height: auto; }
 .earth-fallback p { margin: 0; color: var(--muted); }
 
-/* ==========================================================================
-   v6: fonts that show on iPad, mobile and tablet layouts, mission details
-   ========================================================================== */
-
-/* Safari hides text that uses a background clip together with a filter. Solid text is safe everywhere. */
 .display {
   color: #f4f7fc;
   background: none;
@@ -789,16 +761,13 @@ html[data-motion="reduced"] .astro .bob { animation: none; }
 }
 body { -webkit-text-size-adjust: 100%; }
 
-/* controls: at least 44 px, as on touch screens */
 .btn, .pill, .chip, .lang-btn, .mm-chip, .mission { min-height: 44px; }
 .lang-btn { min-width: 44px; }
 .icon-btn { min-width: 44px; min-height: 44px; display: inline-flex; align-items: center; justify-content: center; }
 .icon-btn img, .icon-btn svg { display: block; width: 22px; height: 22px; }
 
-/* site header: menu button for small screens */
 .menu-btn { display: none; }
 
-/* origin: the team's introduction */
 .origin { padding-top: 48px; }
 .origin-grid { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr); gap: 32px; align-items: center; margin-top: 18px; }
 .origin-text p { line-height: 1.9; color: #e2eaf7; margin: 0 0 16px; }
@@ -806,7 +775,6 @@ body { -webkit-text-size-adjust: 100%; }
 .origin-fig img { width: 100%; height: auto; border-radius: 18px; border: 1px solid var(--line); box-shadow: var(--shadow); }
 .origin-fig figcaption { margin-top: 10px; color: var(--muted); }
 
-/* mission block on the moon map */
 .site-info { padding: 0 0 12px; }
 .site-facts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; margin: 0 0 12px; }
 .site-facts div { border: 1px solid var(--line); border-radius: 12px; padding: 10px 12px; background: rgba(255, 255, 255, 0.03); }
@@ -825,16 +793,13 @@ body { -webkit-text-size-adjust: 100%; }
 .photo-fig figcaption { padding: 12px 0 0; font-weight: 600; }
 .photo-credit { padding: 6px 22px 18px; }
 
-/* Thai name shown under the English full name */
 .th-sub { margin: 2px 0 6px; color: var(--muted); font-size: 0.95rem; }
 
-/* credits */
 .member .orb { display: grid; place-items: center; color: #041018; font-weight: 800; font-size: 0.95rem; letter-spacing: 0.04em; }
 .tools li { line-height: 1.7; }
 
-/* ---------- tablet and phone ---------- */
 @media (max-width: 900px) {
-  .astro-layer { display: none; }                     /* keeps the astronauts clear of the text */
+  .astro-layer { display: none; }                     
   .hero { padding: 36px 16px 28px; min-height: auto; }
   .giant { width: min(94vw, 760px); margin-top: 0; }
   .hero-copy { margin-top: -6vh; }
@@ -846,7 +811,7 @@ body { -webkit-text-size-adjust: 100%; }
   .origin-grid { grid-template-columns: 1fr; }
   .mm-grid, .mm-below { grid-template-columns: 1fr; }
   .mm-stage { height: clamp(320px, 72vw, 470px); }
-  .mm-label .s { display: none; }                     /* the chips carry the detail on small screens */
+  .mm-label .s { display: none; }                     
   .mm-label { padding: 6px 9px; }
   .site-facts { grid-template-columns: 1fr; }
   .grid { grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); }
@@ -890,16 +855,10 @@ body { -webkit-text-size-adjust: 100%; }
   .features { grid-template-columns: 1fr; }
 }
 
-/* iPad portrait and phones: stop sideways scrolling */
 html, body { max-width: 100%; overflow-x: hidden; }
 
 @media (max-width: 900px) { .hero::after { background: radial-gradient(ellipse at 50% 45%, transparent 55%, rgba(3, 5, 11, 0.55) 100%); } }
 
-/* ==========================================================================
-   v7: landing page layers, back to front
-   page background -> stars (fixed, behind everything) -> APOLLO -> Moon
-   -> shadow gradient -> scroll fade -> text. Below the hero the page sinks to black on scroll.
-   ========================================================================== */
 .hero {
   position: relative;
   isolation: isolate;
@@ -910,7 +869,7 @@ html, body { max-width: 100%; overflow-x: hidden; }
   display: block;
   text-align: center;
 }
-.hero::after { display: none; }                     /* the shadow image replaces the old vignette */
+.hero::after { display: none; }                     
 .hero-apollo {
   position: absolute; left: 50%; top: 8%; z-index: 1;
   width: min(92vw, 1000px); height: auto;
@@ -948,7 +907,6 @@ html, body { max-width: 100%; overflow-x: hidden; }
 .cta { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin: 0 0 12px; }
 .stats { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin-top: 14px; }
 
-/* the page below the hero sinks from dark blue to black as you scroll */
 .scroll-dark {
   position: fixed; inset: 0; z-index: 1; pointer-events: none; opacity: 0;
   background: #000;
@@ -965,10 +923,6 @@ html, body { max-width: 100%; overflow-x: hidden; }
   .cta .btn { text-align: center; }
 }
 
-/* ==========================================================================
-   v8: stars and astronauts stay visible. Only the page background darkens on scroll.
-   Order, back to front: background -> dark-blue-to-black layer -> stars and astronauts -> moon -> text
-   ========================================================================== */
 .scroll-dark { z-index: 0 !important; }
 #space { z-index: 1 !important; }
 .astro-layer { display: block !important; z-index: 1 !important; }
@@ -976,24 +930,17 @@ html, body { max-width: 100%; overflow-x: hidden; }
 .astro { width: clamp(56px, 9vw, 150px) !important; }
 .astro img { opacity: 0.95; }
 
-/* click / tap sparkle burst */
 #burst {
   position: fixed; inset: 0; width: 100%; height: 100%;
   z-index: 60; pointer-events: none;
 }
 
-/* ==========================================================================
-   v11: landing order and readability, power section, About notes, scroll cue
-   ========================================================================== */
-
-/* APOLLO now sits in front of the Moon: the Moon is behind, the wordmark on top of it */
 #hero-moon { z-index: 2 !important; }
 .hero-shadow { z-index: 3 !important; }
 .hero-apollo { z-index: 4 !important; filter: drop-shadow(0 0 28px rgba(0, 0, 0, 0.55)) drop-shadow(0 0 36px rgba(166, 240, 247, 0.25)) !important; }
 .hero-fade { z-index: 5 !important; }
 .hero-copy, .hero-foot, .scroll-cue { z-index: 6 !important; }
 
-/* the tagline pill: easier to read over the wordmark */
 .hero-copy .eyebrow {
   font-size: 0.98rem;
   padding: 10px 20px;
@@ -1002,12 +949,11 @@ html, body { max-width: 100%; overflow-x: hidden; }
   box-shadow: 0 0 0 4px rgba(5, 10, 18, 0.65), 0 0 24px rgba(232, 183, 90, 0.35);
   letter-spacing: 0.16em;
 }
-/* the subtitle: larger and brighter */
+
 .hero-copy .lead { font-size: 1.3rem; color: #e9f0fb; text-shadow: 0 2px 16px rgba(0, 0, 0, 0.9); }
-/* the headline: a little smaller, and the line breaks sit between words */
+
 .hero-copy .display { font-size: clamp(2rem, 4.6vw, 3.8rem); text-wrap: balance; }
 
-/* scroll cue: tells the visitor there is more below */
 .scroll-cue {
   position: absolute; z-index: 6; right: 3%; bottom: 3%;
   display: inline-flex; align-items: center; gap: 8px;
@@ -1021,10 +967,8 @@ html, body { max-width: 100%; overflow-x: hidden; }
 @keyframes cueBob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(6px); } }
 @media (max-width: 900px) { .scroll-cue { display: none; } }
 
-/* origin: a stronger heading */
 #origin-title { font-size: clamp(2rem, 4.2vw, 3rem); font-weight: 800; }
 
-/* power section: heading, picture row, and text */
 .power-head { font-size: 1.15rem; font-weight: 800; color: var(--gold); margin: 0; letter-spacing: 0.02em; }
 .power-gallery { display: flex; gap: 12px; overflow-x: auto; padding-bottom: 6px; }
 .power-fig { margin: 0; flex: 0 0 150px; }
@@ -1038,7 +982,6 @@ html, body { max-width: 100%; overflow-x: hidden; }
 .power-thumb:hover { transform: translateY(-3px); border-color: var(--cyan); box-shadow: 0 0 18px rgba(166, 240, 247, 0.35); }
 .power-fig figcaption { margin-top: 6px; line-height: 1.4; }
 
-/* About notes on instrument dossiers and exhibit stories */
 .about { margin-top: 18px; padding: 14px 16px; border-radius: 14px; border: 1px solid var(--line); background: rgba(255, 255, 255, 0.03); }
 .about .kicker { margin-bottom: 6px; }
 .about p { margin: 0; line-height: 1.8; color: #dfe8f5; }
